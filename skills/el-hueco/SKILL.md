@@ -16,9 +16,9 @@ fácil; sostenerla no, porque para eso tendrían que arreglar su negocio.
 dicen los clientes de mis competidores", "cómo me diferencio de X", "análisis competitivo",
 "busca mi hueco de mercado", "por dónde ataco a mi competencia".
 
-> **Cómo se activa esta skill.** En **Claude.ai** no hay comandos con barra: pídelo con
-> palabras normales y la skill se activa sola. Si ves que no la coge, nómbrala:
-> *"usa la skill el-hueco"*. En **Claude Code** sí funciona `/el-hueco`.
+> **Cómo se llama esta skill.** En **Claude Code** y **Cowork**: `/el-hueco`.
+> En **Claude.ai** no hay comandos con barra — pídelo con palabras y se activa
+> sola; si no la coge, nómbrala: *"usa la skill el-hueco"*.
 
 
 ---

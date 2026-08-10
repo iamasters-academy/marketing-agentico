@@ -23,9 +23,9 @@ hablar con mi cliente", "entrevista a mi cliente", "qué piensa mi cliente de es
 mi ICP", "analiza las reseñas de mis clientes", "tengo transcripciones de llamadas", "por
 qué no me compran".
 
-> **Cómo se activa esta skill.** En **Claude.ai** no hay comandos con barra: pídelo con
-> palabras normales y la skill se activa sola. Si ves que no la coge, nómbrala:
-> *"usa la skill cliente-vivo"*. En **Claude Code** sí funciona `/cliente-vivo`.
+> **Cómo se llama esta skill.** En **Claude Code** y **Cowork**: `/cliente-vivo`.
+> En **Claude.ai** no hay comandos con barra — pídelo con palabras y se activa
+> sola; si no la coge, nómbrala: *"usa la skill cliente-vivo"*.
 
 
 ---

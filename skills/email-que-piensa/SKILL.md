@@ -24,9 +24,9 @@ mis leads", "flujo de bienvenida", "automatización de email", "mi lista está f
 abren los correos", "monta mi secuencia", "reescribe mis emails", "email marketing para mi
 negocio", "a quién dejo de escribir".
 
-> **Cómo se activa esta skill.** En **Claude.ai** no hay comandos con barra: pídelo con
-> palabras normales y la skill se activa sola. Si ves que no la coge, nómbrala:
-> *"usa la skill email-que-piensa"*. En **Claude Code** sí funciona `/email-que-piensa`.
+> **Cómo se llama esta skill.** En **Claude Code** y **Cowork**: `/email-que-piensa`.
+> En **Claude.ai** no hay comandos con barra — pídelo con palabras y se activa
+> sola; si no la coge, nómbrala: *"usa la skill email-que-piensa"*.
 
 
 ---

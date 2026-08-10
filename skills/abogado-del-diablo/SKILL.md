@@ -323,7 +323,7 @@ está en `references/por-que-objeciones-si-y-predicciones-no.md`.
 | Todas las objeciones salen "es comunicación" | El ataque ha sido blando. Volver al frente 1 y buscar afirmaciones sin prueba, y al frente 3 y buscar el riesgo real de comprar |
 | El usuario quiere que le puntúe versiones de un titular | No hacerlo. Explicar la distinción de arriba y ofrecer lo que sí se puede: atacar cada versión y ver cuál aguanta mejor las objeciones |
 | No tiene web, ni texto, ni negocio | Modo prácticas con `ejemplos/propuestas-de-practicas.md` |
-| Escribe `/abogado-del-diablo` en claude.ai y no pasa nada | Ahí no hay comando con barra. Pedirlo con palabras ("usa la skill abogado-del-diablo…") y comprobar que está activada en Personalizar → Skills |
+| Escribe `/abogado-del-diablo` en claude.ai y no pasa nada | En Claude.ai no hay comandos con barra (en Claude Code y Cowork sí). Pedirlo con palabras ("usa la skill abogado-del-diablo…") y comprobar que está activada en Personalizar → Skills |
 | Pega DMs o correos con nombres, teléfonos o emails dentro | Avisar antes de usarlos y trabajar con el texto anonimizado. No repetir datos personales en el documento de salida |
 
 ---

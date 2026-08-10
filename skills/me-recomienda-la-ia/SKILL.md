@@ -23,9 +23,9 @@ página del informe: esto no lo gana tu blog.
 "visibilidad en IA", "GEO", "SEO para ChatGPT", "quiero que la IA me recomiende", "share of
 model", "mide mi marca en Perplexity", "por qué la IA recomienda a mi competencia".
 
-> **Cómo se activa esta skill.** En **Claude.ai** no hay comandos con barra: pídelo con
-> palabras normales y la skill se activa sola. Si ves que no la coge, nómbrala:
-> *"usa la skill me-recomienda-la-ia"*. En **Claude Code** sí funciona `/me-recomienda-la-ia`.
+> **Cómo se llama esta skill.** En **Claude Code** y **Cowork**: `/me-recomienda-la-ia`.
+> En **Claude.ai** no hay comandos con barra — pídelo con palabras y se activa
+> sola; si no la coge, nómbrala: *"usa la skill me-recomienda-la-ia"*.
 
 
 ---

@@ -29,19 +29,45 @@ Y lo importante: **estas skills no vienen rellenas con el negocio de nadie**. Vi
 
 ---
 
-## Instalación en 3 minutos
+## Instalación
 
-Elige tu vía. **Si no sabes cuál, la A.**
+### La vía rápida: que lo instale Claude por ti
+
+Si usas **Claude Code** o **Cowork**, no hagas nada a mano. Copia esta dirección:
+
+```
+https://github.com/iamasters-academy/marketing-agentico
+```
+
+Pégasela a Claude y dile:
+
+> **«Instálame todas las skills de este repositorio»**
+
+Claude lee el fichero [INSTALAR.md](INSTALAR.md), las coloca en su sitio y te dice cuáles han
+quedado listas. Cuando termines, reinicia y ya puedes llamarlas escribiendo **`/mi-marca`**,
+**`/el-hueco`** y las demás.
+
+Para **actualizarlas** más adelante, mismo gesto: le pasas la dirección y le dices que las
+ponga al día. Este campo cambia rápido y el kit se corrige; no te quedes con la versión del
+primer día.
+
+> **¿Estás en Claude.ai (web o app)?** Ahí Claude no puede instalar nada por su cuenta: la
+> subida es manual. Sigue la vía A de abajo, que son cinco minutos.
+
+---
 
 ### Vía A — Claude.ai (sin instalar nada)
 
 Funciona en la web y en la app de escritorio. No necesitas terminal ni saber programar.
 
-**Paso 1 · Descarga el kit.** En [la página del repo en GitHub](https://github.com/iamasters-academy/marketing-agentico), pulsa el botón verde **`Code`** (arriba a la derecha del listado de archivos) → **`Download ZIP`**. Descomprime el archivo que se te descarga.
+**Paso 1 · Activa las skills en tu cuenta.** Entra en [claude.ai](https://claude.ai) → tu nombre (abajo a la izquierda) → **Ajustes** → **Capacidades**, y activa **"Ejecución de código y creación de archivos"**. Sin esto, la opción de skills no aparece. Es el paso que más gente se salta.
 
-**Paso 2 · Activa las skills en tu cuenta.** Entra en [claude.ai](https://claude.ai) → tu nombre (abajo a la izquierda) → **Ajustes** → **Capacidades**, y activa **"Ejecución de código y creación de archivos"**. Sin esto, la opción de skills no aparece. Es el paso que más gente se salta.
+**Paso 2 · Descarga la skill ya empaquetada.** No tienes que comprimir nada: en [`instalar/zip/`](instalar/zip/) están las nueve listas, una por archivo. Empieza por **`mi-marca.zip`**.
 
-**Paso 3 · Prepara el .zip de una skill.** Claude quiere **una skill por archivo .zip**, y el .zip tiene que contener **la carpeta entera**, no los archivos sueltos de dentro:
+<details>
+<summary>¿Prefieres prepararlo tú a mano? (no hace falta)</summary>
+
+Descarga el repo entero (botón verde **`Code`** → **`Download ZIP`**), descomprímelo, y comprime **la carpeta** de la skill que quieras. El .zip tiene que contener la carpeta entera, no los archivos sueltos de dentro:
 
 ```
 mi-marca.zip
@@ -50,12 +76,15 @@ mi-marca.zip
     └── references/
 ```
 
-- **En Mac:** clic derecho sobre la carpeta `mi-marca` → *Comprimir "mi-marca"*.
-- **En Windows:** clic derecho sobre la carpeta `mi-marca` → *Enviar a* → *Carpeta comprimida*.
+- **En Mac:** clic derecho sobre la carpeta → *Comprimir "mi-marca"*.
+- **En Windows:** clic derecho sobre la carpeta → *Enviar a* → *Carpeta comprimida*.
 
-**Paso 4 · Súbela.** En Claude.ai: **Personalizar** → **Skills** → **`+`** → **Crear skill** → **Subir**, y arrastra el .zip.
+Si comprimes los archivos de dentro en lugar de la carpeta, la subida da error. Es el fallo más común.
+</details>
 
-**Paso 5 · Úsala.** Repite los pasos 3 y 4 con cada skill que quieras (van de una en una). Después abre un chat nuevo y **pídelo con palabras normales**:
+**Paso 3 · Súbela.** En Claude.ai: **Personalizar** → **Skills** → **`+`** → **Crear skill** → **Subir**, y arrastra el .zip. Ojo, que esto no está en Ajustes: en Ajustes activas la capacidad, en Personalizar subes la skill.
+
+**Paso 4 · Úsala.** Repite los pasos 2 y 3 con cada skill que quieras (van de una en una). Después abre un chat nuevo y **pídelo con palabras normales**:
 
 > «Quiero configurar mi perfil de marca»
 
@@ -63,18 +92,34 @@ mi-marca.zip
 
 > «Usa la skill mi-marca»
 
-Los nombres con barra que verás en esta página (`/mi-marca`, `/el-hueco`…) son la forma de referirnos a cada skill, y **sí funcionan como comando en Claude Code**. En Claude.ai, háblale.
-
 > **¿No encuentras alguna opción?** La interfaz de Claude cambia cada pocos meses. Los dos sitios donde mirar son siempre **Ajustes** (para activar la capacidad) y **Personalizar** (para subir la skill).
 
-### Vía B — Claude Code (si ya lo tienes)
+### Vía B — Claude Code o Cowork, a mano
+
+Si prefieres no pedírselo a Claude y hacerlo tú:
 
 ```bash
 git clone https://github.com/iamasters-academy/marketing-agentico.git
-cp -r marketing-agentico/skills/* ~/.claude/skills/
+cp -R marketing-agentico/skills/* ~/.claude/skills/
 ```
 
-Reinicia Claude Code y escribe `/mi-marca`.
+Reinicia y ya las tienes como comandos: `/mi-marca`, `/el-hueco`, `/cliente-vivo`…
+
+También tienes cada skill empaquetada suelta en [`instalar/`](instalar/) (archivos `.skill`), por si quieres instalar solo una.
+
+---
+
+## ¿Con barra o sin barra?
+
+Depende de dónde estés, y es la duda número uno:
+
+| Dónde | Cómo se llama |
+|---|---|
+| **Claude Code** | `/mi-marca` ✅ |
+| **Cowork** | `/mi-marca` ✅ |
+| **Claude.ai** (web y app) | Con palabras: *«quiero configurar mi perfil de marca»* o *«usa la skill mi-marca»* |
+
+Los nombres con barra que verás en esta página son la forma de referirnos a cada skill. Si estás en Claude.ai y escribes la barra, no pasará nada: háblale.
 
 ---
 

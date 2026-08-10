@@ -13,9 +13,9 @@ del kit va a leer siempre. Es el paso que ahorra repetir lo mismo ocho veces.
 todavía no existe. También cubre a quien no tiene negocio propio: ofrece una marca de
 prácticas para poder hacer los ejercicios igual.
 
-> **Cómo se activa esta skill.** En **Claude.ai** no hay comandos con barra: pídelo con
-> palabras normales y la skill se activa sola. Si ves que no la coge, nómbrala:
-> *"usa la skill mi-marca"*. En **Claude Code** sí funciona `/mi-marca`.
+> **Cómo se llama esta skill.** En **Claude Code** y **Cowork**: `/mi-marca`.
+> En **Claude.ai** no hay comandos con barra — pídelo con palabras y se activa
+> sola; si no la coge, nómbrala: *"usa la skill mi-marca"*.
 
 
 ## Antes de empezar: dilo en voz alta

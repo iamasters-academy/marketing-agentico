@@ -1,0 +1,14 @@
+{
+  "name": "iamasters-academy",
+  "owner": {
+    "name": "Ángel Aparicio",
+    "url": "https://github.com/iamasters-academy"
+  },
+  "plugins": [
+    {
+      "name": "marketing-agentico",
+      "source": ".",
+      "description": "Nueve skills de marketing con IA que trabajan con TU negocio: competencia, cliente, posicionamiento, métricas, contenido, leads, GEO y email."
+    }
+  ]
+}

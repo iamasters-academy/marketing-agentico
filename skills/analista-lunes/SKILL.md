@@ -350,7 +350,7 @@ Lo que hay que decir antes de que alguien se meta en el jardín:
 | La cuenta demo no carga o pide permisos | Es de Google y a veces tarda. Recarga; si sigue, salta a la vía 2 con cualquier CSV del usuario |
 | El usuario pide "un dashboard bonito" | Esta skill no lo hace, y díselo en una línea: el panel enseña datos, esto dice qué ha cambiado |
 | Solo llega la tabla de dos periodos, sin histórico ni desglose diario | Trabaja igual, pero escribe "no comprobado" en los filtros de variación normal y de un solo día. NO escribas "descartado" |
-| El usuario escribe `/analista-lunes` y no pasa nada | La barra no está disponible en todas partes. Que lo pida en lenguaje normal: *"usa la skill analista-lunes con esta captura"*. Y que compruebe en Personalizar → Skills que está subida y activada |
+| El usuario escribe `/analista-lunes` y no pasa nada | En Claude.ai no hay comandos con barra (en Claude Code y Cowork sí). Que lo pida en lenguaje normal: *"usa la skill analista-lunes con esta captura"*. Y que compruebe en Personalizar → Skills que está subida y activada |
 
 ---
 

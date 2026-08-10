@@ -23,9 +23,9 @@ Esta skill hace tres cosas, en este orden, y el orden importa:
 estilo", "que no suene a IA", "contenido para LinkedIn e Instagram", "adapta este post a
 todos los canales", "hazme contenido para esta semana", "revisa si esto suena a IA".
 
-> **Cómo se activa esta skill.** En **Claude.ai** no hay comandos con barra: pídelo con
-> palabras normales y la skill se activa sola. Si ves que no la coge, nómbrala:
-> *"usa la skill mi-voz"*. En **Claude Code** sí funciona `/mi-voz`.
+> **Cómo se llama esta skill.** En **Claude Code** y **Cowork**: `/mi-voz`.
+> En **Claude.ai** no hay comandos con barra — pídelo con palabras y se activa
+> sola; si no la coge, nómbrala: *"usa la skill mi-voz"*.
 
 
 ---

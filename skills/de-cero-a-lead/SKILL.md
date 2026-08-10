@@ -18,9 +18,9 @@ no es que se vea bonito: es que te llega el correo.
 bienvenida automático", "el circuito de captación", "monta mi embudo", "una landing gratis
 sin programar".
 
-> **Cómo se activa esta skill.** En **Claude.ai** no hay comandos con barra: pídelo con
-> palabras normales y la skill se activa sola. Si ves que no la coge, nómbrala:
-> *"usa la skill de-cero-a-lead"*. En **Claude Code** sí funciona `/de-cero-a-lead`.
+> **Cómo se llama esta skill.** En **Claude Code** y **Cowork**: `/de-cero-a-lead`.
+> En **Claude.ai** no hay comandos con barra — pídelo con palabras y se activa
+> sola; si no la coge, nómbrala: *"usa la skill de-cero-a-lead"*.
 
 
 ---
