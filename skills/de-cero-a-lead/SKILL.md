@@ -55,11 +55,11 @@ sin programar".
    alguien a crear una cuenta, comprueba **hoy** que sigue siendo gratis:
    > "Voy a verificar que estas cuatro herramientas siguen teniendo plan gratuito antes de
    > que te crees ninguna cuenta. Si algo ha cambiado, te lo digo y buscamos otra."
-4. **Haz la pregunta legal antes de escribir una sola línea de HTML.** No al final:
+5. **Haz la pregunta legal antes de escribir una sola línea de HTML.** No al final:
    > "¿Este formulario va a recoger datos de personas reales, o lo montamos en modo prueba y
    > lo rellenas tú con tu propio correo? Te lo pregunto ahora porque, si es real, hay tres
    > cosas que tienen que estar en la página desde el minuto uno."
-5. **Pregunta qué hay al otro lado.** Sin algo que el visitante quiera, no hay lead: hay un
+6. **Pregunta qué hay al otro lado.** Sin algo que el visitante quiera, no hay lead: hay un
    formulario vacío. Si no lo tiene claro, ayúdale a definirlo antes de maquetar nada.
 
 ### Lo que esta skill no hace por ti
