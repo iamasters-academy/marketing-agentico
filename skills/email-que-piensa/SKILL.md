@@ -1,6 +1,6 @@
 ---
 name: email-que-piensa
-description: Diseña un árbol de decisión de nurturing sobre el comportamiento real de tus leads —esperar, cambiar de ángulo, pasar a ventas o dejarlo ir— y escribe los correos de cada rama en tu voz.
+description: Diseña un árbol de decisión de nurturing sobre el comportamiento real de tus leads —esperar, cambiar de ángulo, pasar a ventas o dejarlo ir, incluido no escribirle— y escribe los correos de cada rama en tu voz. Mira el nombre de los enlaces en los que hicieron clic, no el número, y te dice quién NO recibe correo esta semana y por qué.
 ---
 
 # /email-que-piensa — El agente que decide a quién NO escribir

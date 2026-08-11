@@ -1,6 +1,6 @@
 ---
 name: de-cero-a-lead
-description: Monta el circuito de captación entero —landing, formulario, hoja de destino y email de bienvenida— con herramientas gratuitas, sin programar ni terminal. Para captación y conversión de leads.
+description: Monta el circuito de captación entero —oferta, landing, formulario, hoja de destino y email de bienvenida— con herramientas gratuitas, sin programar ni terminal. Verifica en el momento qué planes siguen siendo gratis, contempla que ya tengas web (subdominio o ruta, sin pisarla), escribe los textos legales del RGPD y cierra separando lo que puedes hacer hoy tú solo de lo que necesita el OK de otra persona. Para captación y conversión de leads.
 ---
 
 # /de-cero-a-lead — El circuito entero, funcionando hoy

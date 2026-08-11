@@ -1,6 +1,6 @@
 ---
 name: analista-lunes
-description: Mira tus métricas y te dice las tres cosas que han cambiado, con una hipótesis de causa y qué comprobar para cada una. Informe repetible cada lunes, sin montar ningún dashboard.
+description: Mira tus métricas y te dice las tres cosas que han cambiado, con una hipótesis de causa y qué comprobar para cada una. Filtra el ruido antes de opinar, pregunta lo que la analítica no ve —cuántos de esos leads valían algo— y distingue «no comprobado» de «descartado». Informe repetible cada lunes, con el registro de hipótesis dentro, sin montar ningún dashboard.
 ---
 
 # /analista-lunes — Tres cosas han cambiado. Y por qué.
