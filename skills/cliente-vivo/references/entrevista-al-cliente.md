@@ -85,6 +85,23 @@ Estas producen una respuesta amable que no significa nada. Si el usuario hace al
 > contesto igual, pero marcada como invento. Si la giras a *«cuéntame la última vez que…»*,
 > la respuesta sí lleva cita detrás."
 
+**Y si además la pregunta lleva dentro el plan del usuario** —*"…porque es lo que quiero
+proponer el lunes"*, *"…que es lo que me pide mi socio"*— no basta con avisar: **ejecuta el
+protocolo de colapso** de `vacuna-antisesgo.md`. Ese es el disparador número uno y el que más
+veces se cuela.
+
+---
+
+## Antes de contestar, clasifica el tema
+
+Medio segundo que evita el fallo más caro de esta skill: mira el material y decide si el tema
+que te acaban de preguntar está **presente** (contestas con 📌), **semi-presente** (⚠️
+obligatorio, aunque tengas una cita cerca) o **ausente** (⚠️ limpio).
+
+**El peligro está en el medio, no abajo.** Con un tema ausente el aviso salta solo; con uno
+semi-presente hay citas estirables, y ahí es donde se inventa un párrafo entero con una cita
+real debajo. El caso completo, en `vacuna-antisesgo.md`.
+
 ---
 
 ## Cómo se lleva una sesión
@@ -94,12 +111,28 @@ Estas producen una respuesta amable que no significa nada. Si el usuario hace al
    Comparar respuestas es la mitad del valor.
 3. **Cuando salga un ⚠️, no lo tapes: anótalo.** Al final de la sesión, la lista de ⚠️ es la
    lista de la compra: el material que hay que ir a buscar.
-4. **Cierra en diez líneas:** qué has aprendido con pruebas, qué se ha quedado sin
+4. **Dosifica los pies de fuente.** A partir de la tercera o cuarta respuesta, el 📌 se abrevia
+   (trozo de cita + `Cliente A · 12 jun`) y el ⚠️ nunca. Si todos los pies pesan lo mismo, el
+   usuario deja de leerlos — y ahí es cuando dejan de protegerle.
+5. **Cierra en diez líneas:** qué has aprendido con pruebas, qué se ha quedado sin
    respaldo, y qué preguntarías a un cliente de verdad la semana que viene.
 
 > **Cuándo parar.** Cuando dos preguntas seguidas devuelvan ⚠️. Ahí ya no estás
 > entrevistando a nadie: estás charlando con un modelo. Se para, se recoge más material y se
 > vuelve.
+
+### Si el usuario pregunta siempre bien
+
+Pasa, sobre todo con quien ya conoce el método: hace cuatro preguntas de la familia 1, todas
+salen con 📌, y **la vacuna se queda en un checklist ceremonial al final**. Se pierde lo mejor
+de la skill, que es verla cazarse a sí misma.
+
+Ofrécele hacer una mala a propósito:
+
+> "Vas a llevarte el expediente sin haber visto lo que esta herramienta hace cuando falla, que
+> es la mitad de por qué merece la pena. Hazme una pregunta de las que fabrican síes —*«¿le
+> gustaría que tuviéramos X?»*, *«¿compraría si costara Y?»*— sobre algo que ya estés pensando
+> en hacer. Y mira lo que pasa."
 
 ---
 

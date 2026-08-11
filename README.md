@@ -125,9 +125,11 @@ Los nombres con barra que verás en esta página son la forma de referirnos a ca
 
 ## Empieza por aquí
 
-**Antes de nada, ejecuta `/mi-marca`.** Es una entrevista de 5 minutos sobre tu negocio: qué vendes, a quién, con qué tono, quiénes son tus competidores. Guarda tu perfil y **las otras ocho skills lo leen automáticamente**.
+**Antes de nada, ejecuta `/mi-marca`.** Si tienes web, Claude la lee y busca a tu competencia **antes** de preguntarte nada: en diez minutos tienes tu perfil. Guarda ese perfil y **las otras ocho skills lo leen automáticamente**.
 
-Si te saltas este paso, las demás skills te van a preguntar lo mismo una y otra vez. Cinco minutos ahora te ahorran cuarenta después.
+Justo después va **`/mi-voz`**: las dos juntas son la *puesta a punto* del kit. Con eso hecho, todo lo que produzcan las otras siete suena a ti.
+
+Si te saltas este paso, las demás skills funcionan igual —te harán tres preguntas rápidas y seguirán—, pero se lo tendrás que contar una y otra vez.
 
 ---
 

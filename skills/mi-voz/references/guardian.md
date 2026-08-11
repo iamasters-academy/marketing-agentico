@@ -20,8 +20,8 @@ Lo que hace el guardián es otra cosa, mucho más aburrida y mucho más útil:
 > Comparar el texto contra **el manual de voz de esta persona concreta** y contra los hechos
 > de su negocio, y decir dónde no encaja **citando la línea exacta**.
 
-No pregunta "¿esto suena a IA?". Pregunta "¿esto se parece a lo que tú escribes, y hay algo
-aquí que solo puedas decir tú?".
+No pregunta "¿esto suena a IA?". Pregunta "¿esto se parece a lo que tú escribes, hay algo
+aquí que solo puedas decir tú, y tienes derecho a decirlo?".
 
 ---
 
@@ -41,9 +41,9 @@ se anuncia y el juicio se hace **citando el manual**, no de memoria.
 
 ---
 
-## Los tres filtros
+## Los cuatro filtros
 
-El texto tiene que pasar los tres. Basta con fallar uno.
+El texto tiene que pasar los cuatro. Basta con fallar uno.
 
 ### Filtro 1 — Voz
 
@@ -55,7 +55,9 @@ El texto tiene que pasar los tres. Basta con fallar uno.
   texto, se señala y se mira si además falla algo más.
 - ¿El formato encaja? (emojis, viñetas, negritas, longitud de párrafo)
 - ¿El cierre es de los suyos?
-- ¿El tratamiento al lector es el que corresponde a ESE canal?
+- ¿El tratamiento al lector es el que corresponde a ESE canal y a ESE registro? Si el manual
+  declara dos registros —empresa y persona—, se juzga contra el que toca, no contra la
+  media de los dos.
 
 ### Filtro 2 — Sustancia
 
@@ -79,13 +81,86 @@ suena a IA porque **no dice nada que su autor no pudiera haber copiado de otro**
 - ¿Lleva marcas de otro canal? (hashtags en X, "hilo" en LinkedIn, enlaces en Instagram).
 - ¿Funciona sin haber leído la otra pieza?
 
+### Filtro 4 — Autoría
+
+**¿Tiene derecho a decir esto quien lo firma?**
+
+Este filtro existe porque los tres primeros dan PASA y el usuario contesta *"está bien, pero
+yo no lo firmaría"*. No está diciendo "no me gusta". Está diciendo **"no soy yo quien
+firma"** — y en una PYME quien escribe casi nunca es quien firma.
+
+Falla si se cumple cualquiera de estas:
+
+- La pieza afirma **hechos que solo puede respaldar otra persona** ("dos de nuestros siete
+  clientes…", "cuando alguien me pregunta yo le contesto…").
+- La pieza lleva **una opinión sobre la empresa o el sector** que le corresponde a quien
+  dirige, no a quien redacta.
+- **Quien firma no la ha visto.** Va a su nombre, a su perfil o a su buzón.
+- **El usuario dice que no la firmaría.** Aquí no se discute: **manda su "no"**.
+
+**Y esto es lo que hay que decirle, tal cual:**
+
+> "El guardián ha dicho PASA y tú has dicho que no. Manda tu no. Eso no es un fallo del
+> guardián: es su límite. Comprueba si un texto suena a esa voz y si tiene sustancia. **No
+> comprueba si tienes derecho a decirlo.** Eso es tuyo, no mío."
+
+---
+
+## El protocolo de autoría
+
+### Antes de escribir — la pregunta que ahorra la reescritura
+
+Al empezar la fase 2, una línea:
+
+> "¿Quién firma cada pieza? ¿Va en tu perfil o en el de otra persona?"
+
+Si firma alguien que no está en la conversación, **el filtro 4 ya está activo desde la
+primera palabra** y se escribe sabiéndolo.
+
+### Cuando el filtro 4 falla — tres salidas, y ninguna es "publícalo y ya"
+
+| Salida | Qué es | Cuándo |
+|---|---|---|
+| **A · Mandarle la pieza entera** para que la apruebe o la cambie | Rápido | Casi nunca funciona: le llega un texto que él no ha pensado, la reacción natural es reescribirlo entero y suele acabar sin publicarse |
+| **B · Mandarle tres preguntas** y escribir con lo que conteste | Cinco minutos de su tiempo | **La recomendada.** El contenido pasa a ser suyo de verdad y el usuario solo lo ha redactado |
+| **C · Que lo firme el usuario** | Cambia la voz y a menudo el canal | Solo si su perfil también genera negocio. Dilo si no es el caso: *"tu perfil no es el canal que trae clientes; el que lo trae es el suyo"* |
+
+### Las tres preguntas — cómo se escriben
+
+**Tres, nunca más:** con más de tres no contesta nadie. Y las tres piden **un hecho
+concreto**, no una opinión sobre el texto. "¿Te parece bien el post?" no es una pregunta
+útil: devuelve una corrección de estilo. "¿Alguno de nuestros clientes había hecho esto
+antes?" devuelve la primera línea de la pieza.
+
+Ejemplo real de las pruebas del kit, con las tres preguntas que se mandaron por WhatsApp y
+volvieron contestadas en cuatro minutos:
+
+1. De los siete clientes que hemos cerrado, ¿alguno había hecho ya una formación de IA antes,
+   con otro proveedor?
+2. Cuando un cliente te pregunta por el Art. 4, ¿qué es lo primero que le dices?
+3. ¿Has visto alguna vez un certificado de formación que no valiera para nada? ¿De qué tipo
+   era?
+
+Las tres respuestas se convirtieron en los tres datos que hacen la pieza imposible de copiar.
+**Este es el sitio donde el filtro 4 y el filtro 2 se juntan:** casi siempre, lo que le falta
+a un texto para tener sustancia es exactamente lo que solo sabe quien lo firma.
+
+### El pudor, que es una cosa distinta y también real
+
+Escribir en primera persona por otro no da apuro por el "yo". Da apuro por **afirmar algo
+que no sabes si es verdad**. Dilo así:
+
+> "Fíjate en qué es lo que te chirría. No es el estilo: es 'conté nueve', que es un hecho, y
+> 'a la mía tampoco', que es una opinión sobre su empresa. Las dos las tiene que respaldar
+> él. Si te trae los datos, el apuro se va solo. Ahora mismo estás firmando afirmaciones sin
+> fuente, y con eso se pone nervioso cualquiera."
+
 ---
 
 ## Los tics: qué buscar cuando el texto "suena raro"
 
 No son delitos por sí solos —**mucha gente escribe así de verdad**—. Son señales de que hay
-que ir a comprobar contra el manual. Si el manual dice que esta persona hace eso, entonces
-está bien.
+que ir a comprobar contra el manual.
 
 **De estructura**
 - Todo va de tres en tres: "rápido, sencillo y eficaz". Tres ejemplos, tres razones, tres
@@ -110,19 +185,66 @@ está bien.
 
 ---
 
+## El tic que resulta ser la firma de la casa
+
+**Esto pasa, pasa a menudo, y es el momento más didáctico de toda la skill.**
+
+Caso real de las pruebas del kit: la antítesis *"No es X, es Y"* está en la lista de arriba
+como señal de texto de máquina. En la web de la empresa analizada aparecía **18 veces en
+3.500 palabras** — escritas por personas, y era lo más reconocible que tenían. *"El proyecto
+se cierra por autonomía, no por fecha."* *"Producción, no demos."* No es un tic: es la forma
+en la que piensan, aplicada a la sintaxis.
+
+Si el guardián rechaza ahí, rechaza a la persona por ser ella misma.
+
+### El protocolo, en cuatro pasos
+
+Cuando detectes un rasgo de la lista de tics, **no lo marques como fallo todavía**:
+
+1. **Ve al manual.** ¿Está documentado ese rasgo, con citas?
+2. **Si el manual lo documenta → no es un tic, es su firma.** No se rechaza. Se comprueba la
+   dosis (paso 3).
+3. **Compara la densidad, no la presencia.** El manual registra cuántas veces aparece por
+   cuántas palabras del corpus. La pieza nueva tiene que estar **en el mismo orden de
+   magnitud**, no en la misma cifra exacta:
+   - Corpus: 18 apariciones en 3.500 palabras → **una cada ~190 palabras**.
+   - Pieza nueva de 170 palabras → tocaría alrededor de una. Dos está dentro.
+   - Seis en 170 palabras **no** está dentro: eso ya no es su voz, es una imitación de su
+     voz. Y una imitación se nota más que una ausencia.
+   - Cero en una pieza larga tampoco encaja: si el rasgo aparece en 4 de 5 piezas del
+     corpus y en el texto nuevo no está, falta algo suyo.
+4. **Si el manual NO lo documenta y el rasgo aparece en el texto nuevo → sí es una señal.**
+   Ahí el tic no viene de la persona: viene del modelo. Se señala como fallo del filtro 1,
+   citando el campo del manual que se incumple.
+
+### La consecuencia para la fase 1
+
+Para que este protocolo se pueda ejecutar, **el manual tiene que traer el número**. Cuando un
+rasgo estructural sea una firma, no basta con escribir "usa mucho la antítesis": hay que
+escribir *"18 apariciones en 3.500 palabras, una cada ~190"*. Está en la plantilla de
+`manual-de-voz.md`, campo *Tus muletillas*.
+
+Un tic no es un delito. Es una señal para ir a comprobar.
+
+---
+
 ## El veredicto
 
-Tres salidas, y hay que elegir una. "Está bastante bien pero…" no es un veredicto.
+Cuatro salidas, y hay que elegir una. "Está bastante bien pero…" no es un veredicto.
 
 | Veredicto | Cuándo | Qué se hace |
 |---|---|---|
-| **PASA** | Los tres filtros limpios | Se entrega |
+| **PASA** | Los cuatro filtros limpios | Se entrega |
+| **FIRMA** | Los tres primeros limpios, falla el 4 | Se entrega **con las tres preguntas escritas** para quien firma. No se publica hasta que conteste |
 | **REESCRIBE** | Falla el filtro 1 o el 3, pero la sustancia está | Se arregla lo señalado |
 | **TIRA** | Falla el filtro 2 | Se vuelve a la idea, no al texto |
 
 **Cuando falla la sustancia no se reescribe.** Si no hay nada propio dentro, reescribirlo
 solo lo disfraza mejor. Hay que volver a la idea y buscar el dato, el nombre o la opinión
-que faltaba — y muchas veces eso significa preguntarle algo al usuario.
+que faltaba — y muchas veces eso significa preguntarle algo a alguien.
+
+**FIRMA no es un rechazo.** El texto está bien: lo que falta es un permiso, y el permiso no
+lo da un modelo. Entrégalo entero, con las preguntas debajo, listas para copiar y mandar.
 
 ## Cómo se escribe el veredicto
 
@@ -138,6 +260,10 @@ incumple.**
 
 Si no puedes citar la línea, no es una objeción: es una sensación. Guárdatela.
 
+**Y di siempre qué filtro estuvo más justo**, aunque el veredicto sea PASA. Si el manual
+tenía `Sin evidencia suficiente` en el registro de ese canal, el veredicto vale menos que el
+de una pieza comparada contra muestras reales — y eso se dice al entregar, no se esconde.
+
 ---
 
 ## El límite de dos reescrituras
@@ -151,6 +277,9 @@ Máximo **dos** vueltas. Si a la tercera sigue sin pasar, se para y se le dice a
 Es incómodo y es el momento en que la skill hace su trabajo. Una fábrica de contenido que
 nunca para es una fábrica de ruido.
 
+**Las vueltas de FIRMA no cuentan.** Esperar la respuesta de quien firma y reescribir con
+sus datos no es un intento fallido: es el mecanismo funcionando.
+
 ---
 
 ## Lo que el guardián no puede hacer
@@ -158,11 +287,16 @@ nunca para es una fábrica de ruido.
 Dilo cuando entregues, no lo escondas. Y el primero va primero por algo:
 
 - **No comprueba que lo que dices sea verdad.** Un dato inventado con tu tono exacto pasa los
-  tres filtros sin despeinarse. **PASA no significa publicable: significa que suena a ti.**
+  filtros sin despeinarse. **PASA no significa publicable: significa que suena a ti.**
   Los nombres, las cifras y las fechas los verificas tú contra la fuente antes de publicar.
+- **No da el permiso.** El filtro 4 detecta que falta, no lo concede. Eso lo firma una
+  persona.
 - **No garantiza que un lector no piense que lo ha escrito una IA.** Eso no se puede medir y
   quien te diga lo contrario te está vendiendo un detector.
 - **No juzga si la pieza va a funcionar.** Sonar a ti y funcionar son dos cosas distintas.
 - **No mejora tu voz.** Si tu voz publicada es aburrida, el guardián defiende que sigas
   siendo aburrido con precisión. Cambiar de voz es una decisión tuya, y se hace publicando
   distinto durante meses, no en un chat.
+- **No decide el mecanismo.** Un botón, un formulario o una pregunta de cierre **no son
+  violaciones de voz**: ver el bloque *"Dónde acaba este manual"* en `manual-de-voz.md`.
+  Si rechazas una landing por llevar un botón, el guardián se ha convertido en el problema.

@@ -1,11 +1,64 @@
 # Banco de ataques
 
-El músculo de `/abogado-del-diablo`. Cuatro frentes, con el banco de preguntas de cada uno y
-las trampas en las que es fácil caer.
+El músculo de `/abogado-del-diablo`. La auditoría previa, los cuatro frentes con el banco de
+preguntas de cada uno, y las trampas en las que es fácil caer.
 
 **Regla que atraviesa todo el documento:** una objeción solo cuenta si está escrita **en
 primera persona** y **con las palabras de quien la piensa**. "Percepción de precio elevado"
 no es una objeción: es un informe. "¿Treinta euros al mes para esto?" sí lo es.
+
+---
+
+## Paso 0 — La auditoría de arranque
+
+Antes del primer ataque. **De aquí sale la munición**: en las pruebas del kit, lo más
+demoledor no salió de preguntarle nada al usuario, salió de leerle la web.
+
+### Su web, entera
+
+No solo la home. `firecrawl_map` te dice en diez segundos qué páginas existen; sin
+Firecrawl, recorre el menú y el pie. Después **enseña qué has leído y qué no has podido
+leer**, página por página, antes de atacar: cambia lo que puedes decir.
+
+Por cada ausencia, la objeción que produce y la frase que la delata:
+
+| Lo que no está | La objeción que produce |
+|---|---|
+| Precio, horquilla o un "desde" | *"He mirado tres. Uno me pone su paquete y tú no me dices nada. ¿Es según la cara que me veáis?"* |
+| Testimonios con nombre, cargo y empresa | *"Aquí no hay nadie que diga que esto le funcionó"* |
+| Casos con cifras | *"'Producción, no demos'. Muy bien. Enséñame una."* |
+| Fechas — desde cuándo, cuántos proyectos | *"¿Y esta gente desde cuándo hace esto? Cuando no se dice, es que llevan poco"* |
+| Sectores o tamaños de cliente concretos | *"¿Habéis hecho esto en una empresa como la mía o soy el conejillo?"* |
+| Blog o cualquier cosa indexable | Ninguna objeción directa: es que no llega a leerte nadie |
+| Algo que el lector se pueda llevar | *"Me interesa, pero esto lo tengo que meter en un comité. ¿Y qué les llevo?"* |
+| Qué tiene que poner él de su parte | *"¿Y cuánto de esto tengo que hacer yo?"* |
+
+**Anota la cita literal de la frase que provoca cada objeción.** Sin ella, la objeción es una
+opinión tuya y se cae en cuanto alguien la discuta.
+
+Y busca también lo contrario: **la mejor frase de la web**, la que sí contesta a un miedo
+real. Casi siempre existe y casi siempre está enterrada en una página interior donde no la
+lee nadie. Decírselo vale tanto como cualquier ataque.
+
+### Dos competidores, los más directos
+
+Ábrelos de verdad (`_investigar.md` explica por qué comprobar que compiten no es opcional).
+De cada uno saca dos cosas:
+
+- **Qué publica que él no publique.** Precio, casos, testimonios firmados, sectores, blog.
+  Cada casilla donde el competidor sí llega es una comparación que el lector hace solo.
+- **Con qué frase se posiciona.** Si dice casi lo mismo que él y además lo tiene indexado,
+  eso es el frente 2 entero.
+
+Verifica los precios en la web del competidor **aunque los traiga un informe previo de
+`/el-hueco`**. Comprobar no es repetir, y los precios cambian.
+
+### El móvil
+
+Lees texto, no maquetación, y ese es el punto ciego declarado de esta skill. Si tienes
+navegador o captura, míralo a 375 px de ancho: qué se ve sin scroll, si aparece el botón, si
+el menú esconde lo importante. Si no puedes, **va escrito en "lo que este informe no dice"**
+y se le pasa la comprobación de 30 segundos en su propio móvil.
 
 ---
 
@@ -55,7 +108,8 @@ casillas, y solo una está ocupada por un competidor de verdad:
    dueño un domingo.
 4. **Una herramienta genérica que ya paga.** ChatGPT, Notion, Google Sheets, el CRM que ya
    tiene y usa al 10%. "Esto ya lo tengo, ¿no?".
-5. **El competidor directo.** El único que sale en los análisis de competencia.
+5. **El competidor directo.** El único que sale en los análisis de competencia. Esta casilla
+   la rellenas con lo que sacaste en el paso 0: qué publica el otro que él no publique.
 
 Por cada casilla ocupada, la pregunta es la misma: **¿qué le da esa alternativa que tú no le
 estés dando?** Y suele ser una de estas tres: es más barata, es más cómoda, o no obliga a
@@ -168,3 +222,23 @@ Si aporta DMs, emails, notas de llamadas o reseñas de competidores:
    entre comillas.
 4. **Cuenta.** "Esto lo han dicho 4 de las 10 conversaciones que me has pasado" vale mil
    veces más que cualquier cosa que pueda escribir yo.
+
+---
+
+## De la objeción a la tarea: quién puede ejecutarla
+
+El documento se cierra repartiendo las tareas en dos columnas —lo que puede hacer hoy él solo
+y lo que necesita el OK de otra persona—. Esta tabla te da el reparto por defecto, para no
+tener que pensarlo cada vez. **Es orientativa:** en una empresa de una persona todo va a la
+izquierda, y hay que preguntarlo antes de repartir.
+
+| Veredicto | Dónde suele caer la tarea | Por qué |
+|---|---|---|
+| **Es comunicación** | Casi siempre **izquierda** | Enseñar una prueba que ya existe no necesita permiso de nadie |
+| **Es verdad** | Depende: **izquierda** si es reescribir o publicar algo que ya existe; **derecha** si toca precio, oferta, garantía o producto | Lo que se arregla en la operativa casi nunca lo decide quien lleva el marketing |
+| **Pendiente de dato** | **Izquierda** para contarlo, **derecha** para lo que se decida después | Contar es barato. Lo que se hace con el número, no |
+| **No es tu cliente** | **Derecha** | Decir a quién no sirves es una decisión de posicionamiento, y se toma arriba |
+
+**La pregunta incómoda va siempre a la derecha**, pero con una tarea de izquierda pegada:
+escribir él una respuesta, aunque sea mala, y mandarla a quien decida para que la corrija.
+Es más fácil que te corrijan una respuesta escrita que conseguir que te escriban una.
