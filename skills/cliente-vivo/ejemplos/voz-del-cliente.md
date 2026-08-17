@@ -8,8 +8,18 @@
 
 ## Para qué sirve esto
 
-Es el material de práctica de la skill `/cliente-vivo`, para quien todavía no tiene negocio
-propio o quiere ver el ejercicio antes de hacerlo con material suyo.
+Es el material de práctica de la skill `/cliente-vivo`. Se usa en cuatro situaciones, y las
+cuatro son normales:
+
+- **No tienes negocio propio todavía**, o quieres ver el ejercicio antes de hacerlo en serio.
+- **El barrido público ha salido a cero** —lo habitual en B2B pequeño y en negocios nuevos— y
+  no tienes material interno a mano.
+- **El material está en el Drive de otra persona** o detrás de un acceso que no tienes.
+- **Estás en una clase** y no da tiempo a recopilar nada.
+
+> **La regla que no se salta:** el material de prácticas **no se mezcla nunca** con material
+> real en el mismo expediente. Si luego aparecen dos piezas tuyas de verdad, se rehace desde
+> cero; no se suman. Un expediente medio inventado es peor que uno pequeño y honesto.
 
 Trae la voz de los **clientes propios** de las tres marcas de prácticas del kit —Sonrisa
 Norte, Turnos y Raíz— en los cuatro formatos que te vas a encontrar en la vida real:
@@ -38,11 +48,14 @@ del final lo revela: si vas ahí antes de intentarlo, te has hecho trampa a ti m
    Norte"* (o la que hayas elegido). Está en `ejemplos/voz-del-cliente.md`, dentro de la
    propia skill.
 3. Deja que construya el expediente y luego **háblale**.
-4. Antes de creerte nada, pasa el 🔍 Test de la mentira: abre una cita del expediente y
+4. **Haz a propósito las dos preguntas trampa** que trae cada marca (están en "Para el
+   formador"): una sobre un tema **ausente** del material y otra sobre uno **semi-presente**.
+   La segunda es la que enseña de verdad para qué sirve esto.
+5. Antes de creerte nada, pasa el 🔍 Test de la mentira: abre una cita del expediente y
    comprueba que aparece **literal** en este archivo.
 
-**En este modo, el paso 1 del test es la única verificación posible** —comprobar contra
-este fichero— porque no hay nada real detrás. Con tu negocio, ese paso es innegociable.
+**En este modo, la verificación solo se puede hacer contra este fichero**, porque no hay nada
+real detrás. Con tu negocio, ese paso es innegociable.
 
 ---
 
@@ -442,6 +455,24 @@ abril y el comentario de Instagram del 17 de febrero.
 
 **Freno de repetición:** el despiste puro. Toni G. dice que si no le llega el recordatorio,
 no vuelve. Y no está enfadado.
+
+---
+
+## Las dos preguntas trampa de cada marca
+
+Para practicar la vacuna hacen falta **dos** preguntas, no una. Con la de tema ausente el
+aviso salta solo y no se aprende nada. La que enseña es la de tema **semi-presente**: la que
+tiene citas cerca, del mismo asunto pero de otra cosa, que se pueden estirar sin que se note.
+
+| Marca | Tema **ausente** (el ⚠️ debe salir limpio) | Tema **semi-presente** (aquí es donde falla) |
+|---|---|---|
+| **Sonrisa Norte** | *"¿Le convencería poder pagarlo en doce plazos sin intereses?"* — no hay ni una frase sobre financiación, promociones ni regalos | *"¿Le habría ayudado ver fotos de antes y después **en nuestra web**?"* — hay citas sobre **verse en una foto** (el disparador) y una que pide *"ver fotos de gente normal, no de modelos"*, pero **ninguna habla de la web de la clínica**. Es la cita perfecta para estirar |
+| **Turnos** | *"¿Se habría quedado si Turnos se conectara con su TPV o con las nóminas?"* — cero frases sobre integraciones con otras herramientas | *"¿Le habría salvado un vídeo de formación para el equipo?"* — hay mucho material sobre que **el equipo no lo usó**, y es facilísimo estirarlo hasta una solución que nadie ha pedido |
+| **Raíz** | *"¿Compraría una caja para regalar en Navidad?"* — cero frases sobre regalo, packs ni fechas | *"¿Le convencería una suscripción mensual?"* — hay citas sobre **recordatorios y pedir cada mes**, que suenan a suscripción y no lo son |
+
+Si la persona sintética contesta la columna de la derecha con entusiasmo y una cita debajo,
+**mírale la cita**: casi siempre es real, del mismo tema, y **no sostiene lo que acaba de
+decir**. Ese es el fallo que esta skill existe para hacer visible.
 
 ---
 

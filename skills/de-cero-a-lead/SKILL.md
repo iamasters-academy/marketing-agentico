@@ -1,6 +1,6 @@
 ---
 name: de-cero-a-lead
-description: Monta el circuito de captación entero —landing, formulario, hoja de destino y email de bienvenida— con herramientas gratuitas, sin programar ni terminal. Para captación y conversión de leads.
+description: Monta el circuito de captación entero —oferta, landing, formulario, destino y email de bienvenida— con herramientas gratuitas, sin programar ni terminal. Lee los avatares de /cliente-vivo y genera UNA LANDING POR AVATAR: misma oferta, distinto titular, distinta prueba social y distinto botón. Pregunta con qué CRM trabajas y lo conecta (HubSpot, Mailchimp y Sheets tienen conector oficial; si el tuyo no, va por Google Sheets sin tocar el CRM). Verifica en el momento qué planes siguen siendo gratis, contempla que ya tengas web, escribe los textos legales del RGPD —y en negocios sanitarios avisa de qué NO se puede preguntar en un formulario— y cierra separando lo que puedes hacer hoy tú solo de lo que necesita el OK de otra persona.
 ---
 
 # /de-cero-a-lead — El circuito entero, funcionando hoy
@@ -27,28 +27,39 @@ sin programar".
 
 ## Antes de empezar
 
-1. **Busca el perfil de marca.** En Claude Code, el fichero `perfil-marca.md`. En Claude.ai,
-   las instrucciones del proyecto. De ahí sale el tono, el cliente y el objetivo.
-2. **Si no hay perfil, no te bloquees ni improvises.** Esta skill funciona sola. Haz estas
-   cuatro preguntas, **de una en una**, y sigue con las respuestas:
-   > 1. ¿Qué vendes y a quién?
-   > 2. ¿Qué le vas a dar a cambio del correo?
-   > 3. ¿Cómo hablas —de tú o de usted— y qué palabra no usarías nunca?
-   > 4. ¿Qué nombre y qué correo de contacto van en la página?
+1. **Arranca como manda `references/_arranque.md`.** Busca `perfil-marca.md` antes de
+   saludar. Si está, resume en dos líneas y confirma. Si no está, modo exprés de tres
+   preguntas y adelante — **no mandes a nadie a ejecutar otra skill primero**: está en una
+   clase y quiere montar su circuito hoy.
+   Si quiere practicar sin negocio propio, tira de `ejemplos/ofertas-de-practicas.md`.
 
-   Si tiene `/mi-marca` instalada (viene en el mismo kit), que la ejecute antes y se ahorra
-   esto. Y si quiere practicar sin negocio propio, tira de `ejemplos/ofertas-de-practicas.md`
-   (viene dentro de esta skill) y dilo claro.
-3. **Comprueba que puedes buscar en internet.** Los planes gratuitos de estas herramientas
+2. **Pide los cuatro datos legales AHORA, no al final.** Es la barrera más tonta de todo el
+   kit y llega siempre tarde: mucha gente no se sabe la razón social de su propia empresa,
+   y es normal.
+   > "Cuatro datos que van en los textos legales de la página. Si no los tienes a mano,
+   > seguimos igual y los rellenas al final:
+   > razón social · NIF · domicilio fiscal · correo de contacto."
+
+3. **Contempla que ya tenga web.** Es la pregunta que sale siempre y no estaba resuelta:
+   > "¿Tienes ya web? Esto no la pisa. Hay tres formas de publicarlo y elegimos la que te
+   > encaje."
+
+   | Dónde | Qué implica |
+   |---|---|
+   | **Subdominio** (`recurso.tumarca.com`) | Lo más limpio. Un registro CNAME en tu DNS. Tu web no se toca: **el DNS no es la web** |
+   | **Ruta de tu web** (`tumarca.com/recurso`) | Mejor para SEO, pero necesitas a quien la mantenga |
+   | **Alojamiento gratuito aparte** | Cero riesgo, dirección fea. Vale para probar hoy |
+
+4. **Comprueba que puedes buscar en internet.** Los planes gratuitos de estas herramientas
    cambian cada pocos meses —MailerLite recortó el suyo en junio de 2026—. Antes de mandar a
    alguien a crear una cuenta, comprueba **hoy** que sigue siendo gratis:
    > "Voy a verificar que estas cuatro herramientas siguen teniendo plan gratuito antes de
    > que te crees ninguna cuenta. Si algo ha cambiado, te lo digo y buscamos otra."
-4. **Haz la pregunta legal antes de escribir una sola línea de HTML.** No al final:
+5. **Haz la pregunta legal antes de escribir una sola línea de HTML.** No al final:
    > "¿Este formulario va a recoger datos de personas reales, o lo montamos en modo prueba y
    > lo rellenas tú con tu propio correo? Te lo pregunto ahora porque, si es real, hay tres
    > cosas que tienen que estar en la página desde el minuto uno."
-5. **Pregunta qué hay al otro lado.** Sin algo que el visitante quiera, no hay lead: hay un
+6. **Pregunta qué hay al otro lado.** Sin algo que el visitante quiera, no hay lead: hay un
    formulario vacío. Si no lo tiene claro, ayúdale a definirlo antes de maquetar nada.
 
 ### Lo que esta skill no hace por ti
@@ -80,6 +91,35 @@ El detalle click a click, con las cuentas exactas y lo que cuesta cada límite, 
 
 ## El método
 
+### Paso 0 — Mira si ya tienes los avatares (30 segundos, y cambia la clase entera)
+
+**Antes de la oferta, busca el expediente de `/cliente-vivo`** (`cliente-vivo-persona.md`, o
+como se llame en su carpeta). Si existe, ahí están **los avatares con sus frenos y sus frases
+literales** — y eso es la diferencia entre una landing y una landing que convierte.
+
+**Si hay dos o más avatares con material suficiente, no hagas una landing: haz una por
+avatar.** No es más trabajo del que parece y es lo que de verdad mueve la conversión: la
+misma oferta contada a dos personas distintas necesita **otro titular, otra prueba social y
+otro botón**.
+
+> "He visto que tienes dos avatares en el expediente del cliente. Te propongo **una landing
+> para cada uno**: misma oferta, mensaje distinto. Así puedes mandar cada anuncio a la suya y
+> comparar. ¿Las hago las dos, o prefieres empezar por una?"
+
+**Qué cambia entre una y otra, y qué no:**
+
+| Cambia | No cambia |
+|---|---|
+| El titular y la primera frase | La oferta de fondo |
+| La prueba social (el testimonio que se parece a quien lee) | Los textos legales |
+| El orden y el número de campos | El destino de los datos |
+| El texto del botón | El email de bienvenida… salvo el primer párrafo |
+| Qué freno se ataca primero | La marca |
+
+**Si no hay expediente de `/cliente-vivo`, no pasa nada:** una landing y adelante. Dilo sin
+convertirlo en un reproche ni en una tarea previa — el alumno está aquí para montar el
+circuito, no para volver a la clase 2.
+
 ### Paso 1 — La oferta (5 minutos, y es el paso que más gente se salta)
 
 Antes de la página: **qué recibe a cambio del correo, y cuándo.** Una frase.
@@ -87,9 +127,26 @@ Antes de la página: **qué recibe a cambio del correo, y cuándo.** Una frase.
 Mal: "suscríbete a mi newsletter". Bien: "te mando la plantilla de presupuesto cerrado que
 uso con mis clientes, ahora, al correo".
 
+**La oferta sale del freno, no de la imaginación.** Vuelve al expediente del cliente: ¿qué es
+lo que no sabe y le impide decidir? Eso es lo que hay que darle. Si de la clase 2 salió que
+*"pregunta el precio y desaparece"*, la oferta tiene que ver con el precio — no con un ebook
+genérico del sector.
+
+**Con dos avatares, dos ofertas o una?** Depende de si su pregunta es la misma. Si el hombre
+pregunta *"cuánto me va a costar"* y la mujer pregunta *"qué me está pasando"*, **son dos
+ofertas distintas**, aunque el negocio y el destino sean el mismo. Decídelo mirando sus
+frases, y dilo en voz alta.
+
 Regla dura: **pide solo los datos que vas a usar esta semana.** Si únicamente vas a mandar
 un email, pide el email. Cada campo extra es un dato que tienes que justificar, proteger y
 borrar algún día — y una caída de conversión que te regalas.
+
+> ⚠️ **Y si el negocio es sanitario, jurídico o financiero, hay un límite duro:** no preguntes
+> nunca por el estado de salud, el diagnóstico, la situación judicial o los datos económicos
+> del visitante. En el RGPD los datos de salud son **categoría especial** y capturarlos en un
+> formulario de marketing cambia por completo el consentimiento que hace falta. Un selector de
+> "zona a tratar" o "grado de tu problema" parece inofensivo y no lo es. Se pregunta en la
+> consulta, no en la landing.
 
 ### Paso 2 — La landing
 
@@ -129,14 +186,28 @@ incrustado, un enlace normal a la página del formulario.** Si el widget no carg
 conexión mala, móvil viejo—, el visitante sigue teniendo por dónde entrar. Un enlace nunca
 falla.
 
-### Paso 5 — El destino
+### Paso 5 — El destino, y aquí toca preguntar por el CRM
 
-Conectar el formulario con una hoja de cálculo. Es un botón. A partir de ahí, cada envío es
-una fila con su hora.
+**Pregúntalo antes de montar el destino, no después:**
 
-Esto ya es un CRM. Un CRM malo, pero uno de verdad: los primeros meses de un negocio pequeño
-caben en una hoja, y ninguna herramienta de pago te va a conseguir tu primer cliente antes
-que esta.
+> "¿Dónde quieres que caigan estos leads? Si ya usas un CRM, dime cuál y lo conectamos ahí en
+> lugar de crear otro sitio donde mirar."
+
+Y según lo que conteste, hay tres caminos. **Compruébalo, no lo supongas:** mira si tienes
+herramientas de esa fuente disponibles en la sesión antes de prometer una conexión.
+
+| Lo que tiene | Qué se hace |
+|---|---|
+| **HubSpot, Mailchimp o Google Sheets** | Tienen **conector oficial**. Se activa en **Ajustes → Conectores** de la app de Claude: una vez, sin terminal y sin darte ninguna clave. Con HubSpot además se pueden crear los contactos directamente |
+| **Un CRM de nicho o hecho a medida** — el caso más común | **No hay conector, y no pasa nada.** El formulario escribe en una **hoja de Google**, y el CRM importa de ahí (casi todos lo hacen) o se pone un puente con Zapier o Make si tiene webhooks. **El CRM no se toca** |
+| **Nada** | La hoja de cálculo **es** el destino. Y ya es un CRM: uno malo, pero de verdad. Los primeros meses de un negocio pequeño caben en una hoja, y ninguna herramienta de pago le va a conseguir su primer cliente antes que esta |
+
+**Lo que no se hace nunca:** pedirle el usuario y la contraseña de su CRM para "configurarlo
+por él". Si te los ofrece —y lo va a hacer—, recházalos y explica el camino correcto.
+
+**Y con dos landings, un solo destino.** Dos hojas separadas es el error caro: al mes no
+sabrás comparar nada. Una sola hoja, con **una columna de origen** que diga de qué landing
+viene cada fila. Eso es lo que permite decir en octubre cuál de las dos funcionó.
 
 ### Paso 6 — La bienvenida
 
@@ -147,6 +218,17 @@ Aquí está la trampa que casi todos los cursos se saltan y que tú vas a decir 
 **el formulario gratuito te avisa a ti, no a quien lo rellena.** Para que el lead reciba un
 correo hace falta una segunda herramienta. Cuál, y qué límite tiene cada una, en
 `references/montaje.md`.
+
+**Un correo por avatar.** Si hay dos landings, hay dos correos de bienvenida — y solo cambia
+el primer párrafo, el que recoge con qué venía cada uno. El resto es idéntico. Dilo así, para
+que no parezca el doble de trabajo: *"el segundo correo es el primero con otras dos frases"*.
+
+**Y sé claro con el límite:** tú escribes el correo y dices con qué disparador se manda.
+**Activarlo se hace dentro de su herramienta**, y eso lo hace él. No prometas automatizar lo
+que no puedes tocar:
+
+> "Te dejo los dos correos escritos y te digo exactamente con qué condición se dispara cada
+> uno. Meterlos en {su herramienta} y activarlos son cinco minutos tuyos: yo no entro ahí."
 
 ### Paso 7 — La prueba de extremo a extremo
 
@@ -168,7 +250,7 @@ _{{fecha}} · generado con /de-cero-a-lead_
 | Pieza | Herramienta | Cuenta usada | Enlace | El límite que te va a morder |
 |---|---|---|---|---|
 
-## La landing
+## Las landings (una por avatar)
 Fichero: `index.html` · Publicada en: {{URL real}}
 
 ## Los textos legales que lleva la página
@@ -186,6 +268,21 @@ Fichero: `index.html` · Publicada en: {{URL real}}
 {{el límite gratuito que vas a tocar antes, y qué harás ese día}}
 ```
 
+### Y además, dos ficheros
+
+Cuando el circuito esté probado de extremo a extremo, entrega **dos cosas**:
+
+1. **`index.html`** — la landing, lista para subir. Ya la tiene.
+2. **El entregable con sus colores**, siguiendo `references/_entregable.md`: la oferta y por
+   qué se eligió, el copy final bloque a bloque, los tres textos legales, el email de
+   bienvenida, la checklist de montaje con los clics, **los techos de cada plan gratuito con
+   su cifra**, y el diario de investigación (qué herramientas se comprobaron, cuáles seguían
+   siendo gratis y cuáles no).
+
+Ese segundo fichero es el que abrirá dentro de seis meses cuando algo deje de funcionar.
+
+---
+
 ### Dos reglas que no se negocian
 
 **1. No entregues el circuito hasta que haya pasado un lead de verdad por él.** Un HTML
@@ -195,6 +292,52 @@ hace creer que ya está.
 **2. El apartado "lo que se rompe primero" es obligatorio.** Todo esto es gratis hasta un
 número concreto. Escribe ese número. Quien no sabe dónde está el techo se estrella contra
 él el día que por fin le funciona algo, que es justo el peor día.
+
+---
+
+## Tres cosas que antes quedaban en el aire
+
+### ¿Se pide el correo o no?
+
+`/abogado-del-diablo` recomienda publicar el recurso **sin pedir el correo** para vencer la
+desconfianza. Esta skill monta un formulario que **sí** lo pide. Los dos consejos son buenos
+y no se contradicen si se ordenan bien:
+
+| Cuándo | Qué se hace |
+|---|---|
+| **Su problema es que no le creen** (desconfianza alta, marca joven, sin casos publicados) | Publica la pieza **abierta**, sin puerta. Y al final de la pieza, un formulario para lo siguiente: la plantilla editable, el diagnóstico, la sesión |
+| **Su problema es que no le compran** (le entienden, le piden precio y no cierran) | Formulario delante. Quien lo rellena ya está caliente |
+| **Duda** | Abierto + puerta al final. Se capta menos y se capta mejor |
+
+**La regla:** la puerta se pone **después** de haber dado algo, nunca antes.
+
+### ¿Y la lista que ya tengo?
+
+Primera pregunta de todo el que ya tiene suscriptores, y hasta ahora no estaba escrita:
+
+- **Lista aparte, no la misma.** Los del recurso nuevo llegan con un interés concreto y en
+  una fecha concreta. Mezclarlos con la lista vieja borra esa información, que es justo lo
+  que `/email-que-piensa` necesita para decidir a quién escribir.
+- **A los de la lista vieja se les manda el recurso una vez**, como aviso, no como campaña —
+  y solo si consintieron recibir comunicaciones comerciales. Si no consta, no se manda.
+- **Etiqueta de origen desde el minuto uno.** `origen: recurso-{nombre}` y fecha. Cuesta un
+  clic y vale oro dentro de tres meses.
+
+### El cierre: dos columnas, siempre
+
+No todo lo que sale de aquí lo puede ejecutar quien está delante. En la prueba real, tres de
+ocho pendientes dependían de otras personas y el usuario dijo *"esto ya no lo puedo decidir
+yo sola"*. Cierra así:
+
+| Puedes hacerlo hoy tú solo | Necesita el OK de otra persona |
+|---|---|
+| Publicar la landing, montar el formulario, conectar la hoja, mandarte la prueba a ti mismo | El dominio o subdominio · los datos fiscales · el texto que promete algo (plazos, garantías) · dar de alta una herramienta que cuesta dinero |
+
+Y **escribe el mensaje para pedirlo**, no lo dejes en "habla con tu jefe":
+
+> "Hola {nombre}: he montado la página de captación. Para publicarla en
+> `recurso.{dominio}` necesito que alguien añada un registro CNAME en el DNS — no toca la
+> web actual. Y confirmarme la razón social y el NIF para los textos legales. ¿Lo ves?"
 
 ---
 
@@ -258,7 +401,8 @@ bien: habrás migrado con leads dentro, que es la única forma sensata de elegir
 ## De dónde sale cada pieza de verdad
 
 **Esta skill está pensada para montar un circuito real, hoy, con las cuentas del usuario.**
-El modo prueba es el plan B, no el plan A. Tres vías, en este orden:
+El modo prueba es el plan B, no el plan A. Para todo lo que sea investigar, sigue
+`references/_investigar.md`. Aquí lo específico de montar el circuito:
 
 ### Vía 1 — Lo hago yo (por defecto)
 
@@ -266,12 +410,18 @@ Lo que puedo hacer entero sin que nadie mueva un dedo:
 
 - **La landing completa.** HTML, textos, estructura, los datos estructurados y el borrador
   de la política de privacidad.
-- **El correo de bienvenida**, escrito en la voz del perfil de marca.
+- **El correo de bienvenida**, escrito en la voz del perfil de marca (o del
+  `manual-de-voz.md` si `/mi-voz` lo dejó).
 - **Verificar hoy qué sigue siendo gratis**, con búsqueda web, antes de mandarte a ninguna
   parte. Esta comprobación no es opcional: los planes gratuitos de 2026 no son los de 2025.
 
 Cuando termine, dile qué ha verificado y cuándo. Si una fuente no carga o la página de
 precios ha cambiado, se dice — no se rellena de memoria.
+
+> **Sobre el botón y la voz.** Si `/mi-voz` dejó un manual, léelo — pero recuerda lo que ese
+> mismo manual dice en su bloque *"Dónde acaba este manual"*: **gobierna el tono, no el
+> mecanismo.** Una landing necesita un botón y un formulario necesita un campo. Eso no es
+> una violación de voz, y no debe bloquear el montaje.
 
 ### Vía 2 — Los clics los das tú (la que nunca falla)
 

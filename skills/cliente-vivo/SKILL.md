@@ -1,356 +1,425 @@
 ---
 name: cliente-vivo
-description: Construye un cliente con el que puedes hablar, hecho de reseñas y conversaciones reales, y detecta cuándo esa persona sintética te está diciendo lo que quieres oír.
+description: Construye un cliente con el que puedes hablar, hecho de frases que alguien dijo de verdad. Busca sola la voz de tu mercado —reseñas tuyas y de tu competencia, foros, Reddit, LinkedIn, grupos del sector, reseñas de empleados—, monta la persona y su contra-persona con la cita que sostiene cada frase, y se caza a sí misma cuando te está dando la razón. Si no hay material, trae el suyo de prácticas y el ejercicio se hace igual.
 ---
 
 # /cliente-vivo — Un cliente hecho de pruebas, no de imaginación
 
 El buyer persona de toda la vida —la ficha con foto de banco de imágenes y "Marta, 34 años,
-urbanita, valora su tiempo"— lo escribió alguien en una sala de reuniones. Con buena
-intención, pero de memoria. Y luego se decide el copy, el precio y la campaña sobre eso.
+urbanita, valora su tiempo"— lo escribió alguien de memoria en una sala de reuniones. Y luego se
+decide el copy, el precio y la campaña sobre eso.
 
-Esto hace otra cosa. Construye una persona **hecha de frases que alguien dijo de verdad**
-—reseñas, comentarios, transcripciones de llamadas, correos de clientes— y te deja hablar
-con ella. Cada cosa que diga viene con la cita que la sostiene, o con un aviso de que se lo
-está inventando.
+Esto construye una persona **hecha de frases que alguien dijo de verdad** y te deja hablar con
+ella: cada cosa que diga viene con la cita que la sostiene, o con un aviso de que se lo está
+inventando. Y trae vacuna, porque el defecto de fábrica de estos modelos es **darte la razón**, y
+una persona sintética complaciente es peor que no tener ninguna.
 
-Y trae vacuna. Porque el defecto de fábrica de estos modelos es **darte la razón**, y una
-persona sintética complaciente es peor que no tener ninguna: te confirma lo que ya creías y
-encima te deja tranquilo.
+**Disparadores:** "/cliente-vivo", "buyer persona", "perfil de cliente ideal", "quiero hablar con
+mi cliente", "entrevista a mi cliente", "qué piensa mi cliente de esto", "monta mi ICP", "analiza
+las reseñas de mis clientes", "tengo transcripciones de llamadas", "por qué no me compran".
 
-**Disparadores:** "/cliente-vivo", "buyer persona", "perfil de cliente ideal", "quiero
-hablar con mi cliente", "entrevista a mi cliente", "qué piensa mi cliente de esto", "monta
-mi ICP", "analiza las reseñas de mis clientes", "tengo transcripciones de llamadas", "por
-qué no me compran".
-
-> **Cómo se llama esta skill.** En **Claude Code** y **Cowork**: `/cliente-vivo`.
-> En **Claude.ai** no hay comandos con barra — pídelo con palabras y se activa
-> sola; si no la coge, nómbrala: *"usa la skill cliente-vivo"*.
-
+> **Cómo se llama.** En **Claude Code** y **Cowork**: `/cliente-vivo`. En **Claude.ai** no hay
+> comandos con barra — pídelo con palabras; si no la coge, nómbrala: *"usa la skill cliente-vivo"*.
+>
+> **No la confundas con `/el-hueco`:** aquella trabaja con reseñas de **tus competidores**, esta
+> con la voz de **tus propios clientes** y sobre todo de quien no llegó a comprarte.
 
 ---
 
 ## Antes de empezar
 
-1. **Busca el perfil de marca.** En Claude Code, el fichero `perfil-marca.md` (lo genera la
-   skill `/mi-marca`). En Claude.ai, las instrucciones del proyecto.
-2. **Si no hay perfil, no pares: sigue con un mini-brief.** Esta skill funciona sola. Si el
-   usuario ya tiene `/mi-marca` instalada, recomiéndasela porque el resultado sale mejor,
-   pero no la conviertas en un peaje. Pregunta estas cinco cosas y continúa:
+**1. Busca el perfil.** Sigue `references/_arranque.md`. Se llama `perfil-marca.md`. Si no hay,
+**modo exprés de tres preguntas y adelante**: nunca mandes al usuario a ejecutar otra skill.
 
-   > "No veo un perfil de marca. Podemos seguir igual: contéstame cinco cosas en una línea
-   > cada una y las uso como perfil de trabajo. **1)** Qué vendes. **2)** A quién.
-   > **3)** Qué problema le resuelves. **4)** Rango de precio. **5)** Por dónde te llega la
-   > gente. (Si quieres un perfil en condiciones para el resto de skills del kit, ejecuta
-   > `/mi-marca` cuando termines: se guarda y ya no te lo vuelvo a preguntar.)"
+**2. Informes previos, opcionales.** Si hay un informe de `/el-hueco` en la carpeta, léelo: trae
+las reseñas de la competencia ya buscadas y te ahorra medio barrido. Si no lo hay, lo buscas tú:
+solo se pierde tiempo.
 
-3. **Pregunta qué material tiene.** Esta es la pregunta que decide toda la sesión:
+**3. Avisa del material antes de arrancar, no en el minuto veinte.** Aquí es donde la gente
+abandona: a mitad de sesión hay que ir a buscar cosas al Drive, al cuaderno y a la bandeja de otro.
 
-   > "Para construir esto necesito frases reales de tus clientes. ¿Qué tienes a mano?
-   > Reseñas públicas, transcripciones de llamadas de venta, correos, respuestas de una
-   > encuesta, notas del CRM… lo que sea. Si no tienes nada todavía, también podemos
-   > trabajar, pero prefiero empezar por lo tuyo."
+> "Para que sepas dónde te metes. Esto se construye con **frases reales de clientes**. Lo público
+> lo busco yo —tus reseñas, las de tu competencia, foros, Reddit, LinkedIn, grupos del sector— y
+> tú no copias nada. Lo que de verdad construye la persona es tu material interno: notas de
+> llamadas, correos, la columna de 'motivo de la pérdida'. **Con tres o cuatro piezas ya
+> trabajamos**, no hace falta vaciar el Drive; y si no lo tienes a mano, lo hacemos con material
+> de prácticas que traigo dentro. Unos **35-45 minutos** con lo tuyo, **20** con el de prácticas."
 
-4. **Avisa de la anonimización ANTES de que pegue nada.** Literal, y antes, no después:
+**4. Dos preguntas que va a hacer, contestadas de antemano:**
 
-   > ⚠️ **Si vas a pegarme conversaciones de clientes reales, quítales antes los datos
-   > personales:** nombres completos, teléfonos, correos, direcciones, números de pedido o
-   > de historia clínica. Con iniciales o un "Cliente A" me vale exactamente igual: lo que
-   > yo necesito son las frases, no quién las dijo. Y si grabas llamadas, dilo siempre a la
-   > otra persona. Si en tu empresa hay alguien que lleva protección de datos, esto se
-   > consulta con esa persona, no conmigo.
+- *"¿Esto no es inventarse un cliente con otro nombre?"* → "La frase la escribo yo. Lo que no elijo
+  es **si existe o no en tu material**, y eso lo compruebas tú en treinta segundos."
+- *"¿Y mis datos de la web?"* → No entran: la analítica es comportamiento agregado, no frases. Dilo
+  en una línea, porque quien acaba de hacer `/mi-marca` espera que se cruce.
 
-   Tienes el detalle en `references/anonimizar.md`. Si el usuario pega algo con nombres y
-   teléfonos, **díselo y trabaja con la versión limpia**, no sigas como si nada.
-
-5. **Comprueba que puedes buscar en internet** si vais a tirar de fuentes públicas. Si no lo
-   tienes activado, dilo antes de empezar en vez de fingir que buscas.
-
-> **Quién hace el trabajo.** Enséñale este reparto al principio, para que nadie espere que
-> lo haga todo la máquina:
+> **Quién hace el trabajo:**
 >
 > | Lo pones tú | Lo hago yo |
 > |---|---|
-> | Traer el material de dentro de tu negocio (llamadas, correos, CRM) y tener permiso para usarlo | Buscar y leer lo público que sea accesible |
-> | Quitarle los datos personales **antes** de pegarlo | Ordenar, agrupar, contar y redactar el expediente |
-> | Comprobar que las citas existen en tu material | Marcar qué tiene respaldo (📌) y qué no (⚠️) |
-> | Decidir qué haces con el hallazgo y validarlo con clientes o con una campaña pequeña | Hacer de esa persona y sostener la voz |
+> | El material de dentro de tu negocio, y el permiso para usarlo | Buscar y leer todo lo público: reseñas, foros, redes, sector |
+> | Comprobar que las citas existen en tu material | Ordenar, contar, redactar, y marcar qué tiene respaldo (📌) y qué no (⚠️) |
+> | Decidir qué haces con el hallazgo y validarlo | Hacer de esa persona y sostener la voz |
 >
-> La parte tuya no es el trámite: es la que aporta el valor. El material interno no está en
-> internet y no va a estar nunca.
+> Tu parte no es el trámite: es la que aporta el valor. El material interno no está en internet.
 
 ---
 
-## El método
+## Paso 0 — El barrido (lo hago yo, y busco mucho antes de pedir nada)
 
-Cuatro pasos. El cuarto no es opcional, aunque tengas prisa.
+Sigue `references/_investigar.md`: Firecrawl si está —opcional, sin él funciona igual—, nativas si
+no, preguntar al usuario **el último**.
 
-### Paso 1 — Reunir el material
+**No te rindas con dos búsquedas.** El fallo típico es mirar la ficha de Google del negocio, verla
+vacía y saltar a *"pégame tú el material"*. Antes hay que barrer esto entero:
 
-Junta frases textuales de tres sitios distintos, si es posible:
-
-| Fuente | Qué te da | Sesgo que trae |
+| Dónde | Qué buscas | Qué es |
 |---|---|---|
-| **Reseñas públicas** | Volumen y espontaneidad | Solo escribe quien está muy contento o muy enfadado |
-| **Llamadas y correos** | El porqué, con matices | Solo tienes a quien llegó a hablar contigo |
-| **Encuestas y CRM** | Comparabilidad | La gente contesta lo socialmente cómodo |
+| Tu ficha de **Google Maps** · menciones de tu marca | lo que dicen de ti | 🟢 |
+| Fichas de Maps de **tus competidores** | quejas y elogios de clientes de tu mercado | 🟡 |
+| **Trustpilot, Doctoralia, Amazon, App Store, Google Play, G2, Capterra** | según lo que vendas | 🟢 la tuya · 🟡 la de otros |
+| **Reddit** y foros del sector | cómo eligió proveedor la gente y qué le pasó | 🟡 (🟢 si te nombran) |
+| **LinkedIn**: comentarios de tus posts, posts de competidores y del sector | tu audiencia y tu mercado hablando | 🟡, el más cercano |
+| **Grupos de Facebook** del sector y de la zona · **asociaciones, colegios y gremios** | *"¿alguien ha contratado…?"*, hilos y boletines | 🟡 |
+| **Reseñas de empleados** (Glassdoor, Indeed) de tus competidores | qué prometen fuera y qué pasa dentro | 🟡 aparte: **no es voz de cliente** |
+| Prensa del sector, comparativas, **comentarios de YouTube** | quejas recurrentes | 🟡 |
 
-**La regla incómoda:** el material más valioso es el de **quien no te compró**. Los
-contactos que pidieron presupuesto y desaparecieron, las bajas, los "me lo tengo que
-pensar". Casi nadie lo guarda, y es donde está la información que cambia decisiones. Si el
-usuario no tiene nada de eso, dilo como limitación del expediente, no lo rellenes.
+- 🟢 **Voz propia** — de tus clientes o de quien estuvo a punto de serlo. **Sostiene frenos.**
+- 🟡 **Voz de sector** — gente de tu mercado que no es cliente tuyo. **Sirve, marcada como tal**:
+  da vocabulario, hipótesis y preguntas. **No sostiene ningún rasgo de tu persona y se cuenta
+  aparte.** Colar una queja del sector como si fuera de un cliente tuyo es el peor fraude que
+  puede cometer esta skill.
 
-**Guarda todo con la fuente localizable:** dónde se dijo, quién (o "Cliente A"), y cuándo.
-Sin eso, el paso de verificación no se puede hacer.
+**Reglas:** di **cuántas piezas** sacas de cada sitio · **lo que sale a cero también se apunta** y
+va al entregable · avisa del tiempo y ve contando · Trustpilot devuelve 403 casi siempre y
+LinkedIn no se lee logueado: anótalo y sigue.
 
-### Paso 2 — El expediente
+Al terminar, **enseña la tabla de qué miraste y qué devolvió**, y decide: con **3 o más piezas 🟢**
+sigues y pides material interno para completar · con **solo 🟡** lo usas para preguntar mejor,
+contado aparte · con **cero de todo** vas al paso 1, y si tampoco hay material interno, **ofreces
+prácticas ya**.
 
-Aquí no se resume: se **cita**. Cada rasgo del expediente lleva pegada la frase que lo
-sostiene y en cuántas **piezas** aparece.
+---
 
-> **Qué cuenta como una pieza:** una reseña, una conversación (llamada o hilo de correo),
-> una respuesta abierta de encuesta o una ficha del CRM. Una llamada de media hora es **una**
-> pieza, no veinte. Y solo se suman piezas cuando dicen **el mismo freno explícito**, no
-> cuando a ti te parecen parecidas: si hay que interpretar para agruparlas, no se agrupan.
+## El modo prácticas se ofrece aquí — nadie se queda sin poder hacer el ejercicio
 
-Campos obligatorios:
+Este era el fallo de diseño más claro de la skill: el barrido salía seco y, en vez de ofrecer el
+material de prácticas **que lleva dentro**, pasaba directa a *"pégame tú el material"*. Quien no
+tiene negocio, o no tiene acceso al CRM de su empresa, se quedaba fuera.
 
-- **Quién es** — una frase, no un párrafo de novela.
-- **Lo que quiere resolver** — no el producto: el problema. Con cita.
-- **Lo que le frena** — dos o tres frenos, cada uno con su cita y su recuento.
-- **El disparador** — qué pasó el día que decidió moverse. Suele ser un hecho concreto, no
-  una reflexión.
-- **Sus palabras** — vocabulario literal que usa. Esto es oro para el copy: escribe con sus
-  palabras, no con las tuyas.
-- **Lo que no sabemos** — los huecos del expediente. **Campo obligatorio.** Si el material
-  no dice nada sobre precio, o sobre competencia, o sobre postventa, se escribe aquí.
+**Cuando el barrido salga a cero, cuando diga que no tiene material, cuando dude, o cuando lleve
+diez minutos buscando** — ofrécelo sin esperar a que lo pida:
 
-> **Separa lo que dice de lo que hace.** "Es caro" es lo que la gente declara, y muchas veces
-> no es todo lo que pasó. Busca en el material la diferencia entre el motivo declarado y lo
-> que la persona describe que le ocurrió: ahí suele estar el hallazgo.
->
-> **Y preséntalo como lo que es: una hipótesis.** Que en este material el "es caro" tape otra
-> cosa no demuestra que pase siempre ni en todos los negocios. Lo correcto es decir "el
-> material es compatible con que el freno sea X", y que el usuario lo contraste con más
-> conversaciones o con una campaña pequeña antes de mover el precio.
+> "El barrido público ha salido a cero: {las fuentes que miraste}. Es lo normal en B2B pequeño y en
+> negocios nuevos: nadie deja una reseña de una consultora. Dos caminos, y los dos sirven:
+> **A) Con lo tuyo** — notas de llamadas, correos, la columna de 'motivo de la pérdida'; es lo que
+> de verdad construye la persona. **B) Con material de prácticas** — traigo dentro tres negocios
+> completos (reseñas, llamadas, correos, encuestas y notas de CRM, inventados pero realistas, con
+> un patrón escondido en cada uno): veinte minutos, aprendes el método igual, y lo repites con lo
+> tuyo cuando lo tengas. ¿A o B?"
 
-### Paso 3 — Darle voz (la regla del pie de fuente)
+Está en **`ejemplos/voz-del-cliente.md`** —Sonrisa Norte (clínica), Turnos (software), Raíz
+(producto)— y trae **dos preguntas trampa por marca** para practicar la vacuna.
 
-Cuando el expediente esté cerrado, el usuario puede hablar con esa persona. Al responder,
-**haces de ella**, con su vocabulario y su tono. Pero cada respuesta termina con un pie:
+**Reglas:** adapta la primera frase si el barrido sí encontró algo · dilo claro cada vez que
+entregues algo (son datos inventados) · **no mezcles nunca** prácticas con material real en el mismo
+expediente: si aparecen dos piezas suyas, se rehace, no se suma · avisa de que aquí la verificación
+solo se puede hacer contra ese fichero.
+
+---
+
+## Paso 1 — El material propio: una sola petición, cerrada
+
+**Nunca pidas a cachos.** El punto de mayor abandono fueron veinte minutos rebuscando con la sesión
+parada, porque el material estaba en tres sitios. Se pide **una vez**, con la lista completa y el
+sitio donde suele estar cada cosa:
+
+| Qué sirve | Dónde suele estar | Qué aporta |
+|---|---|---|
+| **Notas de llamadas de venta**, aunque sean a mano | tu cuaderno, tu Drive, el bloc del comercial | Lo mejor que hay: el porqué con matices |
+| **La columna "motivo de la pérdida"** del CRM o de la hoja de leads | CRM → exportar CSV · o la hoja de Drive | La voz de quien no compró: **la más valiosa** |
+| **Correos de antes de comprar, y las quejas** | tu bandeja: "presupuesto", "precio", "una duda" | El momento exacto de la duda |
+| **Respuestas abiertas de encuestas** | Google Forms / Typeform → Respuestas | Vocabulario. Ojo a **quién** contestó |
+| **Soporte, devoluciones, reclamaciones** | el buzón de soporte o el helpdesk | Frenos de después de comprar |
+| **WhatsApp o DMs con clientes** | el móvil | Las frases más crudas que vas a leer |
+
+Y las cinco reglas, con la lista y de una vez:
+
+1. **Júntalo y pégamelo de golpe.** No en seis mensajes.
+2. **Tope de diez minutos.** Lo que no aparezca se queda fuera: **con tres o cuatro piezas ya hay
+   expediente.**
+3. **Sin resumir**, con muletillas y frases a medias: con material promedio sale una persona promedio.
+4. **Lo que esté en la bandeja de otra persona no para la sesión.** Seguimos, y al final te dejo
+   escrito el mensaje para pedírselo.
+5. **Quítale los nombres y los teléfonos si te da tiempo. Si no, ya lo paro yo cuando lo vea.**
+
+Esa quinta regla es corta a propósito. **El aviso previo largo no funciona**: se lee, se asiente y
+se pegan los datos igual. Lo que protege es lo de abajo.
+
+### La parada — este es el mecanismo, no el aviso
+
+**En cuanto recibas material, antes de analizar nada, escanéalo.** Es un paso obligatorio del
+método. Busca: nombres y apellidos (de clientes **y de tus empleados**) · teléfonos, correos y
+usuarios · direcciones · DNI, pólizas, números de pedido o de historia clínica · **nombres de
+empresas cliente**, que en B2B identifican más que las personas · datos de salud o económicos · y
+**combinaciones que señalan a uno solo** (cargo + sector + provincia, *"el único de {ciudad} que
+lleva {especialidad}"*). Esa última es la que más se cuela y casi nadie la ve.
+
+Si hay algo, **para y dilo**, separando lo que puedes resolver tú de lo que no, y **sin vender que
+renombrarlo lo arregla**. Guion literal y tabla de etiquetas en `references/anonimizar.md`. Después,
+etiquetas anónimas en todo y **no vuelvas a escribir esos datos en ninguna respuesta**.
+
+---
+
+## Paso 2 — El expediente
+
+Aquí no se resume: se **cita**. Cada rasgo lleva pegada la frase que lo sostiene y en cuántas piezas
+aparece.
+
+> **Una pieza** es una reseña, **una conversación** (llamada o hilo de correo), una respuesta
+> abierta de encuesta o una ficha de CRM. Una llamada de hora y media es **una** pieza.
+
+Antes de escribir nada, inventario en voz alta con tres ajustes que casi siempre bajan el número —y
+eso es lo correcto:
+
+1. **Deduplica.** La ficha de CRM del 22 de abril y la llamada del 22 de abril son la misma
+   conversación contada dos veces.
+2. **Separa poblaciones.** Solo **quien decide la compra** sostiene frenos de compra. **Quien usa el
+   producto** (la plantilla del cliente, el usuario final) da vocabulario y frenos de uso, pero no
+   firma un contrato. La **voz de sector** (🟡) da hipótesis y nada más. Cada una se cuenta aparte.
+3. **Solo se suman piezas cuando dicen el mismo freno explícito.** Si hay que interpretar para
+   agrupar, no se agrupa.
+
+Al dar el número, **enmárcalo antes de que baje la moral**: *"seis piezas parece poco y no lo es:
+cuatro son de gente que no te compró, y eso no lo guarda casi nadie. Con seis sostengo un freno que
+aparezca en dos o tres; lo que no puedo darte son porcentajes ni decir «tu cliente»."*
+
+**Campos obligatorios:** quién es (una frase) · lo que quiere resolver (el problema, no el producto)
+· dos o tres frenos con su cita y su recuento · el disparador, que suele ser un hecho concreto —un
+documento, una factura, la pregunta de un tercero— · sus palabras literales · y **lo que no
+sabemos**, que es campo obligatorio.
+
+**Motivo declarado vs. mecanismo real.** "Es caro" es lo que se declara y casi nunca es lo que pasó:
+busca la diferencia entre el motivo declarado y lo que la persona **describe** que le ocurrió. Y
+preséntalo como **hipótesis** —*"este material es compatible con que el freno sea X"*— para
+contrastarlo con más conversaciones o con una prueba pequeña antes de mover el precio.
+
+---
+
+## Paso 3 — Darle voz: el pie de fuente
+
+Explica cómo se habla con ellas —*"escribe `{Nombre}:` delante de la pregunta, o pregunta y yo te
+digo quién contesta; las importantes, a las dos y en el mismo orden"*— y arranca. Al responder
+**haces de ella**, con su vocabulario. Y cada respuesta termina con un pie, siempre, sin que lo pidan:
 
 ```
 📌 Fuente: "cita textual" — dónde, fecha
 ⚠️ Sin respaldo: no hay nada en el material que sostenga esto.
 ```
 
-Uno de los dos, siempre, en todas las respuestas. Sin excepciones y sin pedirlo.
+### Las tres preguntas del pie de fuente
 
-**Esto es lo que convierte el juguete en herramienta.** Sin el pie de fuente, no puedes
-distinguir lo que sale del material de lo que sale del modelo. Con él, lo ves de un vistazo.
+El pie **se puede falsificar solo**, y ese es el fallo peligroso: no falla poniendo una frase sin
+cita, falla poniendo **una cita real que no sostiene la frase**. El usuario ve el 📌 y da el párrafo
+por bueno. Antes de escribir un 📌, comprueba las tres; si falla una, es ⚠️:
 
-Y cuando toque poner ⚠️, se pone. Decir "no lo sé" es la respuesta más útil que puede dar
-una persona sintética.
+1. **¿Existe?** Aparece **literal** en el material. Si está "casi igual pero mejor dicha", la has
+   reescrito y ya no prueba nada.
+2. **¿Sostiene?** Dice **lo que la frase afirma**. No algo del mismo tema: eso.
+3. **¿Es de quien habla?** Es de **la persona a la que se la atribuyes**, no de otra pieza.
 
-### Paso 4 — La vacuna (obligatoria)
+Una cita real debajo de una frase que no sostiene **es peor que no poner nada**: es un invento con
+apariencia de rigor.
 
-Los modelos de lenguaje tienen una tendencia medida a colapsar hacia un personaje amable y
-promedio, **aunque les pidas explícitamente que sean diversos**. Es un problema documentado,
-no una opinión: tienes las referencias y las tres contramedidas en
-`references/vacuna-antisesgo.md`, y hay que aplicarlas siempre.
+### Clasifica el tema antes de contestar
 
-Resumen de las tres:
+| El tema, en el material | Qué haces |
+|---|---|
+| **Presente** — hay citas que hablan justo de eso | Contestas con 📌 |
+| **Semi-presente** — hay citas cerca, del mismo asunto pero de otra cosa | **⚠️ obligatorio** |
+| **Ausente** — no hay nada | ⚠️ limpio. Aquí casi nunca se falla |
 
-1. **Aliméntala con citas textuales, no con resúmenes.** Un resumen ya es una versión
-   suavizada. Las palabras raras, los tacos y las frases mal construidas son justo lo que
-   impide que la persona se vuelva genérica.
-2. **Obliga al pie de fuente** (paso 3). Es la contramedida más barata y la que más
-   inventos caza.
-3. **Intenta siempre montar una segunda persona de perfil opuesto.** Quien se fue, quien dijo
-   que no, quien compró a otro. Haz las preguntas importantes a las dos. Si las dos responden
-   parecido, no tienes dos personas: tienes el mismo modelo con dos nombres, y hay que
-   volver al material.
-   **Si no hay material de gente que no compró, no te la inventes.** Escribe *"Contra-persona
-   no construida: no hay material de bajas, presupuestos perdidos ni reseñas negativas"*,
-   sigue con la principal y deja esa limitación escrita bien visible en el entregable. Es el
-   hueco más importante del expediente y la primera tarea del usuario para la semana que
-   viene.
+**La zona de riesgo es lo semi-presente, no lo ausente.** Contraintuitivo, y por eso hay que decirlo:
+con un tema ausente el aviso salta solo; con uno a medias hay citas cerca que se pueden estirar, y es
+ahí donde se cuela todo. El caso real, en `references/vacuna-antisesgo.md`.
 
-**Y la cuarta, que depende del usuario:** cómo pregunta. Las preguntas que empiezan por "¿te
-gustaría que…?" o "¿comprarías si…?" fabrican síes. El banco de preguntas está en
-`references/entrevista-al-cliente.md`. Si el usuario hace una pregunta de esas, **contéstala
-y avísale**, no le des el sí y ya está:
+### Dosificación — que el pie se siga leyendo
 
-> "Ojo con esta pregunta: te está pidiendo una hipótesis sobre el futuro, y de eso no hay
-> nada en el material. Te contesto igual, pero marcado como invento. Si la giras a *«cuéntame
-> la última vez que…»*, la respuesta sí tendría pruebas detrás."
+Tres pies largos por turno se vuelven ruido y el usuario empieza a saltárselos, que es cuando dejan
+de protegerle.
+
+- **El ⚠️ nunca se abrevia.** Entero y solo: es la marca que tiene que destacar.
+- **El 📌 sí**, desde la tercera respuesta: el trozo de cita que sostiene la frase + referencia corta
+  (`Cliente A · 12 jun`). La cita completa ya está en el expediente. Un pie por respuesta; la segunda
+  fuente en una línea: `también en: Contacto C · 26 jun`.
+- **Vuelve al pie completo** cuando la respuesta sostenga un hallazgo nuevo o el usuario vaya a
+  decidir algo con ella.
+
+---
+
+## Paso 4 — La vacuna (obligatoria)
+
+Los modelos colapsan hacia un personaje amable y promedio **aunque les pidas lo contrario**. Está
+medido y publicado: referencias y detalle en `references/vacuna-antisesgo.md`.
+
+Cuatro contramedidas: **1)** citas crudas, no resúmenes · **2)** pie de fuente con sus tres preguntas
+· **3)** contra-persona con **material propio** —y si no hay material de quien no compró, se escribe
+*"contra-persona no construida"* y se deja visible en el entregable, no se fabrica— · **4)** vigilar
+cómo pregunta el usuario (banco en `references/entrevista-al-cliente.md`).
+
+### El protocolo de colapso
+
+Cazarse a sí misma es lo mejor que hace esta skill, **y no puede depender de que el modelo se pille
+solo**. Los disparadores son mecánicos y se comprueban **antes** de dar la respuesta por buena.
+**Basta con uno:**
+
+1. El usuario ha dicho **en este mismo turno** lo que quiere hacer, y la respuesta le da la razón.
+2. La pregunta es sobre el futuro o sobre una hipótesis.
+3. El tema es **semi-presente**.
+4. Dos respuestas seguidas sin ⚠️ y de acuerdo con el usuario.
+5. La persona habla más pulido que el material, da cifras que no están, o cambia de opinión en cuanto
+   la contradicen.
+
+**Y entonces se ejecutan los seis pasos de `references/vacuna-antisesgo.md`**, en ese orden: retirar
+la respuesta con un 🛑 **en el mismo turno** → diseccionarla → dar la respuesta correcta → **la misma
+pregunta a la contra-persona sin cambiar una palabra** (si también da la razón, se **declara el
+colapso**) → **girar la pregunta a hechos pasados** y hacérsela a las dos → comparar en una tabla
+futuro/pasado. El último paso es el que produce el hallazgo, y a menudo contradice el plan con el que
+venía el usuario.
 
 ---
 
 ## Lo que entregas
 
+### 1. El expediente — `marketing/cliente-vivo-persona.md`
+
+Nombre fijo, para que otra skill lo encuentre otro día.
+
 ```markdown
 # Cliente vivo · {{negocio}}
-_{{fecha}} · generado con /cliente-vivo · construido sobre {{N}} piezas de material_
+_{{fecha}} · /cliente-vivo · {{N}} piezas del lado comprador{{ + M de otras poblaciones}}_
 
 ## De qué está hecho esto
-{{cuántas reseñas, cuántas llamadas, cuántos correos, de qué fechas}}
-{{y qué falta: si no hay material de quien no compró, se dice aquí}}
+{{piezas por tipo, población y fechas · el barrido, incluido lo que salió a cero · qué falta}}
 
 ## La persona
-
-**{{Nombre}}** — {{una frase}}
-
-- **Lo que quiere resolver:** {{...}}
-  - 📌 "{{cita textual}}" — {{fuente}}, {{fecha}}
-- **Lo que le frena:**
-  1. {{freno}} — aparece en {{N}} piezas · 📌 "{{cita}}" — {{fuente}}, {{fecha}}
-  2. {{freno}} — aparece en {{N}} piezas · 📌 "{{cita}}" — {{fuente}}, {{fecha}}
-- **El disparador:** {{qué pasó el día que se movió}} · 📌 "{{cita}}"
-- **Sus palabras:** {{lista de expresiones literales suyas}}
-- **Lo que NO sabemos:** {{huecos del expediente}}
+**{{Nombre}}** — {{una frase}} · *el nombre es una etiqueta mía, no es de nadie del material*
+- **Lo que quiere resolver:** {{…}} · 📌 "{{cita}}" — {{fuente}}, {{fecha}}
+- **Lo que le frena:** {{2-3}} — en {{N}} de {{T}} piezas · 📌 "{{cita}}" — {{fuente}}
+- **El disparador:** {{el hecho concreto}} · 📌 "{{cita}}"
+- **Sus palabras:** {{expresiones literales, sin corregir}}
+- **Lo que NO sabemos:** {{huecos}}
 
 ## La contra-persona
+**{{Nombre}}** — {{quien no compró}} · {{mismos campos, sus citas, cuántas piezas la sostienen}}
 
-**{{Nombre}}** — {{quien no compró, se fue o eligió a otro}}
-{{mismos campos, con sus propias citas}}
-
-## Motivo declarado vs. mecanismo real
+## Motivo declarado vs. mecanismo real  *(hipótesis, no hallazgo demostrado)*
 | Lo que dicen | Lo que el material describe | Qué cambia si es cierto |
 
 ## Cómo hablar con ellas
-{{tres preguntas que sí tienen respuesta con pruebas, y dos que no}}
+{{tres preguntas que sí tienen respuesta con pruebas, y dos que no, con el porqué}}
 ```
+
+### 2. El HTML — la ficha que se imprime y se cuelga
+
+Sigue `references/_entregable.md` (colores del perfil → de su web → dos preguntas) y genéralo **al
+final**, después de confirmar las conclusiones en el chat.
+
+Aquí el entregable es especialmente potente: la ficha de la persona y su contra-persona con las citas
+al lado es justo lo que alguien imprime y cuelga. Cuídalo.
+
+- **Las dos fichas enfrentadas**, mismos campos y mismo orden, para compararlas de un vistazo, y
+  **cada ficha entera en su página al imprimir** (`break-inside:avoid`).
+- **Cada rasgo con su cita visible**, entrecomillada y con fuente y fecha debajo (`.cita` y `.fuente`
+  del esqueleto). Las citas **son** el documento: no las escondas en notas.
+- **El recuento junto a cada freno** ("3 de 6 piezas") y cuántas piezas sostienen a cada persona: si
+  una está la mitad de fundada, que se vea.
+- **Los ⚠️ juntos en su bloque** —"Lo que no sabemos"—, no repartidos: es la lista de la compra.
+- **La tabla motivo declarado vs. mecanismo**, marcada como hipótesis, y **el diario del barrido** con
+  las fuentes que salieron a cero.
+- **Lo que NO va:** foto, edad inventada, aficiones, ni una frase que empiece por "nuestro cliente
+  ideal es". Y el aviso de que el nombre es una etiqueta, escrito dentro del HTML.
 
 ### Dos reglas que no se negocian
 
-**1. Ningún rasgo sin cita.** Si un rasgo te parece obvio pero no tienes una frase que lo
-sostenga, va a "Lo que no sabemos". Un expediente con cuatro rasgos probados vale más que
-uno con doce inventados, y hay que decirlo en voz alta:
+**1. Ningún rasgo sin cita.** Si te parece obvio pero no hay frase que lo sostenga, va a "Lo que no
+sabemos", y se dice en voz alta: *"he sostenido tres frenos con citas; el cuarto lo intuyo, pero solo
+lo dice una persona: te lo dejo como hipótesis"*.
 
-> "He podido sostener tres frenos con citas. El cuarto lo intuyo, pero solo lo dice una
-> persona: te lo dejo como hipótesis, no como hallazgo."
-
-**2. Intentar la contra-persona no es opcional.** Una sola persona sintética tiende a
-convertirse, en pocos mensajes, en el cliente que tú querías tener. Dos ancladas en
-materiales distintos hacen ese deslizamiento mucho más difícil de ignorar: no lo impiden,
-pero lo dejan a la vista. Y si no hay material contrario, se dice —no se fabrica.
+**2. Intentar la contra-persona no es opcional.** Una sola persona sintética se convierte, en pocos
+mensajes, en el cliente que tú querías tener. Dos ancladas en materiales distintos no lo impiden,
+pero lo dejan a la vista. Y si no hay material contrario, se dice — no se fabrica.
 
 ---
 
 ## 🔍 Test de la mentira
 
-Tres comprobaciones, en voz alta y delante del usuario:
+1. **¿La cita sostiene la frase?** Coge la afirmación más importante y pásale las tres preguntas del
+   pie. **Esta es la que caza el fallo peligroso:** una cita real bajo una frase que no sostiene.
+2. **Abre una cita y búscala en el material.** Tiene que aparecer **literal**. Hazlo delante del
+   usuario y **pídele que repita con otra**: treinta segundos, y es la única prueba que vale.
+3. **La pregunta trampa.** Algo que el material no cubre. **Hazla dos veces:** con un tema ausente y
+   con uno **semi-presente**, que es donde de verdad falla.
+4. **La misma pregunta importante a la contra-persona.** Si las dos responden lo mismo con otras
+   palabras, el colapso ya ha ocurrido: vuelve al material y mete citas más crudas.
 
-1. **Abre una cita del expediente y búscala en el material.** Tiene que aparecer **literal**,
-   palabra por palabra. Si está "casi igual pero mejor dicha", es que la has reescrito, y
-   una cita reescrita ya no prueba nada.
-2. **Haz la pregunta trampa.** Pregúntale a la persona algo que el material no cubre —una
-   promoción, un canal nuevo, un precio distinto—. Si contesta con entusiasmo y sin ⚠️,
-   está inventando y todo lo demás queda bajo sospecha.
-3. **Haz la misma pregunta importante a la contra-persona.** Si las dos responden lo mismo
-   con otras palabras, el colapso ya ha ocurrido: vuelve al material y mete citas más crudas.
+**Lo que este test NO comprueba** —dilo—: que esas frases representen a todos tus clientes (quien
+escribe reseñas o coge el teléfono es una minoría autoseleccionada, y casi nunca incluye a quien se
+fue en silencio); que lo que la gente **dice** que hará sea lo que hará; que el problema siga
+existiendo hoy; ni que haya mercado suficiente. Esto es un **retrato bien fundado de lo que unas
+personas concretas dijeron**, no la verdad sobre tu mercado. La verdad la da vender, o preguntarle a
+alguien de carne y hueso.
 
-**Lo que este test NO comprueba** —dilo, porque importa—: que esas frases representen a
-todos tus clientes (quien escribe reseñas o coge el teléfono es una minoría autoseleccionada
-y casi nunca incluye a quien se fue en silencio); que lo que la gente **dice** que hará sea
-lo que hará; que el problema siga existiendo hoy; ni que exista mercado suficiente. Esto te
-da un **retrato bien fundado de lo que unas personas concretas dijeron**, no la verdad sobre
-tu mercado. La verdad la da vender, o preguntarle a alguien de carne y hueso.
-
-> Si solo hay tiempo para una, que sea la segunda. Es la que detecta el fallo peligroso.
+> Si solo hay tiempo para una, que sea la primera: detecta el fallo que el usuario no vería nunca.
 
 ---
 
-## De dónde sale el material de verdad
+## Al terminar
 
-**Esta skill está pensada para trabajar con tus clientes reales.** El material de prácticas
-es el plan B, no el plan A. Tres vías, en este orden:
+**1. Escribe las correcciones en el perfil.** Si algo contradice `perfil-marca.md`, va a su sección
+`## Correcciones` con fecha (`references/_arranque.md`). Aquí pasa mucho: el diagnóstico no coincide
+con el material, quien decide la compra no es el cliente del perfil, o el dolor principal no aparece
+en ninguna pieza.
 
-### Vía 1 — Lo leo yo (por defecto, para lo público)
+```markdown
+- **{fecha} · /cliente-vivo:** el perfil dice que el freno es {X}; en 6 piezas del lado comprador
+  nadie lo menciona. Lo que sí aparece, en 3, es {Y}.
+```
 
-Con búsqueda web activada puedo **intentar** leer: **Google Maps** (tu ficha y la de quien se
-te parezca), **Trustpilot**, **Doctoralia**, **Amazon** (páginas de producto de tu
-categoría), **App Store** y **Google Play**, **G2** y **Capterra** si vendes software,
-**Reddit**, foros del sector y comentarios de YouTube.
+**2. Separa lo que puede hacer él de lo que depende de otra persona**, y **escribe tú el mensaje**
+para pedir lo que falta:
 
-**"Intentar" es literal, no falsa modestia.** Muchas de estas plataformas bloquean el acceso
-automatizado, y de una sesión a otra puede funcionar o no. Si una fuente me da error o me
-devuelve la página vacía, **te lo digo y pasamos a la vía 2** (la abres tú en el navegador y
-me pegas lo que veas). Lo que no voy a hacer es rellenar ese hueco de memoria.
+| Lo puedes hacer tú esta semana | Necesita a otra persona |
+|---|---|
+| Llamar veinte minutos a tres clientes con las preguntas del expediente | El acceso al CRM o al buzón de soporte |
+| Rellenar "motivo de la pérdida" con la **frase literal**, no con tu interpretación | El OK para hablar con quien no compró |
+| Probar la pieza más barata que salga del hallazgo | Cambiar precios o publicarlos |
 
-Di siempre cuántas piezas has podido leer de cada sitio. Si de una fuente solo has sacado
-seis frases, el expediente es más flojo de lo que parece y hay que decirlo.
+**3. Cómo lo defiende en una reunión** — el consejo más valioso y el más fácil de saltarse:
 
-### Vía 2 — Lo pegas tú (la que nunca falla, y aquí la principal)
+> "Llévalo por lo que es. Primero **las citas sin la persona**: cuatro frases dichas por cuatro
+> personas de cuatro empresas distintas; eso no te lo discute nadie. Después **el número, dilo tú
+> antes de que lo pregunten**. Después el hallazgo, **en formato hipótesis**. Y al final la prueba
+> barata, que es lo único que te van a aprobar. Lo que **no** lleves: el nombre, una foto, y
+> cualquier frase que empiece por 'nuestro cliente ideal es'. En cuanto se convierte en un personaje
+> de PowerPoint, en tres semanas alguien decide el presupuesto sobre un señor que no existe — que es
+> exactamente el buyer persona del que desconfiabas."
 
-Para esta skill, **la vía 2 no es el plan de emergencia: es la buena**. El material que de
-verdad construye una persona útil no está en internet y no va a estar nunca:
-
-- **Transcripciones de llamadas de venta.** Lo mejor que hay, con diferencia.
-- **Correos y mensajes de clientes**, sobre todo los de antes de comprar.
-- **Respuestas abiertas de encuestas** (las de escala numérica no sirven para esto).
-- **Notas del CRM**, en especial el campo "motivo de la pérdida".
-- **Mensajes de soporte y devoluciones.**
-
-Pide un copia-pega directo, sin resumir:
-
-> "Pégame las transcripciones tal cual, con las muletillas y las frases a medias. No me las
-> resumas: el resumen es justo lo que rompe el ejercicio. Y quítales antes los nombres y los
-> teléfonos."
-
-Si tiene un CRM o un formulario, que exporte a CSV y pegue las columnas de texto libre.
-Cualquier CRM y cualquier formulario decente exporta a CSV sin pagar nada.
-
-### Vía 3 — Herramienta o export, solo si es gratis o ya la tiene
-
-> **Antes de nada:** los planes gratuitos y sus límites cambian cada pocos meses. Los datos
-> de abajo se comprobaron el **2 de agosto de 2026** en las páginas oficiales. Dile siempre
-> al usuario que confirme el límite vigente en la web de la herramienta antes de montarse un
-> plan encima. Si no puedes comprobarlo, di el límite como "el que tenían la última vez",
-> no como un hecho de hoy.
-
-- **Export CSV** del CRM, de Google Forms o de Typeform: gratis y ya lo tiene. Empieza aquí.
-- **Transcripción de llamadas:** si ya graba reuniones con la herramienta de vídeo que use en
-  su empresa, que exporte el texto. Si no graba nada, Otter tiene plan gratuito, pero con
-  **300 minutos al mes y 30 minutos por conversación**. Y ojo con el límite que de verdad
-  estorba aquí: en el plan gratuito solo se pueden **importar 3 audios o vídeos ya grabados
-  en toda la vida de la cuenta**, así que sirve para transcribir llamadas nuevas, no para
-  vaciar el archivo de grabaciones viejas. Y **grabar sin decirlo, nunca**.
-- **App Store:** si el negocio es una app, Apple publica un feed gratuito de reseñas
-  recientes por país —del orden de las **500 últimas** (unas 50 por página, hasta 10
-  páginas)— sin registro ni clave. Va por tienda de cada país, y si pides muchas seguidas
-  te lo capa y devuelve páginas vacías. Solo aplica a apps.
-
-Si el usuario ya paga un servicio de extracción masiva de reseñas, que lo use. Si no lo
-paga, **no se lo recomiendes**: para construir un expediente no hace falta.
-
-### Lo que NO se hace
-
-- **La API oficial de Google Places devuelve 5 reseñas** por ficha. Cinco. No sirve para
-  esto y no prometas lo contrario.
-- **La API de Trustpilot está en sus planes de empresa**, no en el gratuito. Si el usuario
-  no lo tiene contratado, no existe: vía 1 o vía 2.
-- **No montes un scraper.** Leer fichas públicas como lo haría una persona está bien;
-  automatizar la extracción masiva va contra las condiciones de uso de esas plataformas.
-- **No pegues datos personales.** Ni nombres completos, ni teléfonos, ni correos, ni datos de
-  salud. Ver `references/anonimizar.md`.
-- **No inventes el material que falte.** Si una fuente te bloquea o el usuario no tiene
-  llamadas grabadas, **es un dato del expediente**, no un obstáculo que sortear. Se escribe
-  en "Lo que no sabemos".
+**4. Cuándo se repite:** cuando cambie el material, no por calendario. Cada cinco piezas nuevas. Y
+**obligatorio antes de tocar precios o rehacer la web**.
 
 ---
 
-## Modo prácticas (plan B)
+## Lo que NO se hace
 
-Si el usuario no tiene negocio, o quiere ver el ejercicio antes de hacerlo en serio, usa
-`ejemplos/voz-del-cliente.md` (viene dentro de esta skill): material sintético de las tres
-marcas de prácticas —reseñas, llamadas, correos, encuestas y notas de CRM— con un patrón
-escondido en cada una.
-
-**Cuando lo uses, dilo claro:** son datos inventados. En este modo el paso 1 del test de la
-mentira solo se puede hacer contra ese fichero, y hay que advertirlo: *"con tus clientes de
-verdad, la cita tiene que existir fuera de aquí."*
+- **No prometas APIs que no dan lo que parece:** la de Google Places devuelve **5 reseñas** por ficha,
+  y la de Trustpilot está en planes de empresa. Si no la tiene contratada, no existe.
+- **No montes un scraper.** Leer fichas públicas como una persona, bien; automatizar la extracción
+  masiva va contra las condiciones de esas plataformas.
+- **No recomiendes herramientas de pago** (para un expediente no hacen falta) **ni pidas credenciales
+  o accesos**, nunca, aunque te los ofrezca.
+- **No inventes el material que falte.** Que una fuente bloquee o que no haya llamadas grabadas **es
+  un dato del expediente**, no un obstáculo que sortear.
+- **No cuentes voz de sector como voz de tus clientes.**
 
 ---
 
@@ -358,12 +427,14 @@ verdad, la cita tiene que existir fuera de aquí."*
 
 | Síntoma | Qué hacer |
 |---|---|
-| La persona contesta a todo y siempre suena razonable | Es el colapso. Revisa que estés poniendo el pie de fuente en todas las respuestas y mete citas más crudas, sin limpiar |
-| Las dos personas (la buena y la opuesta) dicen lo mismo | No están hechas de material distinto. La contra-persona necesita sus propias citas: bajas, presupuestos no cerrados, reseñas de 1★ |
-| Solo hay reseñas de 5 estrellas | Tienes la voz de tus fans, no la de tu mercado. Constrúyelo igual, y escribe bien grande en "Lo que no sabemos" que falta quien no compró |
-| El usuario no tiene ningún material | Empieza por lo público (vía 1) y móntale la tarea de recoger el resto: grabar tres llamadas o mandar una pregunta abierta a diez clientes. Con diez respuestas de verdad ya hay expediente |
-| El usuario pega conversaciones con nombres y teléfonos | Párale, dile qué hay que quitar y trabaja con la versión limpia. No lo dejes pasar "por esta vez" |
-| El material es de hace tres años | Se puede usar, pero fechado y avisado: la gente y el mercado cambian. Ponlo en "Lo que no sabemos" |
+| El barrido público sale a cero | Es lo normal en B2B pequeño. Se escribe como hallazgo y se ofrece el paso 1 o el modo prácticas. **No se rellena de memoria** |
+| No tiene material, o lleva diez minutos rebuscando en el Drive | Córtalo tú y pasa a prácticas, sin dramatizar. Y la tarea: tres llamadas de veinte minutos o una pregunta abierta a diez clientes |
+| Contesta a todo y siempre suena razonable | Es el colapso. Ejecuta el protocolo del paso 4 |
+| Las dos personas dicen lo mismo | No están hechas de material distinto: la contra-persona necesita sus propias citas |
+| Solo hay reseñas de 5 estrellas | Tienes la voz de tus fans, no la de tu mercado. Escríbelo grande en "Lo que no sabemos" |
+| Pega conversaciones con nombres y teléfonos | Para, escanea, dilo y trabaja con etiquetas. No lo dejes pasar "por esta vez" |
+| El material es de hace tres años | Se usa, pero fechado y avisado. Va a "Lo que no sabemos" |
+| Se desanima con el número de piezas | Enmárcalo: cuatro piezas de quien no compró es más de lo que tiene el 90 % de las pymes |
 
 ---
 

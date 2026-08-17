@@ -20,14 +20,22 @@ de intentarlo, te has hecho trampa a ti mismo.
 
 ## Cómo usarlo con `/el-hueco`
 
-1. Ejecuta `/mi-marca`, elige "marca de prácticas" y quédate con Sonrisa Norte, Turnos o Raíz.
-2. Ejecuta `/el-hueco`. Cuando te pida las reseñas de los competidores, dile que están en
-   `ejemplos/resenas-competencia.md` y pégale (o dile que abra) la sección de tu marca.
-3. La skill ya tiene, para cada competidor, la promesa textual y los tres argumentos que
-   repite — es el "Frente 1" del método. Tú le das el "Frente 2" (las reseñas de este
-   archivo) y ella hace el cruce.
-4. Antes de creerte el resultado, pasa el 🔍 Test de la mentira de `/el-hueco`: abre una
-   cita de este archivo y comprueba que aparece tal cual en el grupo correspondiente.
+**Esto lo lee Claude, no el usuario.** No hace falta ejecutar ninguna otra skill antes, ni
+pedirle a nadie que pegue nada: si el usuario no tiene negocio o quiere ver el método
+funcionando, elige con él una de las tres marcas de prácticas (Sonrisa Norte, Turnos o
+Raíz), **abre este fichero tú** y trabaja con la sección que toque.
+
+1. Cada grupo trae ya el **Frente 1** (la promesa textual del competidor y los tres
+   argumentos que repite) y el **Frente 2** (las reseñas). Haz el cruce igual que lo harías
+   con datos reales.
+2. Dentro de cada grupo hay **un patrón escondido** que contradice la promesa. Encontrarlo
+   es el ejercicio.
+3. **Di que son datos inventados**, en el chat y en el entregable. No sirven para tomar
+   ninguna decisión de negocio.
+4. **El paso 1 del 🔍 Test de la mentira no se puede ejecutar aquí**: no hay ninguna reseña
+   real que abrir. Lo más parecido es comprobar que la cita aparece tal cual en el grupo
+   correspondiente de este fichero — y hay que advertir de que con un negocio real ese paso
+   no se puede saltar.
 
 ---
 

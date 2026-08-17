@@ -104,8 +104,18 @@ Navarra. Caja de 6 tarros, 34 €.*
 ## Cómo usar esto en modo prácticas
 
 1. Deja que elija una y dilo en voz alta: **"esto es un negocio inventado del kit"**.
-2. Ataca **solo el texto de la web**, no el bloque de contexto. El contexto es tu chuleta
+2. **El paso 0 no se ejecuta: no hay web que abrir ni competidores que auditar.** El bloque
+   de contexto de cada ficha hace de sustituto — es lo que habrías averiguado leyendo. Dilo
+   así, para que no parezca que te lo has saltado: *"con tu negocio real, este paso lo hago
+   yo abriendo tu web y la de dos competidores, y es de donde sale lo más duro"*.
+3. Ataca **solo el texto de la web**, no el bloque de contexto. El contexto es tu chuleta
    para poner los veredictos: sirve para saber qué es verdad y qué es comunicación.
-3. Al terminar, avisa: los pasos 1 y 2 del test de la mentira (buscar la objeción en tu
+4. **Tampoco hay móvil que comprobar.** Menciónalo una vez y sigue.
+5. **Las dos columnas sí se hacen**, y son la mejor parte del ejercicio: en estos tres
+   negocios hay decisiones claras de dirección (bajar el precio de Sonrisa Norte, sacar el
+   control horario en Turnos, tocar el porte gratuito de Raíz) y otras que se resuelven
+   escribiendo. Reparte y escribe el mensaje para pedir el OK, aunque el socio sea ficticio:
+   redactar ese mensaje es lo que se lleva a su negocio.
+6. Al terminar, avisa: los pasos 1 y 2 del test de la mentira (buscar la objeción en tu
    bandeja, preguntarle a alguien que casi te compró) **no se pueden hacer aquí**, y son
    justo los que más valen. Que repita el ejercicio con algo suyo aunque sean cuatro líneas.

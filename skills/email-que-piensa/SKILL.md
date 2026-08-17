@@ -1,6 +1,6 @@
 ---
 name: email-que-piensa
-description: Diseña un árbol de decisión de nurturing sobre el comportamiento real de tus leads —esperar, cambiar de ángulo, pasar a ventas o dejarlo ir— y escribe los correos de cada rama en tu voz.
+description: Un agente de nurturing que decide qué hacer con cada persona de tu lista, incluido no escribirle. Lee el comportamiento real —mirando el NOMBRE de los enlaces clicados, no el número de clics— y devuelve un MAPA DE FLUJOS con los ocho estados en los que puede estar un lead: no abre, abre y no clica, clica contenido, clica precio, responde, pide cita y no aparece, pide cita y va, dice que no. Cada estado con qué recibe, cuánto se espera, qué lo mueve y CUÁNDO SE DEJA DE ESCRIBIR. Más los correos enteros listos para pegar y la baja programada con fecha. Si usas Mailchimp o HubSpot hay conector oficial; si no, te guía el export columna por columna.
 ---
 
 # /email-que-piensa — El agente que decide a quién NO escribir
@@ -33,17 +33,36 @@ negocio", "a quién dejo de escribir".
 
 ## Antes de empezar
 
-1. **Busca el perfil de marca.** En Claude Code, el fichero `perfil-marca.md`. En Claude.ai,
-   las instrucciones del proyecto.
-2. **Si no hay perfil**, no improvises. Lo mejor es que ejecute `/mi-marca` primero, que es
-   la skill del kit que lo genera. **Y si no la tiene instalada, nadie se queda parado
-   aquí**: hazle estas cuatro preguntas y sigue con lo que conteste.
-   > "Sin el perfil me faltan cuatro cosas. Contéstame en una línea cada una y seguimos:
-   > (1) ¿qué vendes y a quién? (2) ¿a qué precio? (3) ¿qué acción de tu producto o servicio
-   > significa que alguien va en serio? (4) ¿cómo hablas a tus clientes: de tú o de usted?"
-3. **Busca el manual de voz de `/mi-voz`.** Es opcional: si existe, es el que manda para
-   escribir los correos. Si no existe, tira del bloque "la voz" del perfil y pide dos o tres
-   correos reales suyos para copiar el ritmo.
+1. **Arranca como manda `references/_arranque.md`.** Busca `perfil-marca.md` antes de
+   saludar. Si no está, modo exprés y adelante: **no mandes a nadie a ejecutar `/mi-marca`
+   primero**, está en una clase y quiere hacer *esta*.
+2. **Busca el manual de voz `manual-de-voz.md`** que deja `/mi-voz`. Es opcional: si existe,
+   es el que manda para escribir los correos. Si no, tira del bloque "la voz" del perfil.
+   > Y recuerda lo que ese manual dice en su bloque *"Dónde acaba este manual"*: **gobierna
+   > el tono, no el mecanismo.** Una pregunta de cierre en un correo uno-a-uno no es una
+   > violación de voz. No dejes que el manual bloquee un correo que funciona.
+
+2b. **Pregunta por el consentimiento heredado. Aquí, no en el minuto 40.** Es lo que hereda
+   cualquiera que entre nuevo a un puesto de marketing, y lo que decide si esta sesión
+   sirve para algo:
+   > "¿Sabes cómo se captó esta lista y si había casilla de consentimiento comercial?"
+
+   | Respuesta | Qué se hace |
+   |---|---|
+   | Sí, con casilla y consta | Adelante con todo |
+   | La captó otra persona / no consta | Se diseña el árbol igual, pero la **primera acción es un correo de reconfirmación**, no una campaña. Se dice claramente |
+   | Es una lista comprada o scrapeada | Se para. Ningún árbol arregla eso. Se explica por qué y se ofrece montar la captación bien con `/de-cero-a-lead` |
+
+2c. **Pregunta quién lleva el buzón de envío.** La señal más fuerte del método —quién ha
+   respondido— se cae por un problema organizativo, no de datos, y es lo normal en una PYME:
+   quien hace marketing casi nunca lleva `hola@`.
+   > "¿Tienes acceso al buzón desde el que salen los correos? Si lo lleva otra persona, no
+   > pasa nada: montamos el árbol sin esa señal y te digo qué nos perdemos."
+
+   Y si lo lleva otro, **escribe tú el mensaje para pedírselo**:
+   > "Hola {nombre}: ¿me puedes pasar las respuestas que hayan llegado a {buzón} en las
+   > últimas seis semanas? Solo necesito la frase útil de cada una, sin firmas ni datos de
+   > contacto. Es para decidir a quién escribimos y a quién no."
 4. **Pide los datos con el aviso de privacidad por delante**, antes de que pegue nada:
    > "Para esto necesito ver comportamiento, no personas. Cuando exportes tu lista, **borra
    > la columna de correos** antes de pegármela. No me hace falta ni una dirección para
@@ -128,6 +147,38 @@ rama. Tres cosas que se saltan siempre y no se pueden saltar:
 - **El correo de despedida se cumple.** Si no contesta, sale. Un adiós seguido de tres
   correos más te retrata.
 
+### Paso 4b — El mapa de flujos: qué le pasa a cada uno DESPUÉS
+
+El árbol dice en qué rama cae cada persona **hoy**. Eso es una foto. Lo que convierte esto en un
+sistema es decir **qué le pasa después**: qué recibe, cuánto se espera, qué la mueve de sitio y
+**cuándo se deja de escribir**.
+
+Sigue `references/mapa-de-flujos.md`, que trae los ocho estados con sus plazos y sus salidas:
+
+| | Estado | Y lo que importa de cada uno |
+|---|---|---|
+| 1 | **No abre nada** | No es un lead. Despedida y baja |
+| 2 | **Abre y no clica** | Le interesa el tema, no lo que le mandas. Cambio de ángulo, máximo 3 intentos |
+| 3 | **Clica contenido** | Está aprendiendo, no comprando |
+| 4 | **Clica precio o condiciones** | **La señal más fuerte que hay.** Y en el informe parece un clic igual que el 3 |
+| 5 | **Responde** | Sale del automático. Lo coge una persona |
+| 6 | **Pide cita y no aparece** | La rama más caliente y la que nadie trabaja: ya dijo sí una vez |
+| 7 | **Pide cita y va** | Es de ventas. Marketing no interfiere |
+| 8 | **Dice que no** | Se respeta, se registra, y no se le vuelve a escribir |
+
+**El 3 y el 4 se distinguen solo por el nombre del enlace**, nunca por el número de clics. Si no
+tienes el informe de clics por enlace, **no puedes separarlos** — y ahí se va la mitad del valor
+del mapa. Dilo en lugar de inventar la distinción.
+
+**Las cuatro reglas que no se negocian en el mapa:**
+
+1. **Un estado, un correo.** Si alguien cae en dos ramas, gana la de más arriba.
+2. **Toda rama tiene salida.** Un estado sin *«tras N intentos, se deja»* no es nurturing: es
+   acoso con plantilla.
+3. **Responder saca del automático.** Es la regla que más se incumple y la que más quema listas.
+4. **Los estados 5, 7 y 8 no son de marketing.** Meterlos en el automático es la forma más rápida
+   de perder la confianza que ya te habías ganado.
+
 ### Paso 5 — Escribe las reglas de silencio
 
 Un árbol sin frenos vuelve a ser una secuencia. Deja escrito:
@@ -173,6 +224,39 @@ _{{fecha}} · generado con /email-que-piensa_
 {{señales que no tienes, supuestos que has hecho, qué habría que medir}}
 ```
 
+### El entregable: tres pestañas
+
+Sigue `references/_entregable.md` y `references/mapa-de-flujos.md`. El HTML lleva **tres
+pestañas**:
+
+| Pestaña | Qué es |
+|---|---|
+| **Mapa de flujos** | Los ocho estados, **clicables**. Al pulsar uno se ve su flujo entero: qué recibe, cuándo, hacia dónde puede moverse y cuándo se deja. Con el número de personas en cada estado y las salidas marcadas. Debajo, **la misma cosa en tabla** — el diagrama para proyectar, la tabla para leer |
+| **Los correos** | Enteros, asunto y cuerpo, listos para pegar. No esbozos |
+| **El árbol y las reglas** | El recuento por rama cuadrando con el total, a quién NO se escribe, las reglas de silencio y **la baja programada con fecha y en grande** |
+
+Tres cosas que no pueden faltar:
+
+- **La suma tiene que cuadrar con el total de la lista.** Si no cuadra, hay gente sin decisión
+  asignada, y en un mapa visual eso se ve de un golpe.
+- **Cada estado con su número de personas.** Un mapa sin volúmenes es un dibujo; con volúmenes,
+  es una decisión.
+- **La baja programada, con fecha.** Es el paso que todo el mundo se salta y el que hace que todo
+  lo demás valga o no valga. Nadie va a comprobar si lo hizo.
+
+Y el diario: qué se miró, qué señales no se pudieron usar y por qué.
+
+### El cierre: dos columnas, siempre
+
+| Puedes hacerlo hoy tú solo | Necesita el OK de otra persona |
+|---|---|
+| Montar los segmentos, programar los envíos, ejecutar la baja | El visto bueno a los correos si no firmas tú · el acceso al buzón de respuestas · aclarar cómo se captó la lista |
+
+Y **escribe el mensaje para pedirlo**. En la prueba real, tres de las decisiones no eran del
+usuario y ninguna se resolvió.
+
+---
+
 ### Dos reglas que no se negocian
 
 **1. La sección "a quién NO escribo esta semana" es obligatoria y va con nombres y número.**
@@ -217,15 +301,26 @@ respuestas.
 **Esta skill está pensada para trabajar con tu lista y tus correos de verdad, hoy mismo.**
 El dataset de prácticas es el plan B. Tres vías, en este orden:
 
+Para todo lo que sea investigar, sigue `references/_investigar.md`. Aquí lo específico.
+
 ### Vía 1 — Lo busco yo (con búsqueda web)
 
 Lo que **sí** puedo hacer: leer la documentación oficial de *tu* herramienta de email para
 decirte dónde está su botón de exportar, qué columnas te va a dar y qué permite su plan
 gratuito. Eso cambia cada temporada, así que se mira, no se recuerda.
 
+**Y antes de mandarte a exportar nada: comprobar si hay conector o API.** Varias de estas
+herramientas tienen API o servidor MCP. Si lo hay y el usuario ya lo usa, se acabó el
+copia-pega para siempre. Pero **ofrécelo al final, no al principio**: hoy se hace la clase
+con lo que hay, y la automatización es para la próxima vez.
+
 Lo que **no** puedo hacer: entrar en tu cuenta. No tengo acceso a tu herramienta, a tu CRM
 ni a tu bandeja, y no te voy a pedir claves para conseguirlo. Dilo claro desde el principio
 para que nadie espere magia.
+
+> **Nota verificada:** el centro de ayuda de Brevo devuelve 403 a la lectura automatizada y
+> su página de precios va por JavaScript. No pierdas tres turnos intentándolo: pregunta al
+> usuario qué plan tiene y sigue.
 
 ### Vía 2 — Lo pega el usuario (la más fiable)
 
@@ -233,10 +328,25 @@ Es la vía principal de esta skill, y conviene decirlo sin complejos: **es un ra
 suyo y a cambio el árbol es suyo de verdad**. Tres cosas, por este orden de valor:
 
 1. **El export de su lista en CSV** (el CSV es la hoja de cálculo que exporta su herramienta:
-   se abre con Excel, Numbers o Google Sheets), sin la columna de correos, con la fecha de
-   última actividad y los clics por enlace. **Con el CSV básico ya se puede empezar**: los
-   clics por enlace suelen exportarse aparte y se pueden pegar después. Guía completa en
+   se abre con Excel, Numbers o Google Sheets), sin la columna de correos. **Con el CSV
+   básico ya se puede empezar.** Guía completa, con el **mapa de columnas por herramienta**
+   (Brevo, Mailchimp, MailerLite, ActiveCampaign, ConvertKit), en
    `references/exportar-tu-lista.md`.
+
+   > ⚠️ **Esto es lo que hay que decir sí o sí, y antes de que empiece a exportar:**
+   >
+   > **El export de contactos NO trae los clics por enlace, y los clics por enlace son de
+   > donde sale todo el valor de esta skill.** Van en el informe de campaña, aparte.
+   > Con solo el CSV de contactos sale un árbol de tres ramas sin un solo hallazgo, y el
+   > usuario se va pensando que la skill no sirve para mucho.
+   >
+   > Dile literalmente: *"Necesito dos cosas de tu herramienta, no una: el listado de
+   > contactos y, aparte, el informe de clics por enlace de tus últimas campañas. La segunda
+   > es la importante."*
+   >
+   > **Y "última actividad" no existe en todas las herramientas** —Brevo, por ejemplo, no la
+   > tiene—. Si no está, no es un problema: se reconstruye desde los informes de campaña.
+   > El cómo está en `references/exportar-tu-lista.md`.
 2. **Las secuencias que manda hoy**, tal cual, con sus asuntos. Se reescriben por rama.
 3. **Su oferta real**: qué vende, a qué precio, qué pasa cuando alguien dice que sí. Esto lo
    tiene todo el mundo, incluido quien aún no tiene ni un contacto — por eso **el árbol se

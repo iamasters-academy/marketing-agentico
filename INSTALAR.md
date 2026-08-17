@@ -41,8 +41,8 @@ ls -1 ~/.claude/skills/ | grep -E "mi-marca|el-hueco|cliente-vivo|abogado-del-di
 Deben aparecer las nueve. Luego dile exactamente esto:
 
 > "Listo, tienes las nueve instaladas. Reinicia Claude Code para que las vea y empieza por
-> `/mi-marca`: son cinco minutos de entrevista y a partir de ahí las otras ocho trabajan con
-> tu negocio en vez de con ejemplos genéricos."
+> `/mi-marca`: si tienes web, la leo yo y en diez minutos tienes tu perfil. A partir de ahí
+> las otras ocho trabajan con tu negocio en vez de con ejemplos genéricos."
 
 ### 4. Si la persona está en Claude.ai
 
@@ -50,7 +50,7 @@ No puedes instalarlas tú. Guíala paso a paso, sin dar nada por sabido:
 
 1. Que active **Ajustes → Capacidades → Ejecución de código y creación de archivos**. Sin
    esto no le aparecerá la opción de skills, y es el paso que más gente se salta.
-2. Que descargue los ficheros de `instalar/zip/` de este repositorio (uno por skill).
+2. Que descargue los ficheros `.skill` de la carpeta [`instalar/`](instalar/) de este repositorio (uno por skill). Son archivos comprimidos: si su navegador no los descarga, que use el botón **Download raw file**.
 3. Que vaya a **Personalizar → Skills → `+` → Crear skill → Subir** y arrastre el `.zip`.
    Van de una en una.
 4. Avísale de que **en Claude.ai no hay comandos con barra**: las skills se activan solas

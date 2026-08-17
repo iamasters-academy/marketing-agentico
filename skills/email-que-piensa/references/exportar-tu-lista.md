@@ -11,6 +11,56 @@ Un rato de trabajo del usuario, y el ejercicio deja de ser una simulación.
 | **Completo** | Lo anterior + el informe de **clics por enlace** de sus campañas | Ya se puede separar "mira el precio" de "no sabe montarlo", que es donde está el valor |
 | **Avanzado** | Lo anterior + la acción clave del producto y las respuestas de su bandeja | El árbol con las dos señales más fuertes que existen |
 
+---
+
+## Mapa de columnas por herramienta
+
+Cada herramienta llama a lo mismo de otra forma, y **la que más importa a veces no existe**.
+Esta tabla es lo que evita el atasco:
+
+| Lo que necesito | Brevo | Mailchimp | MailerLite | ActiveCampaign | ConvertKit |
+|---|---|---|---|---|---|
+| **Fecha de alta** | `Fecha de creación` | `OPTIN_TIME` | `subscribed_at` | `Subscribe Date` | `Created At` |
+| **Última actividad** | ❌ **no existe** | `LAST_CHANGED` (aproximada) | `updated_at` | `Last Activity` | ❌ no existe |
+| **Nº de aperturas** | Solo por campaña | `Open Rate` (global) | `opens_count` | `Opens` | Solo por campaña |
+| **Nº de clics** | Solo por campaña | `Click Rate` (global) | `clicks_count` | `Clicks` | Solo por campaña |
+| **Clics por enlace** | Informe de campaña | Informe de campaña | Informe de campaña | Informe de campaña | Informe de campaña |
+| **Etiquetas / listas** | `Listas` | `TAGS` | `groups` | `Tags` | `Tags` |
+
+### Dónde está el export de contactos
+
+- **Brevo:** Contactos → (arriba a la derecha) Exportar contactos → elige atributos → CSV.
+- **Mailchimp:** Audience → All contacts → Export Audience.
+- **MailerLite:** Subscribers → filtro → Export → CSV.
+- **ActiveCampaign:** Contacts → Export → elige campos.
+- **ConvertKit:** Subscribers → Export CSV.
+
+### Dónde está el informe de clics por enlace — la pieza que da el valor
+
+**No viene en el export de contactos. Nunca.** Va por campaña:
+
+- **Brevo:** Campañas → abre una campaña enviada → pestaña **Estadísticas** → *Enlaces
+  clicados* (y "Ver contactos" en cada enlace).
+- **Mailchimp:** Campaigns → View report → **Click performance** → *Clicked link* → subscribers.
+- **MailerLite:** Campaigns → informe de la campaña → **Link activity**.
+- **ActiveCampaign:** Campaigns → report → **Links**.
+- **ConvertKit:** Broadcasts → abre uno → **Clicks**.
+
+Pide las **tres o cuatro últimas campañas**, no todas. Con eso ya hay señal.
+
+### Si no existe "última actividad": cómo se reconstruye
+
+Es el caso de Brevo y ConvertKit, y no es un problema. Se hace así:
+
+1. Coge los informes de las últimas 4-6 campañas.
+2. Por cada contacto, la última actividad es **la fecha de la campaña más reciente en la que
+   abrió o hizo clic**.
+3. Quien no aparece en ninguna: su última actividad es *anterior* a la campaña más antigua
+   que has mirado. Eso ya basta para la rama de inactivos.
+
+Dilo así al usuario, para que no lo viva como un fallo: *"tu herramienta no guarda ese
+campo, lo reconstruyo yo desde los informes de campaña. No necesito nada más."*
+
 **Si viene en varios archivos**, que no los cruce él a mano: que pegue cada uno por separado
 diciendo qué es, y **con la columna de id en todos** (el mismo id en los dos ficheros). El
 cruce lo hago yo. Si algún archivo no trae id, se trabaja con el que sí lo tiene y se dice

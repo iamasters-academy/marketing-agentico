@@ -31,6 +31,39 @@ el usuario quiere los cinco, hazlo, pero dile lo que va a pasar.
 
 ---
 
+## Los canales no se preguntan: se confirman
+
+**Están en el perfil de marca**, sección `Dónde vivo`. Abrir una conversación sobre canales
+cuando ya los tienes delante gasta un turno entero de la paciencia del usuario y le dice que
+no has leído lo que dijiste haber leído.
+
+Se confirma en **una línea**, con los que estén activos y con los descartados ya descartados:
+
+> "Voy a escribir para LinkedIn y para tu newsletter, que son los dos que usas de verdad. La
+> página de empresa la dejo fuera: pone que no ha publicado nadie nunca. ¿Vamos con esos?"
+
+Solo si el perfil no existe, o no trae los canales, se pregunta — **una vez, y ofreciendo dos
+o tres, no una lista abierta**. Y si ofreces un canal que no está en el perfil (vídeo corto,
+Instagram), que sea con un motivo dicho en voz alta y aceptando el "no" a la primera.
+
+Anota los descartes y **por qué**, con fecha. Vale para todo el kit y evita que otra skill
+los vuelva a proponer:
+
+> **Canales descartados (11/08/2026).** Instagram y TikTok: no hay cuentas y el cliente
+> objetivo —dirección de PYME industrial, 50 años— no está ahí. Vídeo: sin disponibilidad.
+
+## Quién firma cada canal
+
+La otra pregunta de una línea, y va aquí porque es información de canal, no de texto:
+
+> "¿El post lo firma tu perfil o el de otra persona?"
+
+En una PYME, quien redacta casi nunca es quien firma. Saberlo **antes** de escribir cambia
+la persona gramatical, el tipo de dato que se puede afirmar y a quién hay que preguntarle.
+Saberlo **después** cuesta la pieza entera. Es el filtro 4 del guardián: `guardian.md`.
+
+---
+
 ## La regla de la primera frase
 
 **Prohibido reutilizar la primera frase entre dos canales.** Ni parecida.
@@ -120,6 +153,29 @@ Lo mismo con el cierre: dos cierres iguales delatan lo mismo.
    el paso que la gente se salta y es el que hace todo el trabajo. Si partes del texto de
    LinkedIn, vas a acabar con una traducción del texto de LinkedIn.
 5. **Compara las primeras frases.** Si se parecen, tira la segunda y empieza otra vez.
+
+---
+
+## Producir para un canal del que no hay ni una muestra
+
+Es lo normal, no la excepción: casi nadie tiene corpus de email publicado, y el email suele
+ser uno de los canales de destino.
+
+**No se inventa y no se bloquea.** Se hace esto:
+
+1. Se escribe con **el registro que sí está documentado**, adaptado a lo que pide el canal
+   (arriba). La voz de una web sirve de base para un correo; lo que no sirve es fingir que
+   tienes muestras de correo.
+2. Se marca en el manual, campo *Registro por canal*: `Sin evidencia suficiente`, y qué
+   consecuencia tiene.
+3. **Se dice al entregar la pieza**, sin esconderlo:
+
+   > "Este veredicto vale menos que el del post. No estoy comparando contra muestras de este
+   > canal: estoy comparando contra muestras de otro. Guarda el correo que mandes — en la
+   > próxima extracción es la primera pieza de este canal y el hueco se cierra solo."
+
+4. Y **la falta de muestras obliga a escribir MÁS para el canal, no menos.** Un post de
+   LinkedIn con "Hola" delante no es un correo: es el error más común precisamente aquí.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: analista-lunes
-description: Mira tus métricas y te dice las tres cosas que han cambiado, con una hipótesis de causa y qué comprobar para cada una. Informe repetible cada lunes, sin montar ningún dashboard.
+description: Convierte un CSV de tu CRM en un dashboard interactivo —filtros por periodo, canal, delegación y dispositivo, KPIs que se recalculan, embudo y series— MÁS el análisis de las tres cosas que han cambiado con hipótesis de causa y qué comprobar. Filtra el ruido antes de dibujar nada, distingue «no comprobado» de «descartado», y al final te enseña a conectar HubSpot, Mailchimp o Google Sheets para no volver a exportar un fichero nunca. Un solo HTML sin dependencias, repetible cada lunes.
 ---
 
 # /analista-lunes — Tres cosas han cambiado. Y por qué.
@@ -25,16 +25,31 @@ del lunes".
 
 ## Antes de empezar
 
-1. **Busca el perfil de marca.** En Claude Code, el fichero `perfil-marca.md`. En Claude.ai,
-   las instrucciones del proyecto. Sirve para saber qué es una conversión en este negocio y
-   qué canales le importan. Si no hay perfil, se puede trabajar igual: pregunta esas dos
-   cosas a mano y sigue.
-2. **Pregunta de dónde salen los datos** antes de nada. Tres opciones, y todas valen:
-   > "¿Trabajamos con la cuenta demo de Google Analytics —una tienda real de Google, con los
-   > datos ofuscados por ellos, pública y gratis—, con tu propio Analytics, o con un CSV
-   > (un archivo de tabla, tipo hoja de cálculo) que ya tengas de Meta Ads, Shopify o tu CRM?"
+1. **Arranca como manda `references/_arranque.md`.** Busca `perfil-marca.md` antes de
+   saludar: de ahí sale qué es una conversión en este negocio y qué canales le importan. Si
+   no hay perfil, modo exprés y adelante.
 
-   El detalle de cada vía está más abajo, en **De dónde salen los datos de verdad**.
+2. **Pregunta de dónde salen los datos, con las opciones que existen de verdad.** La
+   pregunta que había aquí ofrecía tres cosas que no coincidían con las tres vías del propio
+   fichero. Esta sí:
+   > "¿Con qué datos trabajamos?
+   > **(a)** Los tuyos: me pegas o me subes una tabla de tu Analytics, tu Meta Ads, tu
+   > Shopify o tu CRM. Es lo normal y lo que mejor funciona.
+   > **(b)** La cuenta demo de Google Analytics: una tienda real de Google, con los datos
+   > ofuscados por ellos, pública y gratis. Para practicar el método sin datos propios.
+   > **(c)** El conector oficial de Google Analytics, solo si estás en Claude Code **y
+   > administras tú tu propiedad de GA4**."
+
+   > ⚠️ **Sobre la (c), antes de que nadie se meta en el jardín:** si su web la hizo una
+   > agencia, lo más probable es que **no administre su propia propiedad de GA4**. Es el
+   > atasco número uno de esta skill y no es técnico, es organizativo. Pregúntalo de una vez:
+   > *"¿Entras tú a Analytics como administrador, o lo lleva quien te hizo la web?"* Si lo
+   > lleva otro, **vais directos a la (a)** y no perdéis diez minutos.
+
+2b. **Si no tiene analítica ninguna**, que también pasa: se trabaja igual con lo que sí
+   tiene —formularios recibidos, correos entrantes, ventas, presupuestos enviados— aunque
+   sea contando a mano en una hoja. Y al terminar, se monta la medición mínima para que el
+   lunes que viene sí haya datos. Un negocio sin analítica no es un negocio sin números.
 3. **Nunca pidas contraseñas, claves de API ni accesos.** No hacen falta para nada de esto.
    Si el usuario te los ofrece, recházalos y explícalo.
 4. **Comprueba que los periodos son comparables** antes de analizar nada. Este paso se salta
@@ -112,6 +127,25 @@ estos cuatro filtros. El desarrollo completo, con la aritmética, está en
 - **¿Ha empeorado algo, o solo ha cambiado la mezcla?** Una media global puede caer sin que
   ningún segmento empeore, solo porque ha cambiado el peso de cada uno. Es el error de
   lectura más común en marketing y tiene su propia sección en el fichero de referencia.
+
+### Paso 3b — Pregunta lo que la analítica no ve
+
+**Este paso es obligatorio y es de donde salen los dos mejores hallazgos.** La analítica te
+dice cuántos formularios llegaron; no te dice si valían algo. En la prueba real, "de 1 a 0
+leads cualificados" y "cero euros de valor perdido" salieron de aquí, no de GA4.
+
+Pregunta las tres de golpe, cuando ya tengas el barrido hecho:
+
+> "Tres cosas que tus datos no me pueden decir y tú sí:
+> 1. De esos {N} formularios del periodo, **¿cuántos eran de clientes que te encajan?**
+> 2. ¿Cuántos acabaron en una reunión o en una respuesta?
+> 3. ¿Qué pasó con ellos? ¿Alguno compró?"
+
+Con eso, un cambio de 9 a 4 formularios deja de ser un dato y pasa a ser una historia. Y si
+no lo sabe, **también es un hallazgo**: significa que no está midiendo lo único que importa.
+
+**No conviertas eso en euros si no te da los números.** Multiplicar leads por ticket medio
+por tasa de cierre produce una cifra que alguien va a citar en una reunión y que no existe.
 
 ### Paso 4 — Elegir tres, y por impacto
 
@@ -202,6 +236,76 @@ _{{periodo}} vs. {{periodo de comparación}} · fuente: {{de dónde salen los da
 {{qué no está medido, qué falta, qué no se puede saber desde aquí}}
 ```
 
+### El entregable: un panel Y un análisis, en dos pestañas
+
+Sigue `references/dashboard-interactivo.md`. El HTML lleva **dos pestañas**, y hay que entregar
+las dos:
+
+| Pestaña | Qué es | Para qué sirve |
+|---|---|---|
+| **Panel** | Filtros por periodo y por cada dimensión del fichero · KPIs que se recalculan · serie semanal · barras clicables · embudo · tabla cruzada | **Explorar.** El usuario corta sus datos como quiera y ve todo de un golpe |
+| **Análisis y conclusiones** | Las tres cosas que han cambiado, hipótesis, qué las tumbaría, lo que NO es noticia, los límites y el registro | **Decidir.** Es lo que ningún dashboard da |
+
+**Un panel sin análisis es un gráfico bonito. Un análisis sin panel es un PDF que nadie
+explora.** Si solo entregas uno de los dos, la skill está a medias.
+
+**El panel solo se monta si hay dato fila a fila.** Con dos capturas de Analytics no hay panel:
+hay informe, y se dice así en lugar de fingir un dashboard con cuatro cifras.
+
+**El orden sigue siendo la lección.** No se dibuja nada durante la conversación: primero se
+barre, se filtra el ruido y sobreviven tres cambios. Cualquier herramienta te pinta cuarenta
+métricas en dos clics; lo que no te da ninguna es el criterio para tirar treinta y siete. **El
+panel te deja mirar; la segunda pestaña te dice dónde mirar.**
+
+Nada de librerías de gráficos: barras con `div` y `width` en porcentaje, series con `<svg>` a
+mano. Un solo fichero que se abra con doble clic dentro de un año, sin internet.
+
+La pestaña de análisis lleva, además del informe:
+
+- **Un resumen de cinco líneas para dirección**, arriba del todo. El informe completo no se
+  lleva a un comité; este resumen sí. No lo improvises al final: va siempre.
+- **El registro de hipótesis con la fecha de la próxima revisión** y qué hay que comprobar
+  en cada una. Así el lunes que viene basta con abrir el fichero de este lunes. Es lo único
+  que hace que el bucle sobreviva a la buena intención.
+- El diario: qué filtros se pudieron aplicar y cuáles quedaron en **"no comprobado"** — que
+  no es lo mismo que "descartado", y esa distinción es media skill.
+
+**El desglose por canal** es lo que da la mitad de la fuerza al informe y casi nadie sabe
+sacarlo. En GA4: *Informes → Adquisición → Adquisición de tráfico*, y arriba a la derecha
+fijas los dos periodos a comparar. Si no puede, pide el dato a quien lleve la cuenta con el
+mensaje de abajo.
+
+### Y al cerrar: que no haya que volver a exportar nunca
+
+**Cuando ya tenga el informe delante** —nunca antes—, abre `references/conectar-datos.md` y
+ofrécele conectar la fuente. Pegar un CSV funciona una vez; al tercer lunes ya nadie exporta
+nada, y la skill muere de éxito.
+
+Tres caminos, y el segundo es el del 80% de la gente:
+
+1. **Conector oficial**, si su herramienta está en el directorio (HubSpot, Mailchimp, Google
+   Sheets, Analytics). Se activa en **Ajustes → Conectores**, una vez, sin terminal.
+2. **Su CRM no está en la lista** — lo normal en PYME. La salida es un **volcado periódico a
+   Google Sheets**, que sí tiene conector. No hay que tocar el CRM.
+3. **Una rutina programada** que lo ejecute los lunes y **se calle si no ha cambiado nada
+   relevante**. Esa última condición es la que hace que el informe se siga leyendo al mes.
+
+**No prometas un conector sin comprobar que lo tienes disponible en la sesión.** Si no lo ves,
+di que existe en el directorio y hay que activarlo, y sigue con el fichero de hoy.
+
+### Cuando los datos los tiene otro
+
+Pasa constantemente. **Escribe el correo tú**, no lo dejes en "pídeselo a tu agencia":
+
+> "Hola: ¿me podéis dar acceso de **lectura** a la propiedad de Google Analytics? Con el rol
+> de Lector me vale, no necesito tocar nada.
+>
+> Y si eso lleva tiempo, con esto me apaño mientras: el informe de **adquisición de tráfico
+> por canal**, comparando {periodo A} con {periodo B}, con sesiones y conversiones de cada
+> uno. Exportado a CSV o una captura, como os venga mejor. Gracias."
+
+---
+
 ### Dos reglas que no se negocian
 
 **1. Nunca un porcentaje solo.** Siempre "de 412 a 383 sesiones (-7 %)", nunca "-7 %". El
@@ -258,6 +362,12 @@ Tres comprobaciones, delante del usuario:
 
 **Esta skill no trae un dataset inventado, y es a propósito:** existe una cuenta pública con
 datos de un negocio que existe, así que no hace falta fabricar nada. Tres vías, en este orden.
+
+> **Y una cosa que sí puedes buscar tú** (sigue `references/_investigar.md`): **el contexto
+> externo del periodo.** Antes de dar una hipótesis por buena, mira si pasó algo fuera —una
+> noticia del sector, un cambio de algoritmo, un festivo, un competidor que lanzó algo—.
+> Muchas veces la explicación de un pico no está en la analítica: está en Google. Y si su
+> tráfico vino de un enlace, **ábrelo**: saber qué decía ese post explica más que la tabla.
 
 ### Vía 1 — La cuenta demo de Google Analytics (para practicar, y sale de una tienda real)
 

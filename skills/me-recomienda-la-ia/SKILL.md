@@ -1,6 +1,6 @@
 ---
 name: me-recomienda-la-ia
-description: Mide cuántas veces te nombran ChatGPT, Perplexity y Gemini frente a tus competidores y construye el plan para que empiecen a hacerlo. Para visibilidad de marca en buscadores con IA.
+description: Diagnostica por qué no apareces en ChatGPT, Perplexity y Gemini, y te da una nota de 0 a 100 con las cuatro razones posibles. Tres las comprueba sola en tres minutos —si los bots de IA pueden leer tu web (robots.txt), si existes como entidad en Wikidata y en las fuentes que citan los modelos, y si tu texto cumple los umbrales de citabilidad—, todo comparado con tus competidores. Solo la cuarta, el share of model, necesita diez minutos tuyos, y si las otras ya explican el cero te ofrece saltártela. Para visibilidad de marca en buscadores con IA, GEO y AEO.
 ---
 
 # /me-recomienda-la-ia — Tu línea base en los buscadores con IA
@@ -9,15 +9,12 @@ Cada vez más gente ya no busca: pregunta. Y cuando pregunta *"¿cuál es el mej
 vendes}}?"*, sale una lista de tres o cuatro nombres. **O estás en esa lista, o no existes en
 esa conversación.**
 
-Casi nadie sabe si está. Según una **encuesta a responsables de marketing** publicada por
-Semrush en junio de 2026, el **45%** no puede medir con precisión la visibilidad de su marca en
-las respuestas de IA, y solo el **9%** tiene herramientas para seguirla en todas las
-plataformas. *(Es una encuesta, no el análisis de prompts del mismo informe; no los mezcles —
-ver `references/datos-geo-2026.md`, punto 1.)*
+Casi nadie sabe si está: el **45%** de los responsables de marketing no puede medir con precisión
+la visibilidad de su marca en las respuestas de IA *(encuesta de Semrush a responsables de
+marketing, junio de 2026)*. Y el número **no se compra**: los tres buscadores tienen plan
+gratuito, así que esto se mide hoy sin gastar un euro.
 
-Esta skill hace dos cosas: **te da tu línea base** —tu *share of model*, medido, con fecha— y
-**te da el plan**. El plan tiene una verdad incómoda dentro, y la vas a leer en la primera
-página del informe: esto no lo gana tu blog.
+Esta skill hace dos cosas: **te da tu número, con fecha**, y **te da el plan**.
 
 **Disparadores:** "/me-recomienda-la-ia", "¿salgo en ChatGPT?", "cómo me menciona la IA",
 "visibilidad en IA", "GEO", "SEO para ChatGPT", "quiero que la IA me recomiende", "share of
@@ -27,59 +24,33 @@ model", "mide mi marca en Perplexity", "por qué la IA recomienda a mi competenc
 > En **Claude.ai** no hay comandos con barra — pídelo con palabras y se activa
 > sola; si no la coge, nómbrala: *"usa la skill me-recomienda-la-ia"*.
 
-
 ---
 
 ## Antes de empezar
 
-1. **Busca el perfil de marca.** En Claude Code, el fichero `perfil-marca.md`. En Claude.ai,
-   las instrucciones del proyecto. De ahí salen las 20 preguntas del sector.
-2. **Si no hay perfil, NO te pares.** Esta skill se puede haber subido sola, sin el resto del
-   kit, y dejar al usuario en un callejón sin salida es el peor arranque posible. Hazle estas
-   seis preguntas de golpe, en un solo mensaje, y con las respuestas montas un perfil mínimo
-   suficiente para continuar:
+**Busca el perfil antes de saludar** — `references/_arranque.md`. El fichero es
+`perfil-marca.md`. Si no hay, modo exprés de tres preguntas y adelante: **nunca mandes a nadie a
+ejecutar otra skill primero**. Si el perfil trae `## Correcciones`, léelas: ahí es donde otra
+skill pudo haber desmentido a un competidor.
 
-   > 1. ¿Cómo se llama tu marca?
-   > 2. ¿Qué vendes exactamente, en una frase?
-   > 3. ¿Quién te compra? (el cliente típico, con su tamaño o su situación)
-   > 4. ¿Qué problema le quitas de encima? Dilo con **sus** palabras, no con las tuyas.
-   > 5. ¿Dónde vendes? (ciudad, país, online)
-   > 6. Dime 2 o 3 competidores que se te ocurran.
+**Opcional, y mejora el resultado:** si existe un informe de `/el-hueco`, léelo — trae los
+competidores ya comprobados uno a uno. **Sin él no pasa nada:** los compruebo yo abriendo sus
+webs (`references/_investigar.md`). Lo único que se pierde es un par de minutos.
 
-   Con eso ya puedes generar las 20 preguntas. Y dilo: *"con esto vamos; si quieres un perfil
-   de marca completo que reutilicen las demás skills del kit, existe `/mi-marca`, pero para
-   medir hoy no te hace falta."*
+**Mira si tienes navegador.** Si entre tus herramientas hay alguna de control de navegador
+(nombres con `chrome`, `browser`, `navigate`, `computer`), ve a
+`references/protocolo-de-captura.md` → *"Con navegador"*: las preguntas las lanzas tú y el
+usuario no pega nada. **Si no la tienes, no lo menciones nunca.** La skill funciona igual y
+nadie tiene que sentir que le falta algo.
 
-   **Si no tiene negocio propio**, ofrécele una marca de prácticas y móntala tú en el momento:
-   por ejemplo *"Turnos", una app de cuadrantes de personal para bares y restaurantes pequeños,
-   29 €/mes, que compite con Sesame HR, Combo y "el cuaderno de siempre"*. El sector es real,
-   así que el ejercicio funciona entero (ver "Si el usuario no tiene negocio", más abajo).
+**Y di lo que cuesta, antes de pedir nada:**
 
-3. **Di lo que esto cuesta, antes de empezar.** No es un botón:
+> "Diez minutos tuyos: **tres pegadas, una por buscador**. Todo lo demás lo hago yo — quién sale
+> en tu lugar, quién publica los rankings de tu sector y qué se está indexando con tu nombre.
+>
+> Empezamos con una sola pregunta en un solo buscador para que veas de qué va. Dos minutos."
 
-   > "Esto son 20 preguntas en tres buscadores: unas 60 respuestas que tienes que copiar y
-   > pegarme tú. Entre 45 minutos y una hora. Hay versión corta de 8 preguntas, unos 20
-   > minutos. No hay forma de que lo haga yo por ti: no tengo acceso a ChatGPT, a Perplexity ni
-   > a Gemini desde aquí.
-   >
-   > Y si prefieres verlo antes de comprometerte: hacemos una **microdemo de una sola
-   > pregunta** en los tres buscadores. Tres copiapegas, cinco minutos, y te enseño la tabla en
-   > pequeño. Luego decides. ¿Microdemo, corta o completa?"
-
-   **Ofrece siempre la microdemo.** El primer resultado que ve el usuario no puede ser una
-   factura de una hora de trabajo manual: tiene que ser una tabla suya, aunque sea diminuta.
-   Después de la microdemo, casi todo el mundo sigue.
-
-   **Y para en seco después de preguntar.** Espera su respuesta antes de generar nada. No
-   sueltes las 20 preguntas en el mismo turno en que le has preguntado qué versión quiere.
-
-4. **Comprueba que puedes buscar en internet.** Lo necesitas para la parte del mapa de fuentes.
-   Si no la tienes activada, dilo: el diagnóstico se puede hacer igual —lo pega el usuario—,
-   pero el plan saldrá más pobre.
-
-> **Quién hace el trabajo:** la medición la hace el usuario, porque solo él puede abrir esos
-> tres buscadores. Yo genero las preguntas, tabulo, calculo, busco en la web y escribo el
-> informe. Dilo claro desde el minuto uno en vez de dejar que lo descubra a mitad.
+**No pidas permiso para la microdemo: hazla.** Y para en seco cuando toque esperar su respuesta.
 
 ---
 
@@ -96,230 +67,439 @@ ningún término técnico. Cada palabra rara que aparezca después, la explicas 
 > - **Mapa de fuentes** = las páginas web que el buscador enseña como respaldo de lo que dice.
 >   De ahí sale tu plan.
 > - **Línea base** = tu número de hoy, con fecha, para poder compararlo dentro de tres meses.
+> - **Crawler** = el robot que lee tu web para el buscador. GPTBot es el de ChatGPT. Si lo tienes
+>   bloqueado, no sales, y no hay más que hablar.
+> - **Entidad** = que el buscador sepa que tu empresa existe como cosa concreta, y no solo que
+>   tenga tu web indexada. Son dos cosas distintas y la segunda no implica la primera.
 
 ---
 
-## El método
+## Los tres minutos que van antes de todo
 
-Dos partes. La primera te dice dónde estás. La segunda, qué haces con eso.
+**Ejecuta esto ANTES de pedirle nada.** Sigue `references/medir-sin-preguntar.md`, que trae los
+umbrales, las tablas y cómo se puntúa cada capa.
 
-### Parte 1 — El diagnóstico: tu *share of model*
+Cuando alguien no aparece en ChatGPT hay cuatro razones posibles, y **tres se descubren sin que
+el usuario mueva un dedo**:
 
-**Share of model** = de todas las respuestas **puntuables**, en cuántas aparece tu marca. Es tu
-cuota de voz dentro del modelo, y es un número que casi nadie de tu sector tiene.
+| | Capa | Qué contesta | Cuánto tarda |
+|---|---|---|---|
+| **A** | **Acceso** | ¿Le pueden leer los bots de IA? Se lee su `robots.txt` y el de sus competidores | 30 s |
+| **B** | **Entidad** | ¿Existe en las fuentes de las que salen los hechos? Wikidata, Wikipedia, nicho, Reddit, YouTube, LinkedIn | 1 min |
+| **C** | **Citabilidad** | ¿Su texto se puede citar, o está escrito para persuadir a quien ya está leyendo? | 1 min |
+| **D** | **Menciones** | ¿Le nombran? Esta es la única que necesita al usuario | 10 min suyos |
 
-**Cuidado con el denominador, que es donde se equivoca todo el mundo:** de las 20 preguntas,
-las 2 de la familia 6 (las que llevan tu nombre) **no puntúan**. Así que 20 preguntas × 3
-motores = **60 respuestas lanzadas, de las cuales 54 son puntuables** (18 × 3). El share of
-model se calcula sobre 54, no sobre 60. En la versión corta de 8 preguntas: 24 lanzadas, **21
-puntuables** (7 × 3). Y las 4 repeticiones del control de calidad **tampoco entran** en el
-denominador: se informan aparte.
+**Enséñale A, B y C antes de mandarle a copiar y pegar.** Tres minutos de trabajo tuyo compran
+toda la credibilidad de la sesión: llega a la parte manual sabiendo ya por qué no aparece.
 
-**Paso 1. Genera las 20 preguntas del sector**, siguiendo `references/banco-de-preguntas.md`.
-Salen del perfil de marca y se entregan listas para copiar y pegar, numeradas, una a una.
+> **El atajo honesto, y hay que ofrecerlo.** Si A, B o C ya explican el cero —su `robots.txt`
+> bloquea `GPTBot`, no existe en Wikidata, su web no tiene un solo bloque citable—, **dilo y
+> ofrécele saltarse la capa D**:
+>
+> *"Con esto ya sé por qué no apareces, y no hace falta que dediques diez minutos a
+> confirmarlo. ¿Lo hacemos igual para tener la línea base con fecha, o pasamos directamente al
+> plan?"*
+>
+> Que elija él. Lo que no se hace es cobrarle diez minutos de copiar y pegar para llegar a una
+> conclusión que ya estaba sobre la mesa.
 
-Seis familias: recomendación directa (5), comparación (4), el problema sin nombrar la categoría
-(4), objeción y precio (3), segmento o territorio (2), y tu marca por su nombre (2).
+---
 
-> **La regla que se salta todo el mundo:** 18 de las 20 preguntas **no llevan tu nombre**. Si le
-> das el nombre al motor, va a hablar de ti. Eso no mide visibilidad: mide que sabes escribir tu
-> propia marca. Lo que se mide es la pregunta de quien todavía no te conoce.
+## Minuto cinco: la microdemo
 
-**Enséñale las 20 y pregunta si son las que haría su cliente** antes de que se ponga a pegar.
-Corregirlas cuesta un minuto; rehacer la tanda, una hora.
+Solo si vais a hacer la capa D. Lo único que evita el abandono es que vea **su** número antes de
+que le pidas trabajo. Una pregunta, un buscador, resultado inmediato. No expliques el método:
+enséñaselo.
 
-**Paso 2. La captura.** Sigue `references/protocolo-de-captura.md` al pie de la letra. Lo
-crítico:
+### Paso 0 — La sesión limpia, y sí, se comprueba
 
-- **Chat nuevo para cada pregunta**, en modo temporal o incógnito, con la memoria y la
-  personalización desactivadas. Si el motor lleva meses oyéndole hablar de su negocio, le va a
-  nombrar su marca por educación, no por visibilidad.
-- **Pegar la respuesta entera**, sin resumir. Los adjetivos y el orden de la lista son la mitad
-  del análisis.
-- **Repetir 4 de las 20** en un chat nuevo. Estos sistemas no son deterministas: la repetición
-  es el control de calidad, y si sale distinto, eso se escribe en el informe.
+**Es el fallo que no se ve.** Si el buscador lleva meses oyéndole hablar de su negocio, le va a
+nombrar su marca por educación. Sale un share of model estupendo y falso, y nadie lo detecta
+después. **No le des la pregunta hasta que confirme los tres pasos.**
 
-**Paso 3. Tabula y calcula.** Por cada respuesta: si apareces, en qué posición, con qué
-adjetivos, qué competidores nombra y qué fuentes cita. De ahí salen las cuatro cifras del
-informe y —lo más valioso— el **mapa de fuentes**.
+> 1. **Ventana de incógnito** (Cmd+Shift+N en Mac, Ctrl+Shift+N en Windows) y **sin iniciar
+>    sesión**.
+> 2. Si el buscador te obliga a entrar: **chat temporal**, y en Ajustes **memoria y
+>    personalización desactivadas** mientras dure esto.
+> 3. **Chat nuevo para cada pregunta.** No encadenes: la segunda respuesta se contamina con la
+>    primera.
 
-### Parte 2 — El plan: dónde se gana esto de verdad
+**La comprobación es lo que de verdad lo arregla.** En esta pregunta no has dado tu nombre, así
+que la respuesta te dice si la sesión estaba limpia:
 
-Aquí va la parte que no gusta y que hay que decir igual: **tu blog no es el campo de juego.**
+| Lo que ves en la respuesta | Qué significa |
+|---|---|
+| No te nombra ni a ti ni a tu marca | Sesión limpia. Adelante |
+| **Te nombra a ti o a tu marca** | **Casi seguro que la sesión está sucia.** Repite en incógnito de verdad. Si al repetir desapareces, la primera respuesta no valía |
+| No te nombra, pero usa tu ciudad, tus sectores o tus palabras sin que se las hayas dado | Memoria activa. Mismo caso: repite |
 
-En el estudio de Ahrefs sobre 75.000 marcas (mayo de 2025), el número de páginas de un sitio
-correlacionaba **0,17** con la visibilidad en AI Overviews, mientras que las menciones de marca
-en la web correlacionaban **0,664** — el triple que los backlinks (0,218). En el estudio de
-diciembre de 2025 de la misma casa, las menciones en YouTube fueron la señal más correlacionada
-(≈0,737). **Los propios autores avisan de que correlación no es causalidad**, y conviene
-repetirlo: las marcas grandes están en todas partes a la vez.
+**La excepción, dila tú antes de que la diga él:** si su marca es conocida de verdad, puede
+aparecer legítimamente. Se distingue en treinta segundos — **que pegue la misma pregunta en un
+buscador donde nunca haya entrado con su cuenta**. Si allí también sale, es visibilidad. Si no,
+era un espejo.
 
-**Y dos matices que hay que decir para no pasarse de frenada:** el 0,17 mide **número de
-páginas**, no calidad ni utilidad de lo que publicas — un blog bueno y pequeño no es lo mismo
-que un blog inflado. Y tu web sigue siendo importante, aunque para otra cosa: es **la fuente de
-la que todos los demás copian tus datos** (ver `references/plan-de-huella.md`, familia E). Lo
-que dicen los datos no es "tu blog no sirve", es "publicar más páginas, por sí solo,
-correlacionó poco".
+### La pregunta y la tabla
 
-Y Google, en su documentación oficial, cierra la puerta al atajo técnico:
+La primera del set, la más pura: alguien que no le conoce pidiendo una recomendación. Se la das
+en un bloque de código, con la cabecera de vuelta, y le pides **una sola respuesta**.
+
+Cuando la pegue, enséñale la tabla en pequeño —¿sale?, quién sale, qué fuentes cita— y el
+número. Y **avisa de lo que no es**: una respuesta no es un share of model, sirve para ver la
+mecánica.
+
+### La respuesta a "¿no lo puedes hacer tú?"
+
+Va a llegar, y es la pregunta más razonable del día. Tenla escrita:
+
+> "No, y te explico por qué. ChatGPT, Perplexity y Gemini no son webs que yo pueda abrir y usar:
+> son productos con cuenta y con sesión, y no puedo escribir en el chat de otro asistente y leer
+> lo que responde. Tampoco vale su API: la app añade encima su propia capa de búsqueda y de
+> personalización, y puede estar sirviendo otro modelo. **Una medición por API mide la API, no a
+> tu cliente.**
+>
+> Así que hay una parte que solo puedes hacer tú, y la he dejado en lo mínimo: **tres pegadas,
+> diez minutos**. Todo lo demás lo hago yo — y de hecho ya lo he hecho: si te acuerdas, las tres
+> tablas que acabas de ver salieron sin que me dieras nada. **Esto es la cuarta parte del informe,
+> no el informe.**"
+
+---
+
+## La tanda: tres preguntas, una pegada por buscador
+
+**Con tres preguntas se responde "¿aparezco o no?".** Salen del perfil, en el idioma y el país
+de su cliente, siguiendo `references/banco-de-preguntas.md`:
+
+| # | Qué mide | ¿Puntúa? |
+|---|---|---|
+| 1 | **Recomendación directa.** Alguien pide que le recomienden. La consulta más pura | Sí |
+| 2 | **El problema, sin nombrar la categoría.** Su cliente no sabe cómo se llama lo que vende: describe su dolor. Es la que casi nadie prueba y la que más sorprende | Sí |
+| 3 | **Su marca por su nombre.** No mide visibilidad: mide **exactitud** — qué acierta el modelo, qué se inventa y con quién le confunde | **No** |
+
+**El denominador, sin trampa:** 3 preguntas × 3 buscadores = **9 respuestas lanzadas, 6
+puntuables**. La 3 no entra: si le das el nombre al motor, va a hablar de ti. Eso no mide
+visibilidad, mide que sabes escribir tu propia marca.
+
+**Y lo que se pierde con la versión corta, dicho antes y no después:** con 6 respuestas
+puntuables sabes **si apareces o no**, y eso es firme —un cero es un cero—. Lo que **no** sabes
+es en qué orden va tu competencia ni cuál es el mapa de fuentes completo. Para eso hacen falta
+más preguntas: están en `references/banco-de-preguntas.md` y se ofrecen **al final**, cuando ya
+haya visto que esto funciona.
+
+### Cómo se pide: un bloque, una pegada
+
+**Un mensaje de ida y uno de vuelta por buscador.** Nada de ir pregunta a pregunta: eso es lo
+que convertía esto en cuarenta minutos.
+
+> "Abre **{{buscador}}** en incógnito. Lanza estas tres en **un chat nuevo cada una** y pégamelas
+> todas juntas en un solo mensaje:
+>
+> ```
+> 1. {{pregunta 1}}
+> 2. {{pregunta 2}}
+> 3. {{pregunta 3}}
+> ```
+>
+> Delante de cada respuesta, una línea así:
+> `--- {{buscador}} · pregunta 1 · {{fecha}} · fuentes: sí/no ---`
+>
+> **Las respuestas enteras, sin resumir.** Los adjetivos y el orden de la lista son la mitad del
+> análisis. Y si el buscador enseña enlaces, cópialos: de ahí sale tu plan."
+
+- **En el primer buscador solo quedan la 2 y la 3**, porque la 1 ya la tienes de la microdemo.
+- **Enséñale las tres preguntas antes de que abra ninguna pestaña** y pregunta si son las que
+  haría su cliente. Corregirlas cuesta un minuto; rehacer la tanda, diez.
+- Si un buscador le corta por el tope del plan gratuito, **para y anótalo**. Se mide con dos y se
+  escribe en el informe. Es un dato, no un fracaso.
+
+---
+
+## Lo que hago yo, sin pedirte nada
+
+Además de las capas A, B y C, mientras pega —o antes, si tarda— completas el resto del informe.
+**Nada de esto se le pregunta.** Sigue `references/_investigar.md` y ve contando lo que
+encuentras según lo encuentras.
+
+| Qué busco | Para qué sirve en el informe |
+|---|---|
+| **Quién publica los rankings del sector** (`mejores {{categoría}} {{año}}`) y si él aparece | El mapa de fuentes y el plan del mes |
+| **Sus competidores de verdad**, abriendo su web uno a uno | La tabla de "quién sale cuando tú no sales" — y evita medir contra un fantasma |
+| **Qué se indexa con su nombre** | "Lo que el modelo cree saber de ti" ← ver abajo |
+| **Directorios, foros y YouTube** de su categoría | Dónde existe la conversación… y dónde no existe |
+
+### La comparación que hay que hacer siempre
+
+**Todo lo de las capas A, B y C se mide también en sus competidores.** Un `robots.txt` propio no
+dice gran cosa; una tabla con su columna al lado de la de los tres competidores dice el informe
+entero. Lo mismo con Wikidata: *"de los cuatro, el único que existe como entidad es el que sale
+en las respuestas"* es una frase que no necesita explicación.
+
+Es exactamente lo mismo que hace `/el-hueco` con las promesas, aplicado a la infraestructura.
+
+### La vía rastreable: lo que los modelos "creen saber" suele estar en la web abierta
+
+**Busca su nombre de marca en un buscador normal y lee el resumen que devuelve.** Muchas veces
+es literalmente el mismo error que suelta el buscador con IA, porque sale del mismo sitio: **lo
+poco que hay indexado**.
+
+En la prueba real del kit, buscar el nombre de la empresa devolvió un resumen que le atribuía
+**cuatro herramientas no-code que no usa** — justo la casilla de la que huyen sus clientes. El
+mismo invento apareció después en Perplexity. **Ese hallazgo salió de una búsqueda normal, no de
+pegar nada.** En la misma sesión, la búsqueda destapó que un solo sitio del mapa de fuentes tenía
+**ocho artículos distintos** cubriendo el embudo entero de la categoría.
+
+> **Si no encuentras nada con su nombre, eso también es el hallazgo.** *"Solo hay dos URLs
+> indexadas y cero menciones en terceros"* es una frase que explica el informe entero.
+
+---
+
+## El plan: dónde se gana esto de verdad
+
+La parte que no gusta y que hay que decir igual: **tu blog no es el campo de juego.**
+
+En el estudio de Ahrefs sobre 75.000 marcas, las **menciones de tu marca en webs de otros**
+correlacionaban **0,664** con la visibilidad, y el **número de páginas de tu web, 0,17**. Dos
+matices que van pegados al dato: ese 0,17 mide **cuántas** páginas tienes, no si son buenas; y
+**los propios autores avisan de que correlación no es causalidad**.
+
+Y Google cierra el atajo técnico en su documentación oficial:
 
 > "There are no additional requirements to appear in AI Overviews or AI Mode, nor other special
 > optimizations necessary."
 
-Así que el plan se construye sobre **huella en sitios de terceros**, siguiendo
-`references/plan-de-huella.md`. Con una regla por encima de todas:
+**Con dos datos basta para el arranque.** Si pide más cifras, están en
+`references/datos-geo-2026.md`, con fuente y fecha. No las sueltes todas de golpe: tres
+correlaciones seguidas pierden a cualquiera.
 
-**El plan sale de SU mapa de fuentes, no de un blog de SEO.** Si en sus 60 respuestas se repiten
-cuatro dominios, esos cuatro encabezan el plan. Si en su sector no sale Reddit, no le mandes a
-Reddit.
+El plan se construye siguiendo `references/plan-de-huella.md`, con una regla por encima de todo:
 
-*Con una honestidad que hay que mantener:* que un motor cite un dominio no demuestra que ese
-dominio sea **la causa** de a quién recomienda. El mapa de fuentes es la mejor lista de
-prioridades disponible —sale de su sector y no de un blog genérico—, pero es una **hipótesis
-priorizada**, no una relación causal probada. Dilo así y no pierdes nada de fuerza.
+**El plan sale de SU mapa de fuentes, no de un blog de SEO.** Si en su sector no sale Reddit, no
+le mandes a Reddit. Y con la honestidad que lo sostiene: que un motor cite un dominio **no
+demuestra** que ese dominio sea la causa de a quién recomienda. Es una **hipótesis priorizada**,
+sacada de su sector y no de un post genérico. Dilo así y no pierdes ni un gramo de fuerza.
 
-Y la línea roja, que se dice en voz alta: **esto no se puede falsear.** Cuentas falsas, upvotes
-comprados y reseñas incentivadas se detectan y se sancionan —en EE. UU. por la regla de la FTC
-(16 CFR Part 465, en vigor desde el 21 de octubre de 2024, hasta 53.088 $ por infracción,
-máximo vigente a agosto de 2026); en la UE por la Directiva Ómnibus, en España vía RDL
-24/2021—. Esta skill construye huella legítima.
-**Si el usuario pide lo otro, se le dice que no y por qué.**
+**La línea roja, en voz alta:** cuentas falsas, upvotes comprados y reseñas incentivadas se
+detectan y se sancionan —en EE. UU. por la regla de la FTC (16 CFR Part 465), en la UE por la
+Directiva Ómnibus, en España vía RDL 24/2021—. **Si lo pide, se le dice que no y por qué.**
+
+### Y separa quién puede hacer cada cosa
+
+El plan termina en dos columnas, porque en una empresa quien hace marketing casi nunca decide
+precios ni administra las cuentas:
+
+| Lo puedes hacer hoy tú solo | Necesita el OK de otra persona |
+|---|---|
+| {{acción}} · {{cuánto tarda}} | {{acción}} · **de quién depende** + el mensaje listo para pedírselo |
+
+---
+
+## La puntuación: un número y cuatro razones
+
+El *share of model* solo, sobre todo cuando es cero, **desmoraliza y no dice qué hacer**. Da
+además una nota de 0 a 100 con sus cuatro componentes, porque un 34 con el desglose delante es
+un mapa, y un 0% a secas es un jarro de agua fría.
+
+| Capa | Peso | Por qué ese peso |
+|---|---|---|
+| **A · Acceso** | 25% | Es un interruptor: si está mal, nada de lo demás importa. Y se arregla en diez minutos |
+| **B · Entidad** | 30% | El que más pesa. Es lo que más tarda en construirse y lo que decide si el modelo sabe que existes |
+| **C · Citabilidad** | 25% | Lo más accionable con lo que ya tiene escrito |
+| **D · Menciones** | 20% | **Es el resultado, no la palanca.** No se sube tocándolo: se sube tocando A, B y C |
+
+`references/medir-sin-preguntar.md` trae cómo se puntúa cada capa. Si no habéis hecho la D,
+**calcula la nota con las tres primeras renormalizadas y dilo**: *"34 sobre 100 midiendo tres de
+las cuatro capas"*. Nunca rellenes una capa que no has medido.
+
+**Y explica el peso de la D en voz alta**, porque el usuario vino a por ese número y va a
+extrañarse de verlo en último lugar:
+
+> "Tu share of model es el termómetro, no la enfermedad. Ponerlo al 20% no es quitarle
+> importancia: es que no se sube mirándolo. Se sube arreglando las otras tres."
 
 ---
 
 ## Lo que entregas
 
+Tres piezas, en este orden. **Confirma las conclusiones en el chat antes de generar el HTML.**
+
+### 1. Una página — la que se lleva a una reunión
+
+El informe completo es correcto y es demasiado largo para dirección. Escribe también esto, y
+escríbelo primero:
+
+```markdown
+## {{negocio}} en los buscadores con IA · {{fecha}}
+
+- **Nota GEO: {{X}}/100** · Acceso {{X}} · Entidad {{X}} · Citabilidad {{X}} · Menciones {{X}}
+- **Te pueden leer:** {{sí / no, y qué bot está bloqueado}}
+- **Existes como entidad:** {{sí / no — y quién de tus competidores sí}}
+- **Share of model: {{X}}%** ({{apariciones}} de {{puntuables}} respuestas) · ChatGPT {{X}}% · Perplexity {{X}}% · Gemini {{X}}%
+- **Quién sale en tu lugar:** {{3 nombres}} — y qué tienen en común
+- **Lo que el modelo cree saber de ti:** {{una frase: no te conoce / se inventa X / te confunde con Y}}
+- **Esta semana:** {{1-2 acciones, y que la primera sea de la capa A si hay algo bloqueado}}
+- **Volvemos a medir el {{fecha, 60-90 días}}**, con las mismas preguntas
+- **Letra pequeña:** {{N}} respuestas, un solo día, {{país}} y {{idioma}}. Foto con margen, no marcador
+```
+
+### 2. El informe completo
+
 ```markdown
 # ¿Me recomienda la IA? · {{negocio}}
-_{{fecha}} · {{N}} preguntas × {{M}} motores = {{N×M}} respuestas lanzadas, {{puntuables}} puntuables · generado con /me-recomienda-la-ia_
+_{{fecha}} · nota GEO {{X}}/100 · {{N}} preguntas × {{M}} motores = {{N×M}} respuestas lanzadas, {{puntuables}} puntuables · generado con /me-recomienda-la-ia_
 
-## Tu línea base
-- **Share of model global:** {{X}}% ({{apariciones}} de {{respuestas puntuables}})
-- **Por motor:** ChatGPT {{X}}% · Perplexity {{X}}% · Gemini {{X}}%
-- **Posición media cuando apareces:** {{X}}.ª
-- **Estabilidad:** de las 4 preguntas repetidas, {{X}} devolvieron lo mismo
+## Tu nota, y de dónde sale
+| Capa | Nota | Qué la baja |
+|---|---|---|
+| A · ¿Te pueden leer? | {{X}}/100 | {{bots bloqueados, o "nada: todo abierto"}} |
+| B · ¿Existes como entidad? | {{X}}/100 | {{dónde no estás}} |
+| C · ¿Tu texto es citable? | {{X}}/100 | {{qué umbral falla}} |
+| D · ¿Te nombran? | {{X}}/100 | {{el share of model}} |
+
+## A · ¿Te pueden leer? — el interruptor
+| Bot | {{negocio}} | {{comp 1}} | {{comp 2}} | {{comp 3}} |
+|---|---|---|---|---|
+| GPTBot · OAI-SearchBot · ClaudeBot · PerplexityBot · Google-Extended | ✅/❌ | … | … | … |
+
+{{y la frase que lo resume: "de los cuatro, ninguno ha tocado su robots.txt para la era de la IA"}}
+
+## B · ¿Existes como entidad? — de dónde saca el modelo los hechos
+| Fuente | {{negocio}} | {{competidores}} | Qué significa |
+|---|---|---|---|
+| Wikidata · Wikipedia · nicho · Reddit · YouTube · LinkedIn | | | |
+
+{{el dato de Ahrefs: YouTube correlaciona 0,737 con las citas de IA; los backlinks 0,266}}
+
+## C · ¿Tu texto es citable? — medido sobre tus tres páginas principales
+{{tabla con el umbral, lo que da su web y el veredicto. Y UN párrafo suyo real reescrito para
+que se vea la diferencia}}
+
+## D · Tu línea base de menciones
+Share of model global y por motor · posición media cuando aparece · estabilidad
 
 ## Quién sale cuando tú no sales
 | Marca | Apariciones | En qué motores | Cómo la describen (literal) |
 
 ## Cómo te describen a ti
-{{adjetivos textuales, entrecomillados. Si no apareces: dilo y punto.}}
+{{adjetivos textuales, entrecomillados. Si no apareces: dilo y punto}}
 
 ## Lo que el modelo cree saber de ti
-{{de las 2 preguntas con tu nombre: qué acierta, qué se inventa, con qué te confunde}}
+{{de la pregunta 3: qué acierta, qué se inventa, con qué te confunde}}
+{{+ lo que devuelve la búsqueda web con su nombre — la vía rastreable}}
 
 ## Mapa de fuentes — esto es tu plan
 | Dominio | Veces citado | En qué preguntas | ¿Estás tú ahí? |
 
 ## Plan
-### Esta semana ({{1-2 acciones concretas}})
-### Este mes ({{2-3 acciones, elegidas por el mapa de fuentes}})
-### Vuelves a medir el {{fecha, 60-90 días}}
+### Esta semana · ### Este mes · ### Vuelves a medir el {{fecha}}
+### Quién puede hacer qué (las dos columnas)
 
 ## Lo que este informe NO dice
-{{límites de la muestra, variabilidad, país e idioma medidos}}
+{{tamaño de la muestra, variabilidad, país e idioma, qué modelos}}
 ```
 
-### Tres reglas que no se negocian
+### 3. El HTML con sus colores
 
-**1. Si sale 0, se escribe 0.** Un share of model del 0% es un resultado perfectamente habitual
-y esperable en negocios pequeños o nuevos, y no es un fracaso: es la línea base. Maquillarlo
-destruye el único valor del ejercicio, que es poder comparar dentro de tres meses.
+`references/_entregable.md`, al pie de la letra. Los colores salen del perfil
+(`## Mi identidad visual`); si no están, de su web; si no hay web, se preguntan **dos colores**
+y ya. **Y lleva siempre el diario de investigación**: qué buscaste, dónde, qué salió y **qué no
+encontraste**. En esta skill ese bloque es media entrega — es todo el trabajo que él no ha
+tenido que hacer.
 
-**2. Las citas de adjetivos son literales.** Si el motor dice "una opción económica pero con
+### Al terminar: deja el rastro
+
+Si has descubierto algo que contradice el perfil —un competidor que no lo es, un servicio que
+el mercado te atribuye y no das, unos colores que no estaban— **escríbelo en la sección
+`## Correcciones` de `perfil-marca.md`**:
+
+```markdown
+- **{{fecha}} · /me-recomienda-la-ia:** {{qué se descubrió y qué invalida}}
+```
+
+---
+
+## Cuatro reglas que no se negocian
+
+**1. Si sale 0, se escribe 0.** Un share of model del 0% es habitual y esperable en negocios
+pequeños o nuevos, y no es un fracaso: es la línea base. Maquillarlo destruye el único valor del
+ejercicio, que es poder comparar dentro de tres meses.
+
+**2. Una mención que no es una aparición no cuenta.** Si el motor nombra a la persona por otra
+cosa —su comunidad, su podcast, su antiguo trabajo— **eso no es que aparezca su empresa**, y
+contarlo es el primer paso para maquillar el informe. Pasó en la prueba real: el modelo nombraba
+al fundador por su comunidad de formación y añadía que *"son cosas distintas y conviene no
+mezclarlas"*. No se contó como aparición — y fue el hallazgo más accionable del día, porque
+señalaba el puente que faltaba. **Se explica por qué no cuenta, y se convierte en acción.**
+
+**3. Las citas de adjetivos son literales.** Si el motor dice "una opción económica pero con
 menos soporte", eso se copia tal cual, entre comillas. Parafrasear aquí es perder el dato.
 
-**3. El informe lleva siempre su propia sección de límites.** Cuántas respuestas, qué días, qué
-país, qué idioma, qué modelos, y si la repetición salió estable o no. Un share of model sin esa
-letra pequeña es una cifra suelta.
+**4. El informe lleva siempre su sección de límites.** Cuántas respuestas, qué día, qué país,
+qué idioma, qué modelos. Un share of model sin esa letra pequeña es una cifra suelta.
 
 ---
 
 ## 🔍 Test de la mentira
 
-Tres comprobaciones, en voz alta y delante del usuario:
+Cinco comprobaciones, en voz alta y delante del usuario. **Las dos primeras son nuevas y son las
+más fáciles de verificar: hazlas siempre.**
 
-1. **Repite tres preguntas 24-48 horas después**, en un chat nuevo. ¿Sale lo mismo? Si el
-   ranking baila, tu línea base es una **foto con margen**, no un marcador. Escríbelo así.
-2. **Abre tres de las fuentes que citó el motor.** ¿Existen, dicen lo que el resumen dice y
-   hablan de tu categoría? Un motor puede citar una página que no sostiene lo que afirma. Si
-   alguna no cuadra, todas las conclusiones que dependan de ella se degradan a hipótesis.
-3. **Cuenta cuántas de tus preguntas llevaban tu nombre.** Si son más de dos o tres, no has
-   medido tu visibilidad: has medido tu ego. Rehaz la tanda.
+1. **Abre tú mismo tu `robots.txt`.** Escribe `tudominio.com/robots.txt` en el navegador. Lo que
+   yo te he dicho tiene que estar ahí, palabra por palabra. Es la comprobación más rápida del kit
+   y la que cierra cualquier discusión: **o el bot está en el fichero o no está.**
+2. **Busca tu marca en Wikidata.** Entra en `wikidata.org`, busca tu nombre y mira si sale una
+   entidad tuya. Si te he dicho que no existes, no debería salir nada. **Y busca también al
+   competidor que sí sale en las respuestas de IA** — ahí es donde se entiende el informe.
+3. **¿Eso que has contado como aparición lo es?** Relee cada mención. Que nombren a la persona,
+   a un producto que ya no vende o a una marca parecida **no es aparecer**. Si al quitar las
+   dudosas el número cambia, el número bueno es el de después.
+4. **Abre tres de las fuentes que citó el motor.** ¿Existen, dicen lo que el resumen dice y
+   hablan de su categoría? Un motor puede citar una página que **no sostiene** lo que afirma —
+   pasó en la prueba real, con su propia web. Si alguna no cuadra, todo lo que dependa de ella
+   se degrada a hipótesis.
+5. **Cuenta cuántas preguntas llevaban su nombre.** Tiene que ser **una**, y no puntúa. Si son
+   más, no has medido visibilidad: has medido ego. Rehaz la tanda.
 
-**Lo que este test NO comprueba** —dilo, porque importa—: que esas 20 preguntas sean las que de
-verdad hace tu mercado (son una hipótesis tuya); que tu muestra represente a todos los usuarios
+### La estabilidad, sin engañarnos
+
+El manual pedía repetir tres preguntas a las 24-48 horas. **Nadie lo hace**, y es mejor decirlo
+que dejarlo como deber pendiente que no se cumple. Así que:
+
+- **Lo que sí se hace y cuesta cero:** la misma pregunta ya se ha lanzado en tres buscadores. Si
+  los tres devuelven listas distintas —lo normal—, **el ranking de competidores baila** y eso va
+  escrito en el informe. No es lo mismo que repetir en el mismo motor, pero es honesto y sale
+  gratis.
+- **Lo que de verdad importa y va al calendario hoy:** la re-medición a **60-90 días**, con las
+  mismas preguntas y el mismo protocolo. Si se cambian las preguntas, la comparación no vale.
+- **Opcional, y marcado como opcional:** repetir dos preguntas pasados dos días. Cinco minutos.
+  Si no se hace, el informe dice **"estabilidad: no comprobada"** — y eso rebaja la confianza del
+  ranking, no la del cero. Un cero sigue siendo un cero.
+
+**Lo que este test NO comprueba** —dilo, porque importa—: que esas preguntas sean las que de
+verdad hace su mercado (son una hipótesis suya); que su muestra represente a todos los usuarios
 (el país, el idioma, el modelo, el historial y la hora cambian la respuesta); que aparecer se
 traduzca en ventas; ni que el plan vaya a funcionar, porque la relación entre menciones en
 terceros y visibilidad es **correlación**, y los autores de esos estudios son los primeros en
-decirlo. Esto te da una **línea base medida y un plan razonado**, no una garantía.
-
-> Si solo hay tiempo para una, que sea la primera.
+decirlo. Esto da una **línea base medida y un plan razonado**, no una garantía.
 
 ---
 
-## De dónde salen los datos de verdad
+## Lo que NO se hace
 
-**Esta skill trabaja con datos reales siempre.** No hay dataset sintético y no hace falta: los
-tres buscadores tienen plan gratuito, así que cualquiera puede hacer la medición hoy mismo
-**sin contratar ninguna herramienta de pago**. Lo que no se promete: que los 60 copiapegas
-entren en una sola sentada. Los planes gratuitos tienen topes de mensajes, y algún motor puede
-pedir cuenta o no estar disponible en su país. Si aparece un tope, se reparte la captura en dos
-ratos o se mide con dos motores, y se escribe en el informe.
-
-### Vía 1 — Lo busco yo (complementaria)
-
-Con búsqueda web activada, mientras el usuario pega, yo puedo:
-
-- Buscar **quién publica las comparativas** de su sector ("mejores {{categoría}} 2026") y
-  comprobar si él aparece.
-- Revisar los **directorios** que le tocan (G2, Capterra, Trustpilot, Doctoralia, Google Maps,
-  App Store… según sector) y si tiene ficha.
-- Encontrar los **hilos y foros** donde ya se pregunta por su categoría.
-- Ver qué hay en **YouTube** sobre su categoría y sus competidores.
-
-**Lo que no puedo hacer:** consultar ChatGPT, Perplexity o Gemini por él. No tengo acceso a esas
-herramientas. Decirlo pronto ahorra un malentendido.
-
-### Vía 2 — Lo pega el usuario (**la principal aquí, y sin complejos**)
-
-Abre los tres buscadores, hace las 20 preguntas, pega las respuestas. Es tedioso, es gratis y es
-el único método que produce **su** número. En esta skill no es el plan B: es el plan A.
-
-Los tres tienen plan gratuito a día de hoy. **Los límites concretos cambian cada pocos meses**
-—cuántos mensajes, qué modelo, cuántas búsquedas profundas—, así que no los cites de memoria:
-que los mire en la página de precios de cada uno en el momento.
-
-### Vía 3 — Herramienta o API, solo si es gratis o ya la tiene
-
-- **Gratis y oficial:** el **informe de IA generativa de Google Search Console**, anunciado el
-  3 de junio de 2026. Muestra las **impresiones** de su sitio en AI Overviews y AI Mode.
-  **Antes de recomendarlo, avisa de que puede no tenerlo:** Google lo está desplegando "a un
-  subconjunto de propietarios de sitios" y "no todas las propiedades tienen acceso". Y aunque
-  lo tenga: da impresiones y poco más —**sin clics, sin CTR, sin consultas**—, cubre **solo
-  superficies de Google** y exige ser propietario verificado del dominio. Es un termómetro
-  complementario, no un sustituto. Nunca lo vendas como "entras y lo tienes".
-- **Herramientas GEO de pago** (Semrush AI Toolkit, Ahrefs Brand Radar, Profound, Peec AI…):
-  automatizan esto a escala. Si ya paga una, que la use. **Si no, no se la recomiendes:** para
-  20 preguntas no hace falta gastar nada.
-- **Las API no valen para esto.** Consultar la API de un modelo no reproduce lo que ve un
-  usuario en la app: la app añade su propia capa de búsqueda, de personalización y de producto,
-  y puede estar usando otro modelo. Una medición por API mide la API, no a tu cliente.
-
-### Lo que NO se hace
-
-- **No se automatiza la consulta a ChatGPT, Perplexity o Gemini con bots ni scrapers.** Va
-  contra sus condiciones de uso, y no hace falta: son 60 copiapegas.
-- **No se inventa lo que un motor "habría dicho".** Si el usuario solo pudo medir dos de los
-  tres, el informe dice dos.
+- **No se automatiza a escala con bots ni scrapers.** Si hay navegador, se conduce como lo haría
+  él: su sesión, sus preguntas, una cada vez y con él delante. Nada de tandas masivas ni de
+  saltarse verificaciones — **si aparece un "confirma que eres humano", se para y se le pasa el
+  turno**.
+- **No se inventa lo que un motor "habría dicho".** Si solo pudo medir dos de los tres, el
+  informe dice dos.
 - **No se prometen plazos ni posiciones.** Las citas de Reddit en ChatGPT pasaron de cerca del
-  60% a principios de agosto de 2025 a alrededor del 10% a mediados de septiembre: **unos 50
-  puntos en seis semanas** (Semrush). Nadie garantiza un puesto en una respuesta que se
-  recalcula cada vez.
-- **No se compran menciones, reseñas ni votos.** Ni aunque lo pida el usuario. Se explica por
-  qué y se ofrece la vía legítima.
+  60% a principios de agosto de 2025 a alrededor del 10% a mediados de septiembre. Nadie
+  garantiza un puesto en una respuesta que se recalcula cada vez.
+- **No se compran menciones, reseñas ni votos.** Ni aunque lo pida. Se explica por qué y se
+  ofrece la vía legítima.
+- **No se recomienda gastar dinero.** Las herramientas GEO de pago automatizan esto a escala: si
+  ya paga una, que la use; si no, para tres preguntas no hace falta nada.
 - Si una fuente bloquea, un motor no está disponible en su país o no muestra enlaces: **es un
-  dato, no un obstáculo que sortear**. Se dice.
+  dato, no un obstáculo que sortear**. Se dice. Y que no enseñe enlaces **no prueba** que no haya
+  buscado.
 
 Todas las cifras que cita esta skill están en `references/datos-geo-2026.md`, con fuente, fecha
 y los caveats de sus autores. **Si vas a decir un número, sácalo de ahí.**
@@ -328,14 +508,14 @@ y los caveats de sus autores. **Si vas a decir un número, sácalo de ahí.**
 
 ## Si el usuario no tiene negocio
 
-Funciona igual, y además es un ejercicio precioso. Con una marca de prácticas —te vale la de
-`/mi-marca` si la tiene, y si no la montas tú en dos líneas: por ejemplo "Turnos", una app de
-cuadrantes de personal para bares pequeños, 29 €/mes— **el sector es real**: las
-preguntas son reales, los buscadores responden de verdad y nombran a competidores que existen.
+Funciona igual, y además es un ejercicio precioso. Con una marca de prácticas —la de `/mi-marca`
+si la tiene, y si no la montas tú en dos líneas: *"Turnos", una app de cuadrantes de personal
+para bares pequeños, 29 €/mes*— **el sector es real**: las preguntas son reales, los buscadores
+responden de verdad y nombran a competidores que existen.
 
 Lo único ficticio es su marca, así que va a sacar **0% de share of model**. Perfecto: es
 exactamente lo que le pasa a la mayoría de negocios pequeños el primer día, y el mapa de fuentes
-—qué sitios cita la IA en ese sector— sale igual de real y de útil.
+sale igual de real y de útil.
 
 **Dilo claro cuando pase:** *"tu marca no existe, por eso sale 0. Lo que sí es real es todo lo
 demás: quién sale, con qué palabras y de dónde lo saca."*
@@ -346,15 +526,25 @@ demás: quién sale, con qué palabras y de dónde lo saca."*
 
 | Síntoma | Qué hacer |
 |---|---|
-| El motor le nombra su marca en casi todas las respuestas | Casi seguro que tiene memoria o personalización activada, o va encadenando preguntas en el mismo chat. Que repita 3 preguntas en incógnito y sin sesión. Si ahí desaparece, la primera tanda no vale |
-| Sale 0% en los tres motores | Es un resultado habitual y esperable en negocios pequeños y nuevos. No lo suavices: escríbelo como línea base y pasa al plan. Es más útil un 0 medido que un "estamos trabajando la visibilidad" |
-| Un motor no muestra fuentes | Anótalo como "sin fuentes" y déjalo ahí. **No deduzcas que no ha buscado**: que no te enseñe los enlaces no prueba que no haya consultado la web, solo que no los muestra. El mapa de fuentes se construye con los motores que sí las den |
-| Las respuestas cambian mucho al repetir | No es un fallo, es la naturaleza del sistema. Baja el nivel de confianza del informe y dilo con una frase: "esta medición tiene margen; el ranking de competidores es orientativo" |
-| El usuario se cansa a las 25 respuestas | Cierra con lo que hay. Un informe de 25 respuestas bien etiquetado vale; uno de 60 a medias inventar, no. Ajusta los porcentajes a la muestra real y márcalo |
-| Pide "salir el primero en ChatGPT en un mes" | Dile que no se puede garantizar y por qué (el dato de Reddit: del 60% al 10% de las citas de ChatGPT en seis semanas). Ofrécele lo que sí: línea base, plan y nueva medición en 60-90 días |
-| Pide comprar reseñas o crear cuentas para hablar bien de él | No. Explica la FTC y la Directiva Ómnibus, y reconduce a la familia A del plan, que da resultado antes de lo que cree |
+| El motor le nombra su marca en la microdemo | Sesión sucia casi seguro: memoria o personalización activadas, o preguntas encadenadas. Que repita en incógnito. Si ahí desaparece, la primera respuesta no valía |
+| Sale 0% en los tres motores | Resultado habitual y esperable en negocios pequeños y nuevos. No lo suavices: escríbelo como línea base y pasa al plan. Vale más un 0 medido que un "estamos trabajando la visibilidad" |
+| Un motor no muestra fuentes | Anótalo como "sin fuentes" y déjalo ahí. **No deduzcas que no ha buscado**: solo que no los enseña. El mapa se construye con los motores que sí los den |
+| Los tres motores dan listas muy distintas | No es un fallo, es la naturaleza del sistema. Baja la confianza del ranking en el informe con una frase: "el orden de competidores es orientativo" |
+| Topa con el límite del plan gratuito | Se reparte en dos ratos o se mide con dos motores, y se escribe en el informe. Nunca se rellena lo que falta |
+| Pega las respuestas resumidas | Pídele **una** que falte entera y explica por qué: los adjetivos y el orden son la mitad del análisis. No le hagas repetir las tres |
+| El modelo simplemente no le conoce, y no se inventa nada | Es el caso más común y no ha hecho nada mal. Díselo: el hallazgo vistoso no sale siempre, y "no te conoce" ya orienta el plan entero |
+| Pide "salir el primero en ChatGPT en un mes" | Dile que no se puede garantizar y por qué (Reddit: del 60% al 10% de las citas en seis semanas). Ofrécele lo que sí: línea base, plan y nueva medición en 60-90 días |
+| Pide comprar reseñas o crear cuentas que hablen bien de él | No. Explica la FTC y la Directiva Ómnibus, y reconduce a la familia A del plan |
 
 ---
+
+## Créditos
+
+Las capas A, B y C —la tabla de crawlers de IA por niveles, los pesos de presencia de marca, los
+umbrales de citabilidad y el esquema de puntuación— están adaptadas de
+**[geo-seo-claude](https://github.com/zubair-trabzada/geo-seo-claude)** de Zubair Trabzada,
+publicado bajo licencia MIT (Copyright © 2026 Zubair Trabzada). Ver
+`references/medir-sin-preguntar.md`.
 
 <!--
   Kit "Marketing Agéntico" · IA Masters Academy · Ángel Aparicio
