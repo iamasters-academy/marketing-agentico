@@ -1,6 +1,6 @@
 ---
 name: analista-lunes
-description: Mira tus métricas y te dice las tres cosas que han cambiado, con una hipótesis de causa y qué comprobar para cada una. Filtra el ruido antes de opinar, pregunta lo que la analítica no ve —cuántos de esos leads valían algo— y distingue «no comprobado» de «descartado». Informe repetible cada lunes, con el registro de hipótesis dentro, sin montar ningún dashboard.
+description: Convierte un CSV de tu CRM en un dashboard interactivo —filtros por periodo, canal, delegación y dispositivo, KPIs que se recalculan, embudo y series— MÁS el análisis de las tres cosas que han cambiado con hipótesis de causa y qué comprobar. Filtra el ruido antes de dibujar nada, distingue «no comprobado» de «descartado», y al final te enseña a conectar HubSpot, Mailchimp o Google Sheets para no volver a exportar un fichero nunca. Un solo HTML sin dependencias, repetible cada lunes.
 ---
 
 # /analista-lunes — Tres cosas han cambiado. Y por qué.
@@ -236,10 +236,31 @@ _{{periodo}} vs. {{periodo de comparación}} · fuente: {{de dónde salen los da
 {{qué no está medido, qué falta, qué no se puede saber desde aquí}}
 ```
 
-### Y el entregable con sus colores
+### El entregable: un panel Y un análisis, en dos pestañas
 
-Sigue `references/_entregable.md`. Aquí el HTML hace algo que el chat no puede: **sostener
-el bucle**. Lleva, además del informe:
+Sigue `references/dashboard-interactivo.md`. El HTML lleva **dos pestañas**, y hay que entregar
+las dos:
+
+| Pestaña | Qué es | Para qué sirve |
+|---|---|---|
+| **Panel** | Filtros por periodo y por cada dimensión del fichero · KPIs que se recalculan · serie semanal · barras clicables · embudo · tabla cruzada | **Explorar.** El usuario corta sus datos como quiera y ve todo de un golpe |
+| **Análisis y conclusiones** | Las tres cosas que han cambiado, hipótesis, qué las tumbaría, lo que NO es noticia, los límites y el registro | **Decidir.** Es lo que ningún dashboard da |
+
+**Un panel sin análisis es un gráfico bonito. Un análisis sin panel es un PDF que nadie
+explora.** Si solo entregas uno de los dos, la skill está a medias.
+
+**El panel solo se monta si hay dato fila a fila.** Con dos capturas de Analytics no hay panel:
+hay informe, y se dice así en lugar de fingir un dashboard con cuatro cifras.
+
+**El orden sigue siendo la lección.** No se dibuja nada durante la conversación: primero se
+barre, se filtra el ruido y sobreviven tres cambios. Cualquier herramienta te pinta cuarenta
+métricas en dos clics; lo que no te da ninguna es el criterio para tirar treinta y siete. **El
+panel te deja mirar; la segunda pestaña te dice dónde mirar.**
+
+Nada de librerías de gráficos: barras con `div` y `width` en porcentaje, series con `<svg>` a
+mano. Un solo fichero que se abra con doble clic dentro de un año, sin internet.
+
+La pestaña de análisis lleva, además del informe:
 
 - **Un resumen de cinco líneas para dirección**, arriba del todo. El informe completo no se
   lleva a un comité; este resumen sí. No lo improvises al final: va siempre.
@@ -253,6 +274,24 @@ el bucle**. Lleva, además del informe:
 sacarlo. En GA4: *Informes → Adquisición → Adquisición de tráfico*, y arriba a la derecha
 fijas los dos periodos a comparar. Si no puede, pide el dato a quien lleve la cuenta con el
 mensaje de abajo.
+
+### Y al cerrar: que no haya que volver a exportar nunca
+
+**Cuando ya tenga el informe delante** —nunca antes—, abre `references/conectar-datos.md` y
+ofrécele conectar la fuente. Pegar un CSV funciona una vez; al tercer lunes ya nadie exporta
+nada, y la skill muere de éxito.
+
+Tres caminos, y el segundo es el del 80% de la gente:
+
+1. **Conector oficial**, si su herramienta está en el directorio (HubSpot, Mailchimp, Google
+   Sheets, Analytics). Se activa en **Ajustes → Conectores**, una vez, sin terminal.
+2. **Su CRM no está en la lista** — lo normal en PYME. La salida es un **volcado periódico a
+   Google Sheets**, que sí tiene conector. No hay que tocar el CRM.
+3. **Una rutina programada** que lo ejecute los lunes y **se calle si no ha cambiado nada
+   relevante**. Esa última condición es la que hace que el informe se siga leyendo al mes.
+
+**No prometas un conector sin comprobar que lo tienes disponible en la sesión.** Si no lo ves,
+di que existe en el directorio y hay que activarlo, y sigue con el fichero de hoy.
 
 ### Cuando los datos los tiene otro
 

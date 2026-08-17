@@ -1,6 +1,6 @@
 ---
 name: me-recomienda-la-ia
-description: Mide si ChatGPT, Perplexity y Gemini te nombran cuando alguien pide una recomendación en tu sector —tu share of model— y construye el plan para que empiecen a hacerlo. Busca sola quién sale en tu lugar, quién publica los rankings del sector y qué se está indexando con tu nombre; al usuario solo le pide tres pegadas de diez minutos. Para visibilidad de marca en buscadores con IA y GEO.
+description: Diagnostica por qué no apareces en ChatGPT, Perplexity y Gemini, y te da una nota de 0 a 100 con las cuatro razones posibles. Tres las comprueba sola en tres minutos —si los bots de IA pueden leer tu web (robots.txt), si existes como entidad en Wikidata y en las fuentes que citan los modelos, y si tu texto cumple los umbrales de citabilidad—, todo comparado con tus competidores. Solo la cuarta, el share of model, necesita diez minutos tuyos, y si las otras ya explican el cero te ofrece saltártela. Para visibilidad de marca en buscadores con IA, GEO y AEO.
 ---
 
 # /me-recomienda-la-ia — Tu línea base en los buscadores con IA
@@ -67,13 +67,49 @@ ningún término técnico. Cada palabra rara que aparezca después, la explicas 
 > - **Mapa de fuentes** = las páginas web que el buscador enseña como respaldo de lo que dice.
 >   De ahí sale tu plan.
 > - **Línea base** = tu número de hoy, con fecha, para poder compararlo dentro de tres meses.
+> - **Crawler** = el robot que lee tu web para el buscador. GPTBot es el de ChatGPT. Si lo tienes
+>   bloqueado, no sales, y no hay más que hablar.
+> - **Entidad** = que el buscador sepa que tu empresa existe como cosa concreta, y no solo que
+>   tenga tu web indexada. Son dos cosas distintas y la segunda no implica la primera.
+
+---
+
+## Los tres minutos que van antes de todo
+
+**Ejecuta esto ANTES de pedirle nada.** Sigue `references/medir-sin-preguntar.md`, que trae los
+umbrales, las tablas y cómo se puntúa cada capa.
+
+Cuando alguien no aparece en ChatGPT hay cuatro razones posibles, y **tres se descubren sin que
+el usuario mueva un dedo**:
+
+| | Capa | Qué contesta | Cuánto tarda |
+|---|---|---|---|
+| **A** | **Acceso** | ¿Le pueden leer los bots de IA? Se lee su `robots.txt` y el de sus competidores | 30 s |
+| **B** | **Entidad** | ¿Existe en las fuentes de las que salen los hechos? Wikidata, Wikipedia, nicho, Reddit, YouTube, LinkedIn | 1 min |
+| **C** | **Citabilidad** | ¿Su texto se puede citar, o está escrito para persuadir a quien ya está leyendo? | 1 min |
+| **D** | **Menciones** | ¿Le nombran? Esta es la única que necesita al usuario | 10 min suyos |
+
+**Enséñale A, B y C antes de mandarle a copiar y pegar.** Tres minutos de trabajo tuyo compran
+toda la credibilidad de la sesión: llega a la parte manual sabiendo ya por qué no aparece.
+
+> **El atajo honesto, y hay que ofrecerlo.** Si A, B o C ya explican el cero —su `robots.txt`
+> bloquea `GPTBot`, no existe en Wikidata, su web no tiene un solo bloque citable—, **dilo y
+> ofrécele saltarse la capa D**:
+>
+> *"Con esto ya sé por qué no apareces, y no hace falta que dediques diez minutos a
+> confirmarlo. ¿Lo hacemos igual para tener la línea base con fecha, o pasamos directamente al
+> plan?"*
+>
+> Que elija él. Lo que no se hace es cobrarle diez minutos de copiar y pegar para llegar a una
+> conclusión que ya estaba sobre la mesa.
 
 ---
 
 ## Minuto cinco: la microdemo
 
-Lo único que evita el abandono es que vea **su** número antes de que le pidas trabajo. Una
-pregunta, un buscador, resultado inmediato. No expliques el método: enséñaselo.
+Solo si vais a hacer la capa D. Lo único que evita el abandono es que vea **su** número antes de
+que le pidas trabajo. Una pregunta, un buscador, resultado inmediato. No expliques el método:
+enséñaselo.
 
 ### Paso 0 — La sesión limpia, y sí, se comprueba
 
@@ -122,8 +158,9 @@ Va a llegar, y es la pregunta más razonable del día. Tenla escrita:
 > tu cliente.**
 >
 > Así que hay una parte que solo puedes hacer tú, y la he dejado en lo mínimo: **tres pegadas,
-> diez minutos**. Todo lo demás —quién sale en tu lugar, quién publica los rankings de tu sector,
-> qué se está indexando con tu nombre— lo busco yo, y ya he empezado."
+> diez minutos**. Todo lo demás lo hago yo — y de hecho ya lo he hecho: si te acuerdas, las tres
+> tablas que acabas de ver salieron sin que me dieras nada. **Esto es la cuarta parte del informe,
+> no el informe.**"
 
 ---
 
@@ -178,8 +215,9 @@ que convertía esto en cuarenta minutos.
 
 ## Lo que hago yo, sin pedirte nada
 
-Mientras pega —o antes, si tarda— haces la mitad del informe. **Nada de esto se le pregunta.**
-Sigue `references/_investigar.md` y ve contando lo que encuentras según lo encuentras.
+Además de las capas A, B y C, mientras pega —o antes, si tarda— completas el resto del informe.
+**Nada de esto se le pregunta.** Sigue `references/_investigar.md` y ve contando lo que
+encuentras según lo encuentras.
 
 | Qué busco | Para qué sirve en el informe |
 |---|---|
@@ -187,6 +225,15 @@ Sigue `references/_investigar.md` y ve contando lo que encuentras según lo encu
 | **Sus competidores de verdad**, abriendo su web uno a uno | La tabla de "quién sale cuando tú no sales" — y evita medir contra un fantasma |
 | **Qué se indexa con su nombre** | "Lo que el modelo cree saber de ti" ← ver abajo |
 | **Directorios, foros y YouTube** de su categoría | Dónde existe la conversación… y dónde no existe |
+
+### La comparación que hay que hacer siempre
+
+**Todo lo de las capas A, B y C se mide también en sus competidores.** Un `robots.txt` propio no
+dice gran cosa; una tabla con su columna al lado de la de los tres competidores dice el informe
+entero. Lo mismo con Wikidata: *"de los cuatro, el único que existe como entidad es el que sale
+en las respuestas"* es una frase que no necesita explicación.
+
+Es exactamente lo mismo que hace `/el-hueco` con las promesas, aplicado a la infraestructura.
 
 ### La vía rastreable: lo que los modelos "creen saber" suele estar en la web abierta
 
@@ -245,6 +292,31 @@ precios ni administra las cuentas:
 
 ---
 
+## La puntuación: un número y cuatro razones
+
+El *share of model* solo, sobre todo cuando es cero, **desmoraliza y no dice qué hacer**. Da
+además una nota de 0 a 100 con sus cuatro componentes, porque un 34 con el desglose delante es
+un mapa, y un 0% a secas es un jarro de agua fría.
+
+| Capa | Peso | Por qué ese peso |
+|---|---|---|
+| **A · Acceso** | 25% | Es un interruptor: si está mal, nada de lo demás importa. Y se arregla en diez minutos |
+| **B · Entidad** | 30% | El que más pesa. Es lo que más tarda en construirse y lo que decide si el modelo sabe que existes |
+| **C · Citabilidad** | 25% | Lo más accionable con lo que ya tiene escrito |
+| **D · Menciones** | 20% | **Es el resultado, no la palanca.** No se sube tocándolo: se sube tocando A, B y C |
+
+`references/medir-sin-preguntar.md` trae cómo se puntúa cada capa. Si no habéis hecho la D,
+**calcula la nota con las tres primeras renormalizadas y dilo**: *"34 sobre 100 midiendo tres de
+las cuatro capas"*. Nunca rellenes una capa que no has medido.
+
+**Y explica el peso de la D en voz alta**, porque el usuario vino a por ese número y va a
+extrañarse de verlo en último lugar:
+
+> "Tu share of model es el termómetro, no la enfermedad. Ponerlo al 20% no es quitarle
+> importancia: es que no se sube mirándolo. Se sube arreglando las otras tres."
+
+---
+
 ## Lo que entregas
 
 Tres piezas, en este orden. **Confirma las conclusiones en el chat antes de generar el HTML.**
@@ -257,10 +329,13 @@ escríbelo primero:
 ```markdown
 ## {{negocio}} en los buscadores con IA · {{fecha}}
 
+- **Nota GEO: {{X}}/100** · Acceso {{X}} · Entidad {{X}} · Citabilidad {{X}} · Menciones {{X}}
+- **Te pueden leer:** {{sí / no, y qué bot está bloqueado}}
+- **Existes como entidad:** {{sí / no — y quién de tus competidores sí}}
 - **Share of model: {{X}}%** ({{apariciones}} de {{puntuables}} respuestas) · ChatGPT {{X}}% · Perplexity {{X}}% · Gemini {{X}}%
 - **Quién sale en tu lugar:** {{3 nombres}} — y qué tienen en común
 - **Lo que el modelo cree saber de ti:** {{una frase: no te conoce / se inventa X / te confunde con Y}}
-- **Esta semana:** {{1-2 acciones}}
+- **Esta semana:** {{1-2 acciones, y que la primera sea de la capa A si hay algo bloqueado}}
 - **Volvemos a medir el {{fecha, 60-90 días}}**, con las mismas preguntas
 - **Letra pequeña:** {{N}} respuestas, un solo día, {{país}} y {{idioma}}. Foto con margen, no marcador
 ```
@@ -269,9 +344,35 @@ escríbelo primero:
 
 ```markdown
 # ¿Me recomienda la IA? · {{negocio}}
-_{{fecha}} · {{N}} preguntas × {{M}} motores = {{N×M}} respuestas lanzadas, {{puntuables}} puntuables · generado con /me-recomienda-la-ia_
+_{{fecha}} · nota GEO {{X}}/100 · {{N}} preguntas × {{M}} motores = {{N×M}} respuestas lanzadas, {{puntuables}} puntuables · generado con /me-recomienda-la-ia_
 
-## Tu línea base
+## Tu nota, y de dónde sale
+| Capa | Nota | Qué la baja |
+|---|---|---|
+| A · ¿Te pueden leer? | {{X}}/100 | {{bots bloqueados, o "nada: todo abierto"}} |
+| B · ¿Existes como entidad? | {{X}}/100 | {{dónde no estás}} |
+| C · ¿Tu texto es citable? | {{X}}/100 | {{qué umbral falla}} |
+| D · ¿Te nombran? | {{X}}/100 | {{el share of model}} |
+
+## A · ¿Te pueden leer? — el interruptor
+| Bot | {{negocio}} | {{comp 1}} | {{comp 2}} | {{comp 3}} |
+|---|---|---|---|---|
+| GPTBot · OAI-SearchBot · ClaudeBot · PerplexityBot · Google-Extended | ✅/❌ | … | … | … |
+
+{{y la frase que lo resume: "de los cuatro, ninguno ha tocado su robots.txt para la era de la IA"}}
+
+## B · ¿Existes como entidad? — de dónde saca el modelo los hechos
+| Fuente | {{negocio}} | {{competidores}} | Qué significa |
+|---|---|---|---|
+| Wikidata · Wikipedia · nicho · Reddit · YouTube · LinkedIn | | | |
+
+{{el dato de Ahrefs: YouTube correlaciona 0,737 con las citas de IA; los backlinks 0,266}}
+
+## C · ¿Tu texto es citable? — medido sobre tus tres páginas principales
+{{tabla con el umbral, lo que da su web y el veredicto. Y UN párrafo suyo real reescrito para
+que se vea la diferencia}}
+
+## D · Tu línea base de menciones
 Share of model global y por motor · posición media cuando aparece · estabilidad
 
 ## Quién sale cuando tú no sales
@@ -338,16 +439,23 @@ qué idioma, qué modelos. Un share of model sin esa letra pequeña es una cifra
 
 ## 🔍 Test de la mentira
 
-Tres comprobaciones, en voz alta y delante del usuario:
+Cinco comprobaciones, en voz alta y delante del usuario. **Las dos primeras son nuevas y son las
+más fáciles de verificar: hazlas siempre.**
 
-1. **¿Eso que has contado como aparición lo es?** Relee cada mención. Que nombren a la persona,
+1. **Abre tú mismo tu `robots.txt`.** Escribe `tudominio.com/robots.txt` en el navegador. Lo que
+   yo te he dicho tiene que estar ahí, palabra por palabra. Es la comprobación más rápida del kit
+   y la que cierra cualquier discusión: **o el bot está en el fichero o no está.**
+2. **Busca tu marca en Wikidata.** Entra en `wikidata.org`, busca tu nombre y mira si sale una
+   entidad tuya. Si te he dicho que no existes, no debería salir nada. **Y busca también al
+   competidor que sí sale en las respuestas de IA** — ahí es donde se entiende el informe.
+3. **¿Eso que has contado como aparición lo es?** Relee cada mención. Que nombren a la persona,
    a un producto que ya no vende o a una marca parecida **no es aparecer**. Si al quitar las
    dudosas el número cambia, el número bueno es el de después.
-2. **Abre tres de las fuentes que citó el motor.** ¿Existen, dicen lo que el resumen dice y
+4. **Abre tres de las fuentes que citó el motor.** ¿Existen, dicen lo que el resumen dice y
    hablan de su categoría? Un motor puede citar una página que **no sostiene** lo que afirma —
    pasó en la prueba real, con su propia web. Si alguna no cuadra, todo lo que dependa de ella
    se degrada a hipótesis.
-3. **Cuenta cuántas preguntas llevaban su nombre.** Tiene que ser **una**, y no puntúa. Si son
+5. **Cuenta cuántas preguntas llevaban su nombre.** Tiene que ser **una**, y no puntúa. Si son
    más, no has medido visibilidad: has medido ego. Rehaz la tanda.
 
 ### La estabilidad, sin engañarnos
@@ -429,6 +537,14 @@ demás: quién sale, con qué palabras y de dónde lo saca."*
 | Pide comprar reseñas o crear cuentas que hablen bien de él | No. Explica la FTC y la Directiva Ómnibus, y reconduce a la familia A del plan |
 
 ---
+
+## Créditos
+
+Las capas A, B y C —la tabla de crawlers de IA por niveles, los pesos de presencia de marca, los
+umbrales de citabilidad y el esquema de puntuación— están adaptadas de
+**[geo-seo-claude](https://github.com/zubair-trabzada/geo-seo-claude)** de Zubair Trabzada,
+publicado bajo licencia MIT (Copyright © 2026 Zubair Trabzada). Ver
+`references/medir-sin-preguntar.md`.
 
 <!--
   Kit "Marketing Agéntico" · IA Masters Academy · Ángel Aparicio

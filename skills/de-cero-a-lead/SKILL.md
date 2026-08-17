@@ -1,6 +1,6 @@
 ---
 name: de-cero-a-lead
-description: Monta el circuito de captación entero —oferta, landing, formulario, hoja de destino y email de bienvenida— con herramientas gratuitas, sin programar ni terminal. Verifica en el momento qué planes siguen siendo gratis, contempla que ya tengas web (subdominio o ruta, sin pisarla), escribe los textos legales del RGPD y cierra separando lo que puedes hacer hoy tú solo de lo que necesita el OK de otra persona. Para captación y conversión de leads.
+description: Monta el circuito de captación entero —oferta, landing, formulario, destino y email de bienvenida— con herramientas gratuitas, sin programar ni terminal. Lee los avatares de /cliente-vivo y genera UNA LANDING POR AVATAR: misma oferta, distinto titular, distinta prueba social y distinto botón. Pregunta con qué CRM trabajas y lo conecta (HubSpot, Mailchimp y Sheets tienen conector oficial; si el tuyo no, va por Google Sheets sin tocar el CRM). Verifica en el momento qué planes siguen siendo gratis, contempla que ya tengas web, escribe los textos legales del RGPD —y en negocios sanitarios avisa de qué NO se puede preguntar en un formulario— y cierra separando lo que puedes hacer hoy tú solo de lo que necesita el OK de otra persona.
 ---
 
 # /de-cero-a-lead — El circuito entero, funcionando hoy
@@ -91,6 +91,35 @@ El detalle click a click, con las cuentas exactas y lo que cuesta cada límite, 
 
 ## El método
 
+### Paso 0 — Mira si ya tienes los avatares (30 segundos, y cambia la clase entera)
+
+**Antes de la oferta, busca el expediente de `/cliente-vivo`** (`cliente-vivo-persona.md`, o
+como se llame en su carpeta). Si existe, ahí están **los avatares con sus frenos y sus frases
+literales** — y eso es la diferencia entre una landing y una landing que convierte.
+
+**Si hay dos o más avatares con material suficiente, no hagas una landing: haz una por
+avatar.** No es más trabajo del que parece y es lo que de verdad mueve la conversión: la
+misma oferta contada a dos personas distintas necesita **otro titular, otra prueba social y
+otro botón**.
+
+> "He visto que tienes dos avatares en el expediente del cliente. Te propongo **una landing
+> para cada uno**: misma oferta, mensaje distinto. Así puedes mandar cada anuncio a la suya y
+> comparar. ¿Las hago las dos, o prefieres empezar por una?"
+
+**Qué cambia entre una y otra, y qué no:**
+
+| Cambia | No cambia |
+|---|---|
+| El titular y la primera frase | La oferta de fondo |
+| La prueba social (el testimonio que se parece a quien lee) | Los textos legales |
+| El orden y el número de campos | El destino de los datos |
+| El texto del botón | El email de bienvenida… salvo el primer párrafo |
+| Qué freno se ataca primero | La marca |
+
+**Si no hay expediente de `/cliente-vivo`, no pasa nada:** una landing y adelante. Dilo sin
+convertirlo en un reproche ni en una tarea previa — el alumno está aquí para montar el
+circuito, no para volver a la clase 2.
+
 ### Paso 1 — La oferta (5 minutos, y es el paso que más gente se salta)
 
 Antes de la página: **qué recibe a cambio del correo, y cuándo.** Una frase.
@@ -98,9 +127,26 @@ Antes de la página: **qué recibe a cambio del correo, y cuándo.** Una frase.
 Mal: "suscríbete a mi newsletter". Bien: "te mando la plantilla de presupuesto cerrado que
 uso con mis clientes, ahora, al correo".
 
+**La oferta sale del freno, no de la imaginación.** Vuelve al expediente del cliente: ¿qué es
+lo que no sabe y le impide decidir? Eso es lo que hay que darle. Si de la clase 2 salió que
+*"pregunta el precio y desaparece"*, la oferta tiene que ver con el precio — no con un ebook
+genérico del sector.
+
+**Con dos avatares, dos ofertas o una?** Depende de si su pregunta es la misma. Si el hombre
+pregunta *"cuánto me va a costar"* y la mujer pregunta *"qué me está pasando"*, **son dos
+ofertas distintas**, aunque el negocio y el destino sean el mismo. Decídelo mirando sus
+frases, y dilo en voz alta.
+
 Regla dura: **pide solo los datos que vas a usar esta semana.** Si únicamente vas a mandar
 un email, pide el email. Cada campo extra es un dato que tienes que justificar, proteger y
 borrar algún día — y una caída de conversión que te regalas.
+
+> ⚠️ **Y si el negocio es sanitario, jurídico o financiero, hay un límite duro:** no preguntes
+> nunca por el estado de salud, el diagnóstico, la situación judicial o los datos económicos
+> del visitante. En el RGPD los datos de salud son **categoría especial** y capturarlos en un
+> formulario de marketing cambia por completo el consentimiento que hace falta. Un selector de
+> "zona a tratar" o "grado de tu problema" parece inofensivo y no lo es. Se pregunta en la
+> consulta, no en la landing.
 
 ### Paso 2 — La landing
 
@@ -140,14 +186,28 @@ incrustado, un enlace normal a la página del formulario.** Si el widget no carg
 conexión mala, móvil viejo—, el visitante sigue teniendo por dónde entrar. Un enlace nunca
 falla.
 
-### Paso 5 — El destino
+### Paso 5 — El destino, y aquí toca preguntar por el CRM
 
-Conectar el formulario con una hoja de cálculo. Es un botón. A partir de ahí, cada envío es
-una fila con su hora.
+**Pregúntalo antes de montar el destino, no después:**
 
-Esto ya es un CRM. Un CRM malo, pero uno de verdad: los primeros meses de un negocio pequeño
-caben en una hoja, y ninguna herramienta de pago te va a conseguir tu primer cliente antes
-que esta.
+> "¿Dónde quieres que caigan estos leads? Si ya usas un CRM, dime cuál y lo conectamos ahí en
+> lugar de crear otro sitio donde mirar."
+
+Y según lo que conteste, hay tres caminos. **Compruébalo, no lo supongas:** mira si tienes
+herramientas de esa fuente disponibles en la sesión antes de prometer una conexión.
+
+| Lo que tiene | Qué se hace |
+|---|---|
+| **HubSpot, Mailchimp o Google Sheets** | Tienen **conector oficial**. Se activa en **Ajustes → Conectores** de la app de Claude: una vez, sin terminal y sin darte ninguna clave. Con HubSpot además se pueden crear los contactos directamente |
+| **Un CRM de nicho o hecho a medida** — el caso más común | **No hay conector, y no pasa nada.** El formulario escribe en una **hoja de Google**, y el CRM importa de ahí (casi todos lo hacen) o se pone un puente con Zapier o Make si tiene webhooks. **El CRM no se toca** |
+| **Nada** | La hoja de cálculo **es** el destino. Y ya es un CRM: uno malo, pero de verdad. Los primeros meses de un negocio pequeño caben en una hoja, y ninguna herramienta de pago le va a conseguir su primer cliente antes que esta |
+
+**Lo que no se hace nunca:** pedirle el usuario y la contraseña de su CRM para "configurarlo
+por él". Si te los ofrece —y lo va a hacer—, recházalos y explica el camino correcto.
+
+**Y con dos landings, un solo destino.** Dos hojas separadas es el error caro: al mes no
+sabrás comparar nada. Una sola hoja, con **una columna de origen** que diga de qué landing
+viene cada fila. Eso es lo que permite decir en octubre cuál de las dos funcionó.
 
 ### Paso 6 — La bienvenida
 
@@ -158,6 +218,17 @@ Aquí está la trampa que casi todos los cursos se saltan y que tú vas a decir 
 **el formulario gratuito te avisa a ti, no a quien lo rellena.** Para que el lead reciba un
 correo hace falta una segunda herramienta. Cuál, y qué límite tiene cada una, en
 `references/montaje.md`.
+
+**Un correo por avatar.** Si hay dos landings, hay dos correos de bienvenida — y solo cambia
+el primer párrafo, el que recoge con qué venía cada uno. El resto es idéntico. Dilo así, para
+que no parezca el doble de trabajo: *"el segundo correo es el primero con otras dos frases"*.
+
+**Y sé claro con el límite:** tú escribes el correo y dices con qué disparador se manda.
+**Activarlo se hace dentro de su herramienta**, y eso lo hace él. No prometas automatizar lo
+que no puedes tocar:
+
+> "Te dejo los dos correos escritos y te digo exactamente con qué condición se dispara cada
+> uno. Meterlos en {su herramienta} y activarlos son cinco minutos tuyos: yo no entro ahí."
 
 ### Paso 7 — La prueba de extremo a extremo
 
@@ -179,7 +250,7 @@ _{{fecha}} · generado con /de-cero-a-lead_
 | Pieza | Herramienta | Cuenta usada | Enlace | El límite que te va a morder |
 |---|---|---|---|---|
 
-## La landing
+## Las landings (una por avatar)
 Fichero: `index.html` · Publicada en: {{URL real}}
 
 ## Los textos legales que lleva la página

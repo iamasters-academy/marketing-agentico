@@ -62,7 +62,7 @@ Funciona en la web y en la app de escritorio. No necesitas terminal ni saber pro
 
 **Paso 1 · Activa las skills en tu cuenta.** Entra en [claude.ai](https://claude.ai) → tu nombre (abajo a la izquierda) → **Ajustes** → **Capacidades**, y activa **"Ejecución de código y creación de archivos"**. Sin esto, la opción de skills no aparece. Es el paso que más gente se salta.
 
-**Paso 2 · Descarga la skill ya empaquetada.** No tienes que comprimir nada: en [`instalar/zip/`](instalar/zip/) están las nueve listas, una por archivo. Empieza por **`mi-marca.zip`**.
+**Paso 2 · Descarga la skill ya empaquetada.** No tienes que comprimir nada: en [`instalar/zip/`](instalar/zip/) están las nueve listas, una por archivo (y en [`instalar/`](instalar/) las mismas en formato `.skill` para Claude Code). Empieza por **`mi-marca.zip`**.
 
 <details>
 <summary>¿Prefieres prepararlo tú a mano? (no hace falta)</summary>
@@ -137,15 +137,15 @@ Si te saltas este paso, las demás skills funcionan igual —te harán tres preg
 
 | Skill | Qué hace por ti | Módulo |
 |---|---|---|
-| **`/mi-marca`** | Te entrevista una vez y crea tu perfil. **Empieza siempre por aquí.** | Puesta a punto |
-| **`/el-hueco`** | Lanza varios agentes a la vez a auditar a tus competidores y encuentra el hueco entre lo que prometen y lo que sus clientes se quejan. Sale con tres ángulos de posicionamiento que ellos no pueden copiar. | Business & Growth |
-| **`/cliente-vivo`** | Construye un cliente con el que puedes hablar, hecho con reseñas y conversaciones reales, no imaginado. Y te avisa cuando te está diciendo lo que quieres oír. | Customer Intelligence |
-| **`/abogado-del-diablo`** | Ataca tu propuesta de valor antes de que lo haga el mercado: por qué no te creo, con qué te comparo, qué objeción me frena. | Posicionamiento |
-| **`/analista-lunes`** | Mira tus datos y te dice las tres cosas que han cambiado y por qué. No hace gráficos: te da hipótesis de causa. | Funnel & Analytics |
-| **`/mi-voz`** | Aprende a escribir como tú a partir de tus mejores piezas, y luego produce contenido nativo por canal. Con un crítico que rechaza lo que suena a IA. | Generación de Demanda |
-| **`/de-cero-a-lead`** | Landing, captura, CRM y email de bienvenida. El circuito entero, funcionando. | Leads |
-| **`/me-recomienda-la-ia`** | Mide cuántas veces te nombran ChatGPT, Perplexity y Gemini frente a tu competencia, y te da el plan para que empiecen a hacerlo. | GEO & SEO |
-| **`/email-que-piensa`** | Un agente de nurturing que decide qué hacer con cada lead. Incluido no escribirle. | Email & CRM |
+| **`/mi-marca`** | **Lee tu web**, busca a tu competencia y la comprueba abriéndola, y te hace tres preguntas. De ahí sale tu perfil: negocio, cliente, voz, **tus colores de marca** y objetivo. **Empieza siempre por aquí.** | Puesta a punto |
+| **`/el-hueco`** | Lanza varios agentes a la vez a auditar a tus competidores y encuentra el hueco entre lo que prometen y lo que sus clientes se quejan. Sale con ángulos que puedes sostener — y con la lista de los que no. | Business & Growth |
+| **`/cliente-vivo`** | Construye un cliente con el que puedes hablar, hecho con reseñas y conversaciones reales, no imaginado. Con cita debajo de cada rasgo, una contra-persona enfrente y una vacuna que salta cuando te está diciendo lo que quieres oír. | Customer Intelligence |
+| **`/abogado-del-diablo`** | Ataca tu propuesta de valor antes de que lo haga el mercado: por qué no te creo, con qué te comparo, qué objeción me frena. Y le pone veredicto a cada una: o es verdad, o es que no lo estás demostrando. | Posicionamiento |
+| **`/analista-lunes`** | Convierte un CSV en un **dashboard interactivo** —filtros, KPIs que se recalculan, embudo— **más** el análisis de las tres cosas que han cambiado, con hipótesis de causa y qué comprobar. Y te enseña a conectar la fuente para no volver a exportar nada. | Funnel & Analytics |
+| **`/mi-voz`** | Saca tu voz de tus propios textos y produce contenido nativo por canal. Con un guardián que rechaza lo que no suena a ti y te dice qué línea del manual incumple. | Generación de Demanda |
+| **`/de-cero-a-lead`** | Landing, captura, CRM y email de bienvenida: el circuito entero, funcionando. Y **una landing por avatar** si has hecho `/cliente-vivo`: misma oferta, distinto titular y distinto botón. | Leads |
+| **`/me-recomienda-la-ia`** | Te da una **nota de 0 a 100** con las cuatro razones por las que no apareces en ChatGPT. **Tres las comprueba sola en tres minutos**: si los bots de IA pueden leer tu web, si existes en Wikidata, y si tu texto cumple los umbrales de citabilidad. | GEO & SEO |
+| **`/email-que-piensa`** | Un **mapa de ocho estados** por los que pasa un lead, con qué recibe en cada uno, cuánto se espera y **cuándo se deja de escribir**. Incluida la decisión de no escribirle. | Email & CRM |
 
 Cada skill trae **datos de ejemplo dentro**. Puedes probarlas hoy mismo aunque no tengas Google Analytics, ni CRM, ni una lista de correo.
 
@@ -192,6 +192,16 @@ Normal, y es parte del aprendizaje. Primero pasa el test de la mentira. Si el fa
 
 Debes. Son archivos de texto: ábrelos, cámbialos, rómpelos. La skill que acabe funcionándote va a ser la que tú retoques, no la que yo escribí.
 </details>
+
+---
+
+## Qué ha cambiado
+
+Este campo se mueve rápido y el kit se corrige. Todo lo que cambia está en
+[CHANGELOG.md](CHANGELOG.md), con fecha y con el motivo. **Versión actual: 2.1.0.**
+
+Si instalaste el kit hace semanas, vuelve a pasarle la dirección del repositorio a Claude y
+dile que lo ponga al día: no te quedes con la versión del primer día.
 
 ---
 

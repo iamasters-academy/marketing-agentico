@@ -1,6 +1,6 @@
 ---
 name: email-que-piensa
-description: Diseña un árbol de decisión de nurturing sobre el comportamiento real de tus leads —esperar, cambiar de ángulo, pasar a ventas o dejarlo ir, incluido no escribirle— y escribe los correos de cada rama en tu voz. Mira el nombre de los enlaces en los que hicieron clic, no el número, y te dice quién NO recibe correo esta semana y por qué.
+description: Un agente de nurturing que decide qué hacer con cada persona de tu lista, incluido no escribirle. Lee el comportamiento real —mirando el NOMBRE de los enlaces clicados, no el número de clics— y devuelve un MAPA DE FLUJOS con los ocho estados en los que puede estar un lead: no abre, abre y no clica, clica contenido, clica precio, responde, pide cita y no aparece, pide cita y va, dice que no. Cada estado con qué recibe, cuánto se espera, qué lo mueve y CUÁNDO SE DEJA DE ESCRIBIR. Más los correos enteros listos para pegar y la baja programada con fecha. Si usas Mailchimp o HubSpot hay conector oficial; si no, te guía el export columna por columna.
 ---
 
 # /email-que-piensa — El agente que decide a quién NO escribir
@@ -147,6 +147,38 @@ rama. Tres cosas que se saltan siempre y no se pueden saltar:
 - **El correo de despedida se cumple.** Si no contesta, sale. Un adiós seguido de tres
   correos más te retrata.
 
+### Paso 4b — El mapa de flujos: qué le pasa a cada uno DESPUÉS
+
+El árbol dice en qué rama cae cada persona **hoy**. Eso es una foto. Lo que convierte esto en un
+sistema es decir **qué le pasa después**: qué recibe, cuánto se espera, qué la mueve de sitio y
+**cuándo se deja de escribir**.
+
+Sigue `references/mapa-de-flujos.md`, que trae los ocho estados con sus plazos y sus salidas:
+
+| | Estado | Y lo que importa de cada uno |
+|---|---|---|
+| 1 | **No abre nada** | No es un lead. Despedida y baja |
+| 2 | **Abre y no clica** | Le interesa el tema, no lo que le mandas. Cambio de ángulo, máximo 3 intentos |
+| 3 | **Clica contenido** | Está aprendiendo, no comprando |
+| 4 | **Clica precio o condiciones** | **La señal más fuerte que hay.** Y en el informe parece un clic igual que el 3 |
+| 5 | **Responde** | Sale del automático. Lo coge una persona |
+| 6 | **Pide cita y no aparece** | La rama más caliente y la que nadie trabaja: ya dijo sí una vez |
+| 7 | **Pide cita y va** | Es de ventas. Marketing no interfiere |
+| 8 | **Dice que no** | Se respeta, se registra, y no se le vuelve a escribir |
+
+**El 3 y el 4 se distinguen solo por el nombre del enlace**, nunca por el número de clics. Si no
+tienes el informe de clics por enlace, **no puedes separarlos** — y ahí se va la mitad del valor
+del mapa. Dilo en lugar de inventar la distinción.
+
+**Las cuatro reglas que no se negocian en el mapa:**
+
+1. **Un estado, un correo.** Si alguien cae en dos ramas, gana la de más arriba.
+2. **Toda rama tiene salida.** Un estado sin *«tras N intentos, se deja»* no es nurturing: es
+   acoso con plantilla.
+3. **Responder saca del automático.** Es la regla que más se incumple y la que más quema listas.
+4. **Los estados 5, 7 y 8 no son de marketing.** Meterlos en el automático es la forma más rápida
+   de perder la confianza que ya te habías ganado.
+
 ### Paso 5 — Escribe las reglas de silencio
 
 Un árbol sin frenos vuelve a ser una secuencia. Deja escrito:
@@ -192,16 +224,27 @@ _{{fecha}} · generado con /email-que-piensa_
 {{señales que no tienes, supuestos que has hecho, qué habría que medir}}
 ```
 
-### Y el entregable con sus colores
+### El entregable: tres pestañas
 
-Sigue `references/_entregable.md`. Además de lo de arriba, el HTML lleva:
+Sigue `references/_entregable.md` y `references/mapa-de-flujos.md`. El HTML lleva **tres
+pestañas**:
 
-- **El árbol visual con el recuento por rama**, y que la suma cuadre con el total de la
-  lista. Si no cuadra, hay gente sin decisión asignada y eso se ve de un vistazo.
-- **Los correos enteros, listos para copiar** — asunto y cuerpo. No esbozos.
-- **La baja programada, con fecha y en grande.** Es el paso que todo el mundo se salta y el
-  que hace que todo lo demás valga o no valga. Nadie va a comprobar si lo hizo.
-- El diario: qué se miró, qué señales no se pudieron usar y por qué.
+| Pestaña | Qué es |
+|---|---|
+| **Mapa de flujos** | Los ocho estados, **clicables**. Al pulsar uno se ve su flujo entero: qué recibe, cuándo, hacia dónde puede moverse y cuándo se deja. Con el número de personas en cada estado y las salidas marcadas. Debajo, **la misma cosa en tabla** — el diagrama para proyectar, la tabla para leer |
+| **Los correos** | Enteros, asunto y cuerpo, listos para pegar. No esbozos |
+| **El árbol y las reglas** | El recuento por rama cuadrando con el total, a quién NO se escribe, las reglas de silencio y **la baja programada con fecha y en grande** |
+
+Tres cosas que no pueden faltar:
+
+- **La suma tiene que cuadrar con el total de la lista.** Si no cuadra, hay gente sin decisión
+  asignada, y en un mapa visual eso se ve de un golpe.
+- **Cada estado con su número de personas.** Un mapa sin volúmenes es un dibujo; con volúmenes,
+  es una decisión.
+- **La baja programada, con fecha.** Es el paso que todo el mundo se salta y el que hace que todo
+  lo demás valga o no valga. Nadie va a comprobar si lo hizo.
+
+Y el diario: qué se miró, qué señales no se pudieron usar y por qué.
 
 ### El cierre: dos columnas, siempre
 
