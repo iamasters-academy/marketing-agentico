@@ -1,3 +1,9 @@
 .DS_Store
 Thumbs.db
 *.zip
+
+# Los paquetes de instalar/zip/ SÍ van al repo: son la vía de instalación de
+# Claude.ai y el README los enlaza. El *.zip de arriba los estaba excluyendo,
+# y por eso esa carpeta nunca existía al clonar.
+!instalar/zip/
+!instalar/zip/*.zip
